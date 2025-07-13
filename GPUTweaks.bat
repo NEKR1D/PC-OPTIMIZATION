@@ -4,31 +4,10 @@ rem # Works for any graphics card
 rem # Plundered and combined by NEKR1D
 rem # Created by Shoober420
 
+rem # !!! WARNING !!!
 rem # DOES NOT SUPPORT DIGITAL STREAM COMPRESSION (DSC). Black screen will occur if used with DSC monitors
-
-rem # Timeout Detection and Recovery (TDR)
-rem # Monitors and resets graphics cards that aren't responding quickly enough
-
+rem # Timeout Detection and Recovery (TDR) - Monitors and resets graphics cards that aren't responding quickly enough
 rem # RECOMMENDED TO DISABLE ONBOARD INTEGRATED GPU IN BIOS AND DEVICE MANAGER AND USE DEDICATED GPU ONLY
-
-rem # IMPROVE LATENCY AT THE COST OF LITTLE LESS FPS
-
-rem # https://www.youtube.com/watch?v=fhrdDaLCrMo
-
-rem # https://www.youtube.com/watch?v=OrOHQkOwZWs
-
-rem # https://www.youtube.com/watch?v=itTcqcJxtbo
-
-rem # https://www.youtube.com/watch?v=RWryKvdf_xo
-
-rem # https://forums.blurbusters.com/viewtopic.php?t=13323
-
-rem # https://sites.google.com/view/melodystweaks/basictweaks
-
-rem # https://github.com/sherifmagdy32/gaming_os_tweaker/blob/main/scripts/tweaks/gpu.cmd
-
-rem # Deferred Procedure Call
-rem # Allows high-priority tasks to defer required but lower-priority tasks for later execution
 
 PAUSE
 
