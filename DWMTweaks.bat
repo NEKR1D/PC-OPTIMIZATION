@@ -1,7 +1,7 @@
 rem # DWM Modification and Immediate Render Optimization
 
 rem # Plundered and updated by NEKR1D
-rem # Created by Alchemy Tweaks
+rem # Originally created by Alchemy Tweaks
 
 @Echo Off
 Title Reg Converter v1.2 & Color 1A
