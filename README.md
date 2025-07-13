@@ -133,8 +133,8 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Vertical Sync	```On```
 
 > [!NOTE]
-> - Low Latency Mode is preferential based and requires testing. If you enable NVIDIA Reflex setttings in-game it will ovveride this flag.
-> - Negative LOD bias setting is preferential based and will be influenced by the game you are playing. Manipulates texture/object pop-in and some elements of clarity.
+> - Low Latency Mode is preferential based and requires testing. If you enable NVIDIA Reflex setttings in-game it will override this flag.
+> - Negative LOD bias setting is preferential based and the best choice will depend on the game. Manipulates texture/object pop-in/image quality.
 
 ## NVIDIA Control Panel - Color Settings
 - Open ```NVIDIA Control Panel```
