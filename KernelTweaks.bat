@@ -1,7 +1,7 @@
 rem # Kernel Tweaks
 
 rem # Plundered and combined by NEKR1D
-rem # Created by Shoober420
+rem # Originally created by Shoober420
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DpcTimeout" /t REG_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DpcWatchdogPeriod" /t REG_DWORD /d "0" /f
