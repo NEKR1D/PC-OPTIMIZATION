@@ -1,21 +1,7 @@
 rem # Kernel Tweaks
-rem # Deferred Procedure Call (DPC)
-rem # Allows high-priority tasks to defer required but lower-priority tasks for later execution
 
 rem # Plundered and combined by NEKR1D
 rem # Created by Shoober420
-
-rem # https://www.youtube.com/watch?v=4OrEytGFdK4
-
-rem # https://www.youtube.com/watch?v=k2Vljto4WYk
-
-rem # https://www.youtube.com/watch?v=YaIVoqRo5-g
-
-rem # https://www.youtube.com/watch?v=omg_EnxUJv4
-
-rem # https://forums.blurbusters.com/viewtopic.php?t=13323
-
-rem # https://www.tenforums.com/performance-maintenance/146774-cacheawarescheduling-what-how-does-windows-benefit.html
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DpcTimeout" /t REG_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DpcWatchdogPeriod" /t REG_DWORD /d "0" /f
