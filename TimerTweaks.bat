@@ -3,8 +3,6 @@ rem # Resolution Timer Tweaks
 rem # Plundered and updated by NEKR1D
 rem # Originally Created by Shoober420
 
-rem # https://sites.google.com/view/melodystweaks/misconceptions-about-timers-hpet-tsc-pmt
-rem # https://www.xbitlabs.com/hpet-settings/
 rem # Leave HPET enabled in BIOS
 
 rem # Timer Resolution Tweak
