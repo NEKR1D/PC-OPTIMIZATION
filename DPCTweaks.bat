@@ -1,6 +1,6 @@
-rem # Deferred Procedure Call (DPC) Tweaks
+rem ::: Deferred Procedure Call (DPC) Tweaks
 
-rem # Plundered by NEKR1D
+rem ::: Plundered by NEKR1D
 
 @echo off
 echo Adding values to the Registry...
@@ -12,7 +12,7 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\ker
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v DpcWatchdogPeriod /t REG_DWORD /d 0 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v UnlimitDpcQueue /t REG_DWORD /d 1 /f
 
-rem # Disable Threaded DPCs
+rem ::: Disable Threaded DPCs
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "ThreadDpcEnable" /t REG_DWORD /d "0" /f
 
 echo Completed adding values to the Registry.
