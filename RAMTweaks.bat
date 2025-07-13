@@ -1,9 +1,7 @@
 rem # RAM Tweaks
 
-rem # Created by Shoober420 
-
-rem # https://www.elevenforum.com/members/garlin.5387/
-rem # https://www.elevenforum.com/t/gpu-tweaks-batch-script.30134/post-521530
+rem # Plundered and updated by NEKR1D
+rem # Originally created by Shoober420
 
 rem # Pagefile Size in MB 
 rem # 8GB = 8192 / 16GB = 16384 / 32GB = 32768 / 64GB = 65536
