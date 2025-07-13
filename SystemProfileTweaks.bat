@@ -1,6 +1,7 @@
 rem # System Profile tweaks
 
-rem # Created by Shoober420
+rem # Plundered by NEKR1D
+rem # Originally created by Shoober420
 
 rem # System profiles always on
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "AlwaysOn" /t REG_DWORD /d "1" /f
