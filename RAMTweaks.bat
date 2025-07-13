@@ -1,14 +1,14 @@
-rem # RAM Tweaks
+rem ::: RAM Tweaks
 
-rem # Plundered and updated by NEKR1D
-rem # Originally created by Shoober420
+rem ::: Plundered and updated by NEKR1D
+rem ::: Originally created by Shoober420
 
-rem # Pagefile Size in MB 
-rem # 8GB = 8192 / 16GB = 16384 / 32GB = 32768 / 64GB = 65536
+rem ::: Pagefile Size in MB 
+rem ::: 8GB = 8192 / 16GB = 16384 / 32GB = 32768 / 64GB = 65536
 
-rem # InitialSize=65536,MaximumSize=65536
+rem ::: InitialSize=65536,MaximumSize=65536
 
-rem # Disable Page File
+rem ::: Disable Page File
 rem reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "PagingFiles" /t REG_MULTI_SZ /d "c:\pagefile.sys 0 0" /f
 
 if not exist C:\Windows\System32\wbem\WMIC.exe (
@@ -17,7 +17,7 @@ if not exist C:\Windows\System32\wbem\WMIC.exe (
     echo Done.
 )
 
-rem # Sets SvcHostSplitThresholdInKB, IoPageLockLimit, CacheUnmapBehindLengthInMB, and ModifiedWriteMaximum according to RAM size
+rem ::: Sets SvcHostSplitThresholdInKB, IoPageLockLimit, CacheUnmapBehindLengthInMB, and ModifiedWriteMaximum according to RAM size
 
 @echo off
 
@@ -114,14 +114,14 @@ goto :end
 
 :end
 
-rem # https://msfn.org/board/topic/25684-registry-myths-1-iopagelocklimit/
-rem # https://www.reddit.com/r/techsupport/comments/s92o06/paged_pool_and_non_paged_pool_is_very_high/
-rem # https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/unable-allocate-memory-system-paged-pool
-rem # https://support.arcserve.com/s/article/Tuning-Guide-for-StorageCraft-Software-on-Servers?language=de
-rem # https://sites.google.com/site/tweakradje/windows/windows-tweaking
-rem # https://github.com/mirror/reactos/blob/master/reactos/ntoskrnl/mm/ARM3/mminit.c
+rem ::: https://msfn.org/board/topic/25684-registry-myths-1-iopagelocklimit/
+rem ::: https://www.reddit.com/r/techsupport/comments/s92o06/paged_pool_and_non_paged_pool_is_very_high/
+rem ::: https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/unable-allocate-memory-system-paged-pool
+rem ::: https://support.arcserve.com/s/article/Tuning-Guide-for-StorageCraft-Software-on-Servers?language=de
+rem ::: https://sites.google.com/site/tweakradje/windows/windows-tweaking
+rem ::: https://github.com/mirror/reactos/blob/master/reactos/ntoskrnl/mm/ARM3/mminit.c
 
-rem # Max Page Pool Size / 1GB Non Paged Pool Size
+rem ::: Max Page Pool Size / 1GB Non Paged Pool Size
 reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "NonPagedPoolSize" /t REG_DWORD /d "0x400" /f
 reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "PagedPoolSize" /t REG_DWORD /d "0xffffffff" /f
 reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "DynamicMemory" /t REG_DWORD /d "1" /f
@@ -138,10 +138,10 @@ reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v
 reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "DontVerifyRandomDrivers" /t REG_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "EnableLowVaAccess" /t REG_DWORD /d "1" /f
 
-rem # Disable Memory Compression
+rem ::: Disable Memory Compression
 PowerShell -Command "Disable-MMAgent -MemoryCompression"
 
-rem # Disable Page Combining
+rem ::: Disable Page Combining
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "DisablePageCombining" /t REG_DWORD /d "1" /f
 
 PowerShell -Command "Disable-MMAgent -PageCombining"
