@@ -125,7 +125,7 @@
 
 ; ::: Audio Device Performance Tuning
 "AUDIO_DEVICE_PENDING_INTERRUPTS"="0"           ; ::: Ensures no pending interrupts for sound cards.
-"AUDIO_DEVICE_BUFFER_SIZE"="128"                ; ::: Keeps audio buffer size low to reduce latency in sound processing. Default 512 ; :::Try 64, 128, 256
+"AUDIO_DEVICE_BUFFER_SIZE"="512"                ; ::: Keeps audio buffer size low to reduce latency in sound processing.
 "AUDIO_DEVICE_MAX_PENDING_INTERRUPTS"="0" 
 
 ; ::: General Device Tuning
