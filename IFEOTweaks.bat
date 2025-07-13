@@ -1,25 +1,25 @@
-rem # Image File Execution Options [IFEO] Tweaks Batch
+rem ::: Image File Execution Options [IFEO] Tweaks Batch
 
-rem # Plundered and updated by NEKR1D
+rem ::: Plundered and updated by NEKR1D
 
-rem # defines cpu, io and page priority of games, system and software executables
+rem ::: defines cpu, io and page priority of games, system and software executables
 
-rem # !!! Warning !!!
-rem # !!! DO NOT INSTALL !!!
-rem # !!! Use script as reference only, modify and add your own games/software !!!
+rem ::: !!! Warning !!!
+rem ::: !!! DO NOT INSTALL !!!
+rem ::: !!! Use script as reference only, modify and add your own games/software !!!
 
-rem # 1: Idle
-rem # 2: Normal
-rem # 3: High (Can lower performance)
-rem # 4: Real Time (DO NOT USE THIS)
-rem # 5: Below Normal
-rem # 6: Above Normal
+rem ::: 1: Idle
+rem ::: 2: Normal
+rem ::: 3: High (Can lower performance)
+rem ::: 4: Real Time (DO NOT USE THIS)
+rem ::: 5: Below Normal
+rem ::: 6: Above Normal
 
 setlocal
 
 set "IFEO_BASE=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
 
-rem # Games
+rem ::: Games
 
 set "APP_KEY=%IFEO_BASE%\bf2042.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
@@ -77,7 +77,7 @@ reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 
-rem # System
+rem ::: System
 set "APP_KEY=%IFEO_BASE%\svchost.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
@@ -100,20 +100,20 @@ reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 endlocal
 
-rem # Plundered and updated by NEKR1D
-rem # Originally created by Shoober420
+rem ::: Plundered and updated by NEKR1D
+rem ::: Originally created by Shoober420
 
-rem # Enable Large Pages for games and system executables
-rem # https://forums.guru3d.com/threads/performance-boost-for-most-games.389072/
+rem ::: Enable Large Pages for games and system executables
+rem ::: https://forums.guru3d.com/threads/performance-boost-for-most-games.389072/
 
-rem # Enable Large System Cache
+rem ::: Enable Large System Cache
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "LargeSystemCache" /t REG_DWORD /d "1" /f
 
-rem # Enable Large Pages
+rem ::: Enable Large Pages
 reg add "HKLM\SYSTEM" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "UseLargePages" /t REG_DWORD /d "1" /f
 
-rem # Enable Large Pages on specific Windows and Application processes
+rem ::: Enable Large Pages on specific Windows and Application processes
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dllhost.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\dwm.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
@@ -121,7 +121,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steam.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\steamservice.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 
-rem # Enable Large Pages on specific Games
+rem ::: Enable Large Pages on specific Games
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\QuakeChampions.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\quake2.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\bf2042.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
