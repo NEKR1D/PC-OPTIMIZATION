@@ -25,7 +25,6 @@ echo Setting DNS as Cloudflare 1.1.1.1 / 1.0.0.1
 netsh interface ipv4 set dnsservers name="Ethernet" static 1.1.1.1 primary
 netsh interface ipv4 add dnsservers name="Ethernet" address=1.0.0.1 index=2
 
-
 echo Enabling DNS over HTTPS (DoH)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
@@ -57,9 +56,11 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\QoS" /t REG_
 echo "Adjusting LanmanServer parameters for optimized file sharing performance."
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /t REG_DWORD /v Size /d 3 /f
 
-echo "Setting network throttling index in multimedia system profile to Default (10) / Unthrottled (fffffff) is not always optimal"
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /t REG_DWORD /v NetworkThrottlingIndex /d 10 /f
+rem ::: Network Throttle // Default = 10 Unthrottled = 4294967295 [Decimal Values]
+echo "Setting network throttling index in multimedia system profile"
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /t REG_DWORD /v NetworkThrottlingIndex /d 4294967295 /f
 
+rem ::: Set system responsiveness
 echo "Setting system responsiveness to maximum in multimedia system profile."
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /T REG_DWORD /v SystemResponsiveness /d 0 /f
 
@@ -93,8 +94,8 @@ for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972
 
 rem ::: Speed & Duplex must be set to "Auto Negotiation" or internet borks unless you know correct value [6 = 2.5 Gbit]
 
-echo Setting NIC SpeedDuplex to 1 Gbit
-reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "6" /f
+echo Setting NIC SpeedDuplex to 2.5 Gbit [1Gbit = 6]
+reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "7" /f
 
 rem ::: MIMO Power Save Mode - 3 Disable
 echo Disabling MIMO Power Save Mode
@@ -131,13 +132,12 @@ reg add "%%n" /v "*PMARPOffload" /t REG_SZ /d "0" /f
 reg add "%%n" /v "Downshift" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 
-rem ::: Disabling Interrupt Moderation on NIC [visible in device manager properties]
+rem ::: Enable Interrupt Moderation on NIC [visible in device manager properties]
+rem ::: Set Interrupt Moderation Rate: Interrupt Throttling Rate (ITR) // 125 = Medium 0 = Off
 echo Disabling Interrupt Moderation on NIC [visible in device manager properties]
 reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "0" /f
-reg add "%%n" /v "*InterruptModerationRate" /t REG_DWORD /d 0 /f
 
-rem ::: Interrupt Moderation Rate: Interrupt Throttling Rate (ITR)
-reg add "%%n" /v "ITR" /t REG_SZ /d "0" /f
+reg add "%%n" /v "ITR" /t REG_SZ /d "125" /f
 
 rem ::: JumboPacket: 1514 = Disabled
 echo Disabling JumboPackets
