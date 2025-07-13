@@ -1,12 +1,12 @@
-rem # Network Tweaks
+rem ::: Network Tweaks
 
-rem # Plundered and updated by NEKR1D
-rem # Originally created by Shoober420
+rem ::: Plundered and updated by NEKR1D
+rem ::: Originally created by Shoober420
 
-rem # !!! Warning !!!
-rem # !!! Your hardware and devices are different !!!
-rem # !!! May brick your NIC connectivity !!!
-rem # !!! Use script as reference only !!!
+rem ::: !!! Warning !!!
+rem ::: !!! Your hardware and devices are different !!!
+rem ::: !!! May brick your NIC connectivity !!!
+rem ::: !!! Use script as reference only !!!
 
 if not exist C:\Windows\System32\wbem\WMIC.exe (
     echo Installing WMIC...
@@ -30,7 +30,7 @@ echo Enabling DNS over HTTPS (DoH)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
 
-rem # Require DoH / 2 - Allow DoH / 1 - Prohibit DoH
+rem ::: Require DoH / 2 - Allow DoH / 1 - Prohibit DoH
 echo Forcing requirement of DoH
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "3" /f
 
@@ -87,20 +87,20 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Psched" /v "MaxOutstandingSend
 echo Setting Packet Scheduler - Limit reservable bandwidth = 0
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Psched" /v "NonBestEffortLimit" /t REG_DWORD /d "0" /f
 
-rem # Get the Sub ID of the Network Adapter
+rem ::: Get the Sub ID of the Network Adapter
 
 for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}" /v "*SpeedDuplex" /s ^| findstr  "HKEY"') do (
 
-rem # Speed & Duplex must be set to "Auto Negotiation" or internet borks unless you know correct value [6 = 2.5 Gbit]
+rem ::: Speed & Duplex must be set to "Auto Negotiation" or internet borks unless you know correct value [6 = 2.5 Gbit]
 
 echo Setting NIC SpeedDuplex to 1 Gbit
 reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "6" /f
 
-rem # MIMO Power Save Mode - 3 Disable
+rem ::: MIMO Power Save Mode - 3 Disable
 echo Disabling MIMO Power Save Mode
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
 
-rem # Disable most offloading settings on NIC [visible in device manager]
+rem ::: Disable most offloading settings on NIC [visible in device manager]
 echo Disabling NIC offloading, rss, wake-on-LAN, mircast, etc.
 reg add "%%n" /v "*WakeOnMagicPacket" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*WakeOnPattern" /t REG_SZ /d "0" /f
@@ -131,19 +131,19 @@ reg add "%%n" /v "*PMARPOffload" /t REG_SZ /d "0" /f
 reg add "%%n" /v "Downshift" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 
-rem # Disabling Interrupt Moderation on NIC [visible in device manager properties]
+rem ::: Disabling Interrupt Moderation on NIC [visible in device manager properties]
 echo Disabling Interrupt Moderation on NIC [visible in device manager properties]
 reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*InterruptModerationRate" /t REG_DWORD /d 0 /f
 
-rem # Interrupt Moderation Rate: Interrupt Throttling Rate (ITR)
+rem ::: Interrupt Moderation Rate: Interrupt Throttling Rate (ITR)
 reg add "%%n" /v "ITR" /t REG_SZ /d "0" /f
 
-rem # JumboPacket: 1514 = Disabled
+rem ::: JumboPacket: 1514 = Disabled
 echo Disabling JumboPackets
 reg add "%%n" /v "*JumboPacket" /t REG_SZ /d "1514" /f
 
-rem # Disabling NIC QOS, setting buffer sizes = 4096, etc.
+rem ::: Disabling NIC QOS, setting buffer sizes = 4096, etc.
 echo Disabling NIC QOS, setting buffer sizes = 4096, etc.
 reg add "%%n" /v "LogLinkStateEvent" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*QoS" /t REG_SZ /d "0" /f
@@ -162,25 +162,25 @@ reg add "%%n" /v "RxIntDelay" /t REG_SZ /d "0" /f
 reg add "%%n" /v "RxAbsIntDelay" /t REG_SZ /d "0" /f
 reg add "%%n" /v "FlowControlCap" /t REG_SZ /d "0" /f
 
-rem # Disable Power Management options
+rem ::: Disable Power Management options
 reg add "%%n" /v "PnPCapabilities" /t REG_DWORD /d "0x00000118" /f
 )
 
-rem # MSI mode support for NIC
+rem ::: MSI mode support for NIC
 for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PCI\VEN_"') do (
 	reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f
 	reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "0" /f
 )
 
-rem # NIC Tweaks
+rem ::: NIC Tweaks
 
-rem # Last key changes based on NIC card registry ID
-rem # Find "Class Guid" under Device Manager > Network adapters > Properties > Details tab
-rem # Go to "HKLM\SYSTEM\CurrentControlSet\Control\Network\"Class Guid"\<NIC ID>\Connection" to get NIC ID
-rem # https://www.elevenforum.com/members/garlin.5387/
-rem # https://www.elevenforum.com/t/find-nic-class-guid-in-batch-script-using-wmic-or-anything-else.30083/
+rem ::: Last key changes based on NIC card registry ID
+rem ::: Find "Class Guid" under Device Manager > Network adapters > Properties > Details tab
+rem ::: Go to "HKLM\SYSTEM\CurrentControlSet\Control\Network\"Class Guid"\<NIC ID>\Connection" to get NIC ID
+rem ::: https://www.elevenforum.com/members/garlin.5387/
+rem ::: https://www.elevenforum.com/t/find-nic-class-guid-in-batch-script-using-wmic-or-anything-else.30083/
 
-rem # Disable Nagle's Algorithm and NETBIOS
+rem ::: Disable Nagle's Algorithm and NETBIOS
 
 for /f "delims=" %%n in ('wmic nic where "GUID is not null" get guid ^| findstr /v GUID') do (
    reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%n" /v TCPNoDelay /t REG_DWORD /d 1 /f
@@ -190,25 +190,25 @@ for /f "delims=" %%n in ('wmic nic where "GUID is not null" get guid ^| findstr 
    reg add "HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters\Interfaces\Tcpip_%%n" /v NetbiosOptions /t REG_DWORD /d 2 /f
 )
 
-rem # Maximum Transmission Unit (MTU)
+rem ::: Maximum Transmission Unit (MTU)
 
 echo.
 
-rem # FastSendDatagramThreshold / FastCopyReceiveThreshold should match MTU value in decimal, not hexadecimal (usually 1472)
+rem ::: FastSendDatagramThreshold / FastCopyReceiveThreshold should match MTU value in decimal, not hexadecimal (usually 1472)
 echo Setting FastSendDatagram to match MTU value of 1500
 echo Setting FastCopyReceiveThreshold to match MTU value of 1500
 echo Disabling MTU Discovery/Auto Mode
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\AFD\Parameters" /v "FastSendDatagramThreshold" /t REG_DWORD /d 1500 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\AFD\Parameters" /v "FastCopyReceiveThreshold" /t REG_DWORD /d 1500 /f
 
-rem # Disables MTU Discovery, which auto sets MTU value randomly based on traffic, never enable
+rem ::: Disables MTU Discovery, which auto sets MTU value randomly based on traffic, never enable
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "EnablePMTUDiscovery" /t REG_DWORD /d "0" /f
 
-rem # Set MTU = 1500 on NIC
+rem ::: Set MTU = 1500 on NIC
 echo Setting MTU size to 1500 on NIC
 netsh interface ipv4 set subinterface "Ethernet" mtu=1500 store=persistent
 
-rem # Setting congestion provider to BBR2 [new option available in Windows 11 is faster]
+rem ::: Setting congestion provider to BBR2 [new option available in Windows 11 is faster]
 echo Setting Internet congestion provider to BBR2
 echo Setting Datacenter congestion provider to BBR2
 echo Setting Compat congestion provider to BBR2
