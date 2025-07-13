@@ -1,20 +1,20 @@
-rem # CPU Tweak script
+rem ::: CPU Tweak script
 
-rem # Plundered and updated by NEKR1D
-rem # Originally created by Shoober420
+rem ::: Plundered and updated by NEKR1D
+rem ::: Originally created by Shoober420
 
-rem # AdditionalCriticalWorkerThreads value increases the number of critical worker threads created for a specified work queue
-rem # By increasing the value of this one, you can get more additional worker threads which will allow for more queued I/O in the storage subsystem
-rem # Allow more I/O to queue in the storage subsystem
-rem # Value is determined by RAM size NOT thread or core count
+rem ::: AdditionalCriticalWorkerThreads value increases the number of critical worker threads created for a specified work queue
+rem ::: By increasing the value of this one, you can get more additional worker threads which will allow for more queued I/O in the storage subsystem
+rem ::: Allow more I/O to queue in the storage subsystem
+rem ::: Value is determined by RAM size NOT thread or core count
 
 PAUSE
 
-rem # Add Critical and Delayed Worker Threads
+rem ::: Add Critical and Delayed Worker Threads
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalCriticalWorkerThreads" /t REG_DWORD /d "16" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalDelayedWorkerThreads" /t REG_DWORD /d "16"  /f
 
-rem # Disable Core Parking
+rem ::: Disable Core Parking
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "CoreParkingDisabled" /t REG_DWORD /d "1" /f
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "HighPerformance" /t REG_DWORD /d "1" /f
