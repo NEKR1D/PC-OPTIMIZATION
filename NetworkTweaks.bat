@@ -25,9 +25,9 @@ TIMEOUT 1
 
 rem ::: Windows Network and Internet Connectivity Tweaks
 
-rem :::Setting DNS as Cloudflare 1.1.1.1 / 1.0.0.1
-netsh interface ipv4 set dnsservers name="Ethernet" static 1.1.1.1 primary
-netsh interface ipv4 set dnsservers name="Ethernet" 1.0.0.1 index=2
+rem :::Setting DNS as CloudFlare 1.1.1.1 / 1.0.0.1
+netsh interface ipv4 set dns name="Ethernet" static 1.1.1.1 primary
+netsh interface ipv4 add dns name="Ethernet" addr=1.0.0.1 index=2
 
 rem ::: Flush DNS
 ipconfig /flushdns
