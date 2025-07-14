@@ -2,16 +2,18 @@
 
 # PC Optimization for Gaming
 
-- A collection of tweaks focused on optimizing responsiveness by improving framerate, frametimes, input and device communication latencies.
-    
+- A collection of tweaks focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
+
+- Experimental ```Windows11Tweaks.bat``` that make the OS more responsive, remove bloat, remove telemetry and adjustments to security/privacy elements.
+
 - Currently tested and working on ```INTEL 12900K``` and ```NVIDIA 3080``` running ```WINDOWS 11 Build 24H2 [26100.4652]``` as of ```July 1st, 2025```.
 - Not intended as a comprehensive user guide with technical explanations or a FAQ.
 - Serves mainly as a document to track my own configuration changes.
 
 > [!WARNING]
-> - Tweaks are experimental and will likely cause increased temperatures and CPU/GPU usage.
+> - Tweaks are experimental and will likely cause increased temperatures, power consumption and CPU/GPU usage.
 > - Use the scripts provided as a reference to test and tailor settings to your own experience.
-> - Until you set these correctly for your own environmenmt you can expect unintended behaviors such as; hitching, stuttering, crashing and unable to boot OS.
+> - Review and set these correctly for your own hardware and setup otherwise you can expect unintended behaviors such as; hitching, stuttering, crashing and unable to boot OS.
 
 > [!CAUTION]
 > - **Use at your own risk**.
@@ -73,7 +75,7 @@
    - Set rBAR - Size Limit to ```0x0000000060000000``` [1.5GB]
   
 > [!NOTE]
-> - Activation of ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
+> - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
 > - You can verify ```Resizable BAR``` is enabled by opening the ```NVIDIA Control Panel``` then ```System Information```, and then look for ```Resizable BAR``` in the list. If it says ```Yes```, you’re set.
 
 ## NVIDIA - Graphics Card Driver Clean Install
