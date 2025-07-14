@@ -97,9 +97,9 @@ rem ::: Get the Sub ID of the Network Adapter
 
 for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}" /v "*SpeedDuplex" /s ^| findstr  "HKEY"') do (
 
-rem ::: Setting Network Adapter SpeedDuplex to 2.5 Gbit [1Gbit = 6] [Auto Negotiation = 0]
-rem ::: Speed & Duplex must be set to "Auto Negotiation" or internet breaks unless you know the correct value
-reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "0" /f
+rem ::: Setting Network Adapter SpeedDuplex to 1 Gbit [1Gbit = 6] [Auto Negotiation = 0]
+rem ::: Unless you know the correct value, SpeedDuplex must be set to "Auto Negotiation" or NIC and Internet breaks
+reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "6" /f
 
 rem ::: Disabling MIMO Power Save Mode -  Disable = 1
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
