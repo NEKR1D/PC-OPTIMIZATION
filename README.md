@@ -123,10 +123,10 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Power Management Mode	```Prefer Max Performance```
 - Preferred refresh rate ```Highest available```
 - Shader Cache Size - ```Unlimited```
-- Texture filtering - Anisotropic sample optimization ```On```
+- Texture filtering - Anisotropic sample optimization ```Off```
 - Texture filtering - Negative LOD bias ```Clamp```
 - Texture filtering - Quality ```High Performance```
-- Texture filtering - Trilinear optimization ```On```
+- Texture filtering - Trilinear optimization ```Off```
 - Threaded optimization ```On```
 - Tripple buffering ```Off```
 - Vertical Sync	```On```
