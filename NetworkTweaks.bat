@@ -106,7 +106,7 @@ reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
 
 rem ::: Disable most properties/services on Network Adapter 
 rem ::: Also visible in device manager properties of device
-rem ::: Intel i-225v no longer supports RSS [officially removed in .inf]
+rem ::: Intel i-225v Adapter no longer supports RSS [officially removed in .inf]
 
 rem ::: Disabling Network Adapter offloading, rss, wake-on-LAN, mircast, etc.
 reg add "%%n" /v "*WakeOnMagicPacket" /t REG_SZ /d "0" /f
@@ -195,8 +195,8 @@ rem ::: Setting MTU size to 1500 on Network Adapter
 netsh interface ipv4 set subinterface "Ethernet" mtu=1500 store=persistent
 
 rem ::: Setting Congestion Provider to CUBIC
-rem ::: CUBIC = Introduced in Windows 10?
-rem ::: BBR2 = New option available in Windows 11 that is better/faster
+rem ::: CUBIC = Introduced in Windows 10? // pushes throughput until packet loss then reduces
+rem ::: BBR2 = New option available in Windows 11 // better/faster but can cause connectivity issues
 powershell -Command "netsh int tcp set supplemental Internet CongestionProvider=CUBIC" >nul
 powershell -Command "netsh int tcp set supplemental Datacenter CongestionProvider=CUBIC" >nul
 powershell -Command "netsh int tcp set supplemental Compat CongestionProvider=CUBIC" >nul
