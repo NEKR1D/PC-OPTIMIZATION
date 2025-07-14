@@ -173,6 +173,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 
 > [!NOTE]
 > - Simple method for forcing ```High Performance``` individually for specific Windows apps and game .exes ensuring Power Management Mode is NOT set to ```NVIDIA Recommended```.
+
 ## NVIDIA Profile Inspector - Settings
 
 - GSYNC - Application Mode ```Off```
@@ -214,79 +215,6 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Select ```Gaming```
 - Select ```Game Mode```
 - Set Game Mode to ```On```
-  
-## Windows Services
-
-*Disable these Services:*
-```
-AssignedAccessManager Service
-Connected User Experiences and Telemerty
-Diagnostic Policy Service
-DialogBlockingService
-GameDVR and Broadcast User Service
-Intel(R) Dynamic Application Loader
-Net.Tcp Port Sharing Service
-Network Location Awareness
-OpenSSH Authentication Agent
-Print Device Configuration
-Print Spooler
-PrintScanBrokerService
-Program Compatibility Assistant
-Remote Registry
-Retail Demo Service
-Routing and Remote Access
-Shared PC Account Manager
-SysMain
-TCP/IP NetBIOS Helper
-User Experience Virtualization
-Windows Biometric Service
-Windows Error Reporting
-Windows Event Collector
-Windows Event Log
-Windows Search
-Xbox Accessory Management
-Xbox Live Auth Manager
-Xbox Live Game Save
-Xbox Live Networking
-ZTHELPER
-```
-
-## Windows Devices
-
-*Disable these Devices:*
-```
-Composite Bus Enumerator
-High Definition Audio Controller
-High precision event timer
-Intel(R) Dynamic Application Loader Host Interface
-Intel(R) Graphics Command Center
-Intel(R) Graphics Control Panel
-Intel(R) iCLS Client
-Intel(R) Management Engine Interface #1
-Intel(R) Management Engine WMI Provider
-Intel(R) Serial IO GPIO Host Controller - INTC1056
-Intel(R) Shared SRAM - 7AA7
-Microsoft GS Wavetable Synth
-Microsoft Hyper-V Virtualization Infrastructure Driver
-Microsoft Kernel Debug Network Adapter
-Microsoft Print to PDF
-Microsoft Radio Device Enumeration Bus
-Microsoft RRAS Root Enumerator
-Microsoft Virtual Drive Enumerator
-NDIS Virtual Network Adapter Enumerator
-Remote Desktop Device Redirector Bus
-Root Print Queue
-UMBus Root Bus Enumerator
-WAN Miniport (IKEv2)
-WAN Miniport (IP)
-WAN Miniport (IPv6)
-WAN Miniport (L2TP)
-WAN Miniport (Network Monitor)
-WAN Miniport (PPPOE)
-WAN Miniport (PPTP)
-WAN Miniport (SSTP)
-Windows Print Queues
-```
 
 ## Windows Audio
 
@@ -296,32 +224,6 @@ Windows Print Queues
 - Open ```Control Panel``` > ```Hardware and Sound``` > ```Sound``` > ```Communications``` > Set to ```Do Nothing```
 - Set ```Output``` to ```Headphones``` in games wherever possible
 - Increase Windows volume to ```100%``` _(Use your DAC/AMP or in-game settings to decrease volume instead)_
-
-## Network Interface Card (NIC)
-
-**Disable Protocols/Services**
-```
-Client for Microsoft Networks
-File and Printer Sharing for Microsoft Networks
-QoS Packet Scheduler
-Microsoft LLDP Protocol Driver
-Internet Protocol Version 6 (TCP/IPv6)
-Link-Layer Topology Discovery Responder
-Link-Layer Topology Discovery Mapper I/O Driver
-```
-
-**Enable Protocols**
-```
-Internet Protocol Version 4 (TCP/IPv4)
-```
-
-**Disable WINS/LMHOSTS/NetBIOS**
-```
-Network Adapter > TCP/IPv4 > WINS tab
-Delete any WINS addresses in box
-Disable Enable LMHOSTS lookup
-Disable NetBIOS over TCP/IP
-```
 
 ## References & Research
 - CPU - Disable Core Isolation - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
@@ -334,7 +236,7 @@ Disable NetBIOS over TCP/IP
 - GPU - NVIDIA System Latency Optimization - https://www.nvidia.com/en-us/geforce/guides/gfecnt/202010/system-latency-optimization-guide/
 - GPU - Input Lag Revisited: V-Sync Off and NVIDIA Reflex - https://www.youtube.com/watch?v=dPMHEyz38TM
 - GPU - Gsync 101 - Input Lag Tests - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
-- GPU - Nvidia_Profile_Inspector - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
+- GPU - Nvidia Profile Inspector - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
 - Windows - Virtualization Protections - Code Integrity - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
 - Windows - Resource Sets Tweaks Gave FPS Boost - Perf Analysis - https://www.youtube.com/watch?v=U1xFWbJBEMk
 - Windows - Serialize Timer Expiration" - Improve CPU Performance - Perf Analysis - https://www.youtube.com/watch?v=wil-09_5H0M

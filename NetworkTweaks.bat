@@ -23,75 +23,71 @@ TIMEOUT 1
 
 @echo on
 
-rem ::: Windows Network and Internet Connectivity Tweaks
-
-rem :::Setting DNS as CloudFlare 1.1.1.1 / 1.0.0.1
+rem ::: Setting DNS as CloudFlare 1.1.1.1 / 1.0.0.1
 netsh interface ipv4 set dns name="Ethernet" static 1.1.1.1 primary
 netsh interface ipv4 add dns name="Ethernet" addr=1.0.0.1 index=2
 
 rem ::: Flush DNS
 ipconfig /flushdns
 
-rem :::Enabling DNS over HTTPS (DoH)
+rem ::: Enabling DNS over HTTPS (DoH)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
 
 rem ::: Require DoH / 2 - Allow DoH / 1 - Prohibit DoH
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "3" /f
 
-rem :::Disable TCP/IP NetBIOS Helper (lmhosts)
+rem ::: Disable TCP/IP NetBIOS Helper Service (lmhosts)
 net stop lmhosts
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\lmhosts" /v "Start" /t REG_DWORD /d "4" /f
 
-rem :::"Setting default TTL value in TCP/IP parameters to 64."
+rem ::: "Setting default TTL value in TCP/IP parameters to 64."
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /t REG_DWORD /v DefaultTTL /d 64 /f
 
-rem :::"Setting maximum user port number in TCP/IP parameters to 65534."
+rem ::: "Setting maximum user port number in TCP/IP parameters to 65534."
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /t REG_DWORD /v MaxUserPort /d 65534 /f
 
-rem :::"Setting TCP timed wait delay in TCP/IP parameters to 30 seconds."
+rem ::: "Setting TCP timed wait delay in TCP/IP parameters to 30 seconds."
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /t REG_DWORD /v TcpTimedWaitDelay /d 30 /f
 
-rem :::"Disabling non-best effort bandwidth limit in QoS policies."
+rem ::: "Disabling non-best effort bandwidth limit in QoS policies."
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Psched" /t REG_DWORD /v NonBestEffortLimit /d 0 /f
 
-rem :::"Configuring QoS to not use Network Layer Authentication."
+rem ::: "Configuring QoS to not use Network Layer Authentication."
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\QoS" /t REG_SZ /v "Do not use NLA" /d 1 /f
 
-rem :::"Adjusting LanmanServer parameters for optimized file sharing performance."
+rem ::: "Adjusting LanmanServer parameters for optimized file sharing performance."
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /t REG_DWORD /v Size /d 3 /f
 
 rem ::: Network Throttle // Default = 10 Unthrottled = 4294967295 [Decimal Values]
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /t REG_DWORD /v NetworkThrottlingIndex /d 4294967295 /f
 
-rem :::"Setting system responsiveness to maximum in multimedia system profile."
+rem ::: "Setting system responsiveness to maximum in multimedia system profile."
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /T REG_DWORD /v SystemResponsiveness /d 0 /f
 
-rem :::"Applying NSI registry settings for network performance optimization."
+rem ::: "Applying NSI registry settings for network performance optimization."
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a03-9b1a-11d4-9123-0050047759bc}\26" /v "00000000" /t REG_BINARY /d "0000000000000000000000000500000000000000000000000000000000000000ff00000000000000" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a03-9b1a-11d4-9123-0050047759bc}\26" /v "04000000" /t REG_BINARY /d "0000000000000000000000000500000000000000000000000000000000000000ff00000000000000" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a03-9b1a-11d4-9123-0050047759bc}\0" /v "0200" /t REG_BINARY /d "0000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000ff000000000000000000000000000000000000000000ff000000000000000000000000000000" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Nsi\{eb004a03-9b1a-11d4-9123-0050047759bc}\0" /v "1700" /t REG_BINARY /d "0000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000ff000000000000000000000000000000000000000000ff000000000000000000000000000000" /f
 
-rem :::"Setting priority levels for DNS, Hosts, Local, and NetBT services."
+rem ::: "Setting priority levels for DNS, Hosts, Local, and NetBT services."
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "DnsPriority" /t REG_DWORD /d "6" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "HostsPriority" /t REG_DWORD /d "5" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "LocalPriority" /t REG_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "NetbtPriority" /t REG_DWORD /d "7" /f
 
-rem :::"Setting IRPStackSize for LanmanServer to enhance file sharing capabilities."
+rem ::: "Setting IRPStackSize for LanmanServer to enhance file sharing capabilities."
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /t REG_DWORD /v IRPStackSize /d 30 /f
 
-rem :::Setting Packet Scheduler Timer Resolution = 1
+rem ::: Setting Packet Scheduler Timer Resolution = 1
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Psched" /v "TimerResolution" /t REG_DWORD /d "1" /f
 
-rem :::Setting Packet Scheduler - Limit outstanding packets = 0
+rem ::: Setting Packet Scheduler - Limit outstanding packets = 0
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Psched" /v "MaxOutstandingSends" /t REG_DWORD /d "0" /f
 
-rem :::Setting Packet Scheduler - Limit reservable bandwidth = 0
+rem ::: Setting Packet Scheduler - Limit reservable bandwidth = 0
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Psched" /v "NonBestEffortLimit" /t REG_DWORD /d "0" /f
-
-rem ::: Network Interface Card [Network Adapter] Tweaks
 
 rem ::: Get the Sub ID of the Network Adapter
 
@@ -251,7 +247,43 @@ powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialConge
 rem ::: Setting TCP AutoTuningLevel to Normal and disabling ScalingHeuristics for InternetCustom profile.
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled" >nul
 
+rem ::: Disable Client for Microsoft Networks
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_msclient' -Confirm:$false }"
+
+rem ::: Disable File and Printer Sharing for Microsoft Networks
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_server' -Confirm:$false }"
+
+rem ::: Disable QoS Packet Scheduler
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_pacer' -Confirm:$false }"
+
+rem ::: Disable Microsoft LLDP Protocol Driver
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_lldp' -Confirm:$false }"
+
+rem ::: Disable Microsoft Network Adapter Multiplexor Protocol
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_implat' -Confirm:$false }"
+
+rem ::: Disable Link-Layer Topology Discovery Responder
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_rspndr' -Confirm:$false }"
+
+rem ::: Disable Link-Layer Topology Discovery Mapper I/O Driver
+powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_lltdio' -Confirm:$false }"
+
+rem ::: Disable IPv6 (note: this doesn't fully disable IPv6 OS-wide)
+powershell -Command "Disable-NetAdapterBinding -Name '*' -ComponentID 'ms_tcpip6' -Confirm:$false"
+
+rem ::: Reset WINS server entries
+wmic nicconfig where (IPEnabled=true) call SetWINSServer ""
+
+rem ::: Disable NetBIOS over TCP/IP on all NICs
+wmic nicconfig where (IPEnabled=true and TcpipNetbiosOptions!=2) call SetTcpipNetbios 2
+
+rem ::: Disable LMHOSTS lookup
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters" /v EnableLMHOSTS /t REG_DWORD /d 0 /f
+
 @echo off
+
+echo.
+
 echo REBOOT RECOMMENDED
 
 echo.
