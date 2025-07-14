@@ -34,7 +34,6 @@ echo Forcing requirement of DoH
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "3" /f
 
 echo Disable TCP/IP NetBIOS Helper (lmhosts)
-
 net stop lmhosts
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\lmhosts" /v "Start" /t REG_DWORD /d "4" /f
 
