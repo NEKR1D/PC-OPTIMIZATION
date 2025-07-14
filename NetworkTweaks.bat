@@ -99,7 +99,7 @@ for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972
 
 rem ::: Setting Network Adapter SpeedDuplex to 2.5 Gbit [1Gbit = 6] [Auto Negotiation = 0]
 rem ::: Speed & Duplex must be set to "Auto Negotiation" or internet breaks unless you know the correct value
-reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "6" /f
+reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "0" /f
 
 rem ::: Disabling MIMO Power Save Mode -  Disable = 1
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
