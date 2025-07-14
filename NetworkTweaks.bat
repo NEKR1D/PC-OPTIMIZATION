@@ -110,7 +110,7 @@ rem ::: Intel i-225v no longer supports RSS [officially removed in .inf]
 
 rem ::: Disabling Network Adapter offloading, rss, wake-on-LAN, mircast, etc.
 reg add "%%n" /v "*WakeOnMagicPacket" /t REG_SZ /d "0" /f
-reg add "%%n" /v "WakeOnS5" /t REG_DWORD /d 0 /f
+reg add "%%n" /v "WakeOnMagicPacketFromS5" /t REG_SZ /d 0 /f
 reg add "%%n" /v "*WakeOnPattern" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*PacketCoalescing" /t REG_SZ /d "0" /f
 reg add "%%n" /v "ThroughputBoosterEnabled" /t REG_SZ /d "1" /f
@@ -140,9 +140,10 @@ reg add "%%n" /v "Downshift" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 
 rem ::: Enable Interrupt Moderation on Network Adapter
-rem ::: Set Interrupt Moderation Rate: Interrupt Throttling Rate (ITR) // 3 = Medium 0 = Off
+rem ::: Set Interrupt Moderation // ON = 1
+rem ::: Set Interrupt Throttling Rate (ITR) // 125 = Medium 0 = Off
 reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "1" /f
-reg add "%%n" /v "*InterruptModerationRate" /t REG_SZ /d "3" /f
+reg add "%%n" /v "ITR" /t REG_SZ /d "125" /f
 
 rem ::: Disabling JumboPackets: 1514 = Disabled
 reg add "%%n" /v "*JumboPacket" /t REG_SZ /d "1514" /f
