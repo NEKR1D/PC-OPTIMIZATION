@@ -276,4 +276,4 @@ Set these as the global profile for NVIDIA and individually set specific values 
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
-***
+<br>
