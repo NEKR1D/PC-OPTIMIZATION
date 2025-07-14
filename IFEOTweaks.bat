@@ -19,8 +19,6 @@ setlocal
 
 set "IFEO_BASE=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
 
-rem ::: Games
-
 set "APP_KEY=%IFEO_BASE%\bf2042.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
@@ -32,6 +30,16 @@ reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 set "APP_KEY=%IFEO_BASE%\csgo.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\csrss.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\dwm.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
@@ -56,6 +64,11 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
+set "APP_KEY=%IFEO_BASE%\LSASS.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 1 /f
+
 set "APP_KEY=%IFEO_BASE%\quake2.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
@@ -76,35 +89,17 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
-
-rem ::: System
 set "APP_KEY=%IFEO_BASE%\svchost.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 1 /f
 
-set "APP_KEY=%IFEO_BASE%\LSASS.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 1 /f
-
-set "APP_KEY=%IFEO_BASE%\dwm.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
-
-set "APP_KEY=%IFEO_BASE%\csrss.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
-
 endlocal
 
-rem ::: Plundered and updated by NEKR1D
-rem ::: Originally created by Shoober420
-
 rem ::: Enable Large Pages for games and system executables
-rem ::: https://forums.guru3d.com/threads/performance-boost-for-most-games.389072/
+
+rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: Enable Large System Cache
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "LargeSystemCache" /t REG_DWORD /d "1" /f
