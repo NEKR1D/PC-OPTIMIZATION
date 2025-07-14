@@ -13,7 +13,7 @@
 > [!WARNING]
 > - Tweaks are experimental and will likely cause increased temperatures, power consumption and CPU/GPU usage.
 > - Use the scripts provided as a reference to test and tailor settings to your own experience.
-> - Review and set these correctly for your own hardware and setup otherwise you can expect unintended behaviors such as; hitching, stuttering, crashing and unable to boot OS.
+> - Until configured correctly for your system expect unintended behaviors such as; hitching, stuttering, crashing and unable to boot OS.
 
 > [!CAUTION]
 > - **Use at your own risk**.
