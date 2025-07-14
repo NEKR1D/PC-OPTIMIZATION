@@ -1,7 +1,9 @@
-rem ::: Disable Device Manager Services
+rem ::: Device Manager Services Tweaks
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
+
 rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: Disables specific device manager services (such as chipset drivers) that are not used, and should be disable system-wide
 

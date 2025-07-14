@@ -1,8 +1,8 @@
-rem ::: Window Services Tweak
-
-rem ::: Stops and disables unnecessary windows services
+rem ::: Window Services Tweaks
 
 rem ::: Created by NEKR1D
+
+rem ::: Stops and disables unnecessary windows services
 
 @echo off   
 

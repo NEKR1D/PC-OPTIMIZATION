@@ -1,6 +1,6 @@
 rem ::: MarkC Mouse Acceleration Fix
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
 
 rem ::: !!! WARNING !!!
 rem ::: Windows scaling size must be set to 100%

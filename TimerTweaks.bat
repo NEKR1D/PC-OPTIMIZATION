@@ -1,7 +1,9 @@
 rem ::: Resolution Timer Tweaks
 
-rem ::: Plundered and updated by NEKR1D
-rem ::: Originally Created by Shoober420
+rem ::: Plundered by NEKR1D
+
+rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: Leave HPET enabled in BIOS
 

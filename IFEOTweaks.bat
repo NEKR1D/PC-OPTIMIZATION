@@ -1,8 +1,8 @@
 rem ::: Image File Execution Options [IFEO] Tweaks Batch
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
 
-rem ::: defines cpu, io and page priority of games, system and software executables
+rem ::: Defines CPU, I/O and Page Priority of games, system and software executables
 
 rem ::: !!! Warning !!!
 rem ::: !!! DO NOT INSTALL !!!

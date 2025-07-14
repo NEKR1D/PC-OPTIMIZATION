@@ -1,7 +1,11 @@
 rem ::: DWM Modification and Immediate Render Optimization
 
-rem ::: Plundered and updated by NEKR1D
-rem ::: Originally created by Alchemy Tweaks
+rem ::: Plundered by NEKR1D
+
+rem ::: Originally created by AlchemyTweaks
+rem ::: https://github.com/AlchemyTweaks/Verified-Tweaks/tree/main/DWM
+
+
 
 @Echo Off
 Title Reg Converter v1.2 & Color 1A

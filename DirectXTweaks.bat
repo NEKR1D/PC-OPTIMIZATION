@@ -1,8 +1,9 @@
 rem ::: DirectX Tweaks
-rem ::: https://github.com/AlchemyTweaks/Verified-Tweaks/tree/main/DirectX
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
+
 rem ::: Originally created by AlchemyTweaks
+rem ::: https://github.com/AlchemyTweaks/Verified-Tweaks/tree/main/DirectX
 
 @Echo Off
 Title DirectX Tweaks

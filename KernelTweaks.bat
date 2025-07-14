@@ -1,7 +1,9 @@
 rem ::: Kernel Tweaks
 
-rem ::: Plundered and combined by NEKR1D
+rem ::: Plundered by NEKR1D
+
 rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DpcTimeout" /t REG_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "DpcWatchdogPeriod" /t REG_DWORD /d "0" /f

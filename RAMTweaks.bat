@@ -1,7 +1,9 @@
 rem ::: RAM Tweaks
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
+
 rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: Pagefile Size in MB 
 rem ::: 8GB = 8192 / 16GB = 16384 / 32GB = 32768 / 64GB = 65536

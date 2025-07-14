@@ -1,7 +1,9 @@
-rem ::: CPU Tweak script
+rem ::: CPU Tweaks
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
+
 rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: AdditionalCriticalWorkerThreads value increases the number of critical worker threads created for a specified work queue
 rem ::: By increasing the value of this one, you can get more additional worker threads which will allow for more queued I/O in the storage subsystem

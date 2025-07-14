@@ -1,7 +1,9 @@
 rem ::: Disable CPU Mitigations for Spectre and Meltdown attacks
 
-rem ::: Plundered and updated by NEKR1D
+rem ::: Plundered by NEKR1D
+
 rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: !!! WARNING !!!
 
