@@ -44,7 +44,7 @@
 - Intel Virtualization Technology ```Disable``` 
 - VT-d ```Disable``` 
 - Hyper-Threading ```Disable``` 
-- Spread Spectrum [When Overclocking] ```Disable``` 
+- Spread Spectrum _[When Overclocking] _```Disable``` 
 - CPU C-States ```Disable``` 
 - CPU Power Throttling ```Disable``` 
 - CPU Thermal Protection```Disable``` 
@@ -72,7 +72,7 @@
 - **In NVIDIA Profile Inspector:**
    - Set rBAR - Feature to ```Enable```
    - Set rBAR - Options to  ```0x00000001 (Returnal, Red Dead Redemption 2)```
-   - Set rBAR - Size Limit to ```0x0000000060000000``` [1.5GB]
+   - Set rBAR - Size Limit to ```0x0000000060000000``` _[1.5GB]_
   
 > [!NOTE]
 > - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
@@ -195,7 +195,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Raytracing - (Vulkan RT) Enabled ```Off```
 - rBAR - Feature ```Enable```
 - rBAR - Options ```0x00000001 (Returnal, Red Dead Redemption 2)```
-- rBAR - Size Limit ```0x0000000060000000``` [1.5GB]
+- rBAR - Size Limit ```0x0000000060000000``` _[1.5GB]_
 - Antialiasing - SLI AA ```0x00000000 AA_MODE_SELECTOR_SLIAA_DISABLED```
 - NVIDIA Predefined Ansel Usage ```0x00000000 ANSEL_ALLOW_DISALLOWED```
 - Variable Refresh Rate ```0x00000000 VSYNCVRRCONTROL_DISABLE```
@@ -222,7 +222,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Disable ```Spatial Sound```
 - Enable ```Exclusive Mode```
 - Open ```Control Panel``` > ```Hardware and Sound``` > ```Sound``` > ```Communications``` > Set to ```Do Nothing```
-- Set ```Output``` to ```Headphones``` in games wherever possible
+- Set ```Audio Output``` to ```Headphones``` mode in games whenever possible
 - Increase Windows volume to ```100%``` _(Use your DAC/AMP or in-game settings to decrease volume instead)_
 
 ## References & Research
