@@ -75,7 +75,7 @@
    - Set rBAR - Size Limit to ```0x0000000060000000``` [1.5GB]
   
 > [!NOTE]
-> - Activation of ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
+> - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
 > - You can verify ```Resizable BAR``` is enabled by opening the ```NVIDIA Control Panel``` then ```System Information```, and then look for ```Resizable BAR``` in the list. If it says ```Yes```, you’re set.
 
 ## NVIDIA - Graphics Card Driver Clean Install
