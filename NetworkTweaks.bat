@@ -19,7 +19,7 @@ if not exist C:\Windows\System32\wbem\WMIC.exe (
 
 TIMEOUT 1
 
-@echo off
+@echo on
 
 rem ::: Windows Network and Internet Connectivity Tweaks
 
@@ -138,7 +138,7 @@ reg add "%%n" /v "Downshift" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 
 rem ::: Enable Interrupt Moderation on Network Adapter
-rem ::: Set Interrupt Moderation Rate: Interrupt Throttling Rate (ITR) // 125 = Medium 0 = Off
+rem ::: Set Interrupt Moderation Rate: Interrupt Throttling Rate (ITR) // 3 = Medium 0 = Off
 reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "1" /f
 reg add "%%n" /v "*InterruptModerationRate" /t REG_SZ /d "3" /f
 
@@ -177,8 +177,6 @@ for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PC
 )
 
 rem ::: Maximum Transmission Unit (MTU)
-
-echo.
 
 rem ::: FastSendDatagramThreshold / FastCopyReceiveThreshold should match MTU value in decimal (usually 1472), not hexadecimal
 rem ::: Setting FastSendDatagram to match MTU value of 1500
@@ -248,6 +246,8 @@ powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialConge
 
 rem ::: Setting TCP AutoTuningLevel to Normal and disabling ScalingHeuristics for InternetCustom profile.
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled" >nul
+
+echo REBOOT RECOMMENDED
 
 echo.
 
