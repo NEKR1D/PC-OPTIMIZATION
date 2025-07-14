@@ -144,8 +144,7 @@ reg add "%%n" /v "ITR" /t REG_SZ /d "125" /f
 rem ::: Disabling JumboPackets: 1514 = Disabled
 reg add "%%n" /v "*JumboPacket" /t REG_SZ /d "1514" /f
 
-rem ::: Setting Network buffer sizes = 4096 [Default 1024, 2048]
-
+rem ::: Setting Network buffer sizes = 4096 [Default 1024]
 reg add "%%n" /v "*ReceiveBuffers" /t REG_SZ /d "4096" /f
 reg add "%%n" /v "*TransmitBuffers" /t REG_SZ /d "4096" /f
 
@@ -183,8 +182,8 @@ rem ::: Setting FastCopyReceiveThreshold to match MTU value of 1500
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\AFD\Parameters" /v "FastSendDatagramThreshold" /t REG_DWORD /d 1500 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\AFD\Parameters" /v "FastCopyReceiveThreshold" /t REG_DWORD /d 1500 /f
 
-rem ::: Disabling MTU Discovery/Auto Mode
-rem ::: Disable auto setting MTU value randomly based on traffic
+rem ::: Disabling MTU Discovery
+rem ::: Disable automatic generated MTU value based on traffic
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "EnablePMTUDiscovery" /t REG_DWORD /d "0" /f
 
 rem ::: Setting MTU size to 1500 on Network Adapter
