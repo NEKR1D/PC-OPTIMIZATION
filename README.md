@@ -347,6 +347,7 @@ Disable NetBIOS over TCP/IP
 - Windows - https://james-rankin.com/features/the-ultimate-guide-to-windows-logon-optimizations-part-5/
 - Windows - https://www.wilderssecurity.com/threads/increase-number-of-threads-per-process.317532/
 - Windows - https://notes.ponderworthy.com/additional-critical-worker-threads-in-windows-speed-tweak
+- Windows - Congestion Provider - https://techcommunity.microsoft.com/blog/networkingblog/windows-transport-converges-on-two-congestion-providers-cubic-and-ledbat/339819
 - Network - NIC Tweaks - https://www.speedguide.net/articles/gaming-tweaks-5812
 - Network - NIC Definitions - https://www.speedguide.net/articles/network-adapter-optimization-3449
 - Network - Intel NIC Optimizing Performance - https://edc.intel.com/content/www/us/en/design/products/ethernet/adapters-and-devices-user-guide/optimizing-performance/
