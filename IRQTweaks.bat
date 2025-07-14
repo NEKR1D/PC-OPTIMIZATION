@@ -44,7 +44,7 @@ set "BASE=SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_15F3&SUBSYS_7D301462&RE
 
 reg add "%BASE%%AFFINITY_PATH%" /v DevicePriority /t REG_DWORD /d 3 /f 
 reg add "%BASE%%AFFINITY_PATH%" /v DevicePolicy /t REG_DWORD /d 4 /f 
-reg add "%BASE%%AFFINITY_PATH%" /v AssignmentSetOverride /t REG_BINARY /d 1800000000000000 /f 
+reg add "%BASE%%AFFINITY_PATH%" /v AssignmentSetOverride /t REG_BINARY /d 3000000000000000 /f 
 reg add "%BASE%%MSI_PATH%" /v MSISupported /t REG_DWORD /d 1 /f 
 reg add "%BASE%%MSI_PATH%" /v MessageNumberLimit /t REG_DWORD /d 4 /f 
 
@@ -132,7 +132,7 @@ set "BASE=SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE0&SUBSYS_7D301462&RE
 
 reg add "%BASE%%AFFINITY_PATH%" /v DevicePriority /t REG_DWORD /d 3 /f 
 reg add "%BASE%%AFFINITY_PATH%" /v DevicePolicy /t REG_DWORD /d 4 /f 
-reg add "%BASE%%AFFINITY_PATH%" /v AssignmentSetOverride /t REG_BINARY /d 0600000000000000 /f 
+reg add "%BASE%%AFFINITY_PATH%" /v AssignmentSetOverride /t REG_BINARY /d 0c00000000000000 /f 
 reg add "%BASE%%MSI_PATH%" /v MSISupported /t REG_DWORD /d 1 /f 
 reg add "%BASE%%MSI_PATH%" /v MessageNumberLimit /t REG_DWORD /d 8 /f 
 
