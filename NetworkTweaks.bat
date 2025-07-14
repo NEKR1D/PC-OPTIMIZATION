@@ -27,6 +27,9 @@ rem :::Setting DNS as Cloudflare 1.1.1.1 / 1.0.0.1
 netsh interface ipv4 set dnsservers name="Ethernet" static 1.1.1.1 primary
 netsh interface ipv4 set dnsservers name="Ethernet" 1.0.0.1 index=2
 
+rem ::: Flush DNS
+ipconfig /flushdns
+
 rem :::Enabling DNS over HTTPS (DoH)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
@@ -100,8 +103,8 @@ rem ::: Disabling MIMO Power Save Mode -  Disable = 1
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
 
 rem ::: Disable most properties/services on Network Adapter 
-rem ::: These are also visible in device manager properties of device
-rem ::: Intel i-225v no longer supports RSS [officially not included in driver or .inf]
+rem ::: Also visible in device manager properties of device
+rem ::: Intel i-225v no longer supports RSS [officially removed in .inf]
 
 rem ::: Disabling Network Adapter offloading, rss, wake-on-LAN, mircast, etc.
 reg add "%%n" /v "*WakeOnMagicPacket" /t REG_SZ /d "0" /f
@@ -137,7 +140,7 @@ reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 rem ::: Enable Interrupt Moderation on Network Adapter
 rem ::: Set Interrupt Moderation Rate: Interrupt Throttling Rate (ITR) // 125 = Medium 0 = Off
 reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "1" /f
-reg add "%%n" /v "ITR" /t REG_SZ /d "125" /f
+reg add "%%n" /v "*InterruptModerationRate" /t REG_SZ /d "3" /f
 
 rem ::: Disabling JumboPackets: 1514 = Disabled
 reg add "%%n" /v "*JumboPacket" /t REG_SZ /d "1514" /f
@@ -173,17 +176,7 @@ for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PC
 	reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "0" /f
 )
 
-rem ::: Disable Nagle's Algorithm and NETBIOS
-
-for /f "delims=" %%n in ('wmic Network Adapter where "GUID is not null" get guid ^| findstr /v GUID') do (
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%n" /v TCPNoDelay /t REG_DWORD /d 1 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%n" /v TcpNoDelay /t REG_DWORD /d 1 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%n" /v TcpDelAckTicks /t REG_DWORD /d 1 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%%n" /v TcpAckFrequency /t REG_DWORD /d 1 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters\Interfaces\Tcpip_%%n" /v NetbiosOptions /t REG_DWORD /d 2 /f
-)
-
-rem ::: Maximum Transmission Unit (MTU) Tweaks
+rem ::: Maximum Transmission Unit (MTU)
 
 echo.
 
