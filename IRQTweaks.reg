@@ -1,0 +1,169 @@
+Windows Registry Editor Version 5.00
+
+; ::: IRQ & MSI Tweak Script
+
+; ::: Created by NEKR1D
+
+; ::: Defines MSI priority and individual cpu core assignment
+; ::: Disables MSI on unused and disabled devices
+
+; ::: !!! Warning !!!
+; ::: !!! Use script as reference !!!
+; ::: !!! Your hardware is different, will not work on your PC !!!
+
+; ::: High_Definition_Audio_Controller(2)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AD0&SUBSYS_7D301462&REV_11\3&11583659&0&FB\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AD0&SUBSYS_7D301462&REV_11\3&11583659&0&FB\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000000
+"DevicePriority"=dword:00000001
+"AssignmentSetOverride"=-
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AD0&SUBSYS_7D301462&REV_11\3&11583659&0&FB\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000000
+"MessageNumberLimit"=-
+
+; ::: High_Definition_Audio_Controller(1)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_10DE&DEV_1AEF&SUBSYS_886B1043&REV_A1\4&26196085&0&0108\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_10DE&DEV_1AEF&SUBSYS_886B1043&REV_A1\4&26196085&0&0108\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000000
+"DevicePriority"=dword:00000001
+"AssignmentSetOverride"=-
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_10DE&DEV_1AEF&SUBSYS_886B1043&REV_A1\4&26196085&0&0108\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000000
+"MessageNumberLimit"=-
+
+; ::: Intel(R)_Ethernet_Controller_(3)_I225-V
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_15F3&SUBSYS_7D301462&REV_03\4&270211e3&0&00E1\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_15F3&SUBSYS_7D301462&REV_03\4&270211e3&0&00E1\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:30
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_15F3&SUBSYS_7D301462&REV_03\4&270211e3&0&00E1\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000004
+
+; ::: Intel(R)_GNA_Scoring_Accelerator_module
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_464F&SUBSYS_7D301462&REV_02\3&11583659&0&40\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_464F&SUBSYS_7D301462&REV_02\3&11583659&0&40\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000000
+"DevicePriority"=dword:00000001
+"AssignmentSetOverride"=-
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_464F&SUBSYS_7D301462&REV_02\3&11583659&0&40\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000000
+"MessageNumberLimit"=-
+
+; ::: Intel(R)_Management_Engine_Interface_#1
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE8&SUBSYS_7D301462&REV_11\3&11583659&0&B0\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE8&SUBSYS_7D301462&REV_11\3&11583659&0&B0\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000000
+"DevicePriority"=dword:00000001
+"AssignmentSetOverride"=-
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE8&SUBSYS_7D301462&REV_11\3&11583659&0&B0\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000000
+"MessageNumberLimit"=-
+
+; ::: Intel(R)_SMBus_-_7AA3
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AA3&SUBSYS_7D301462&REV_11\3&11583659&0&FC\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AA3&SUBSYS_7D301462&REV_11\3&11583659&0&FC\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000000
+"DevicePriority"=dword:00000001
+"AssignmentSetOverride"=-
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AA3&SUBSYS_7D301462&REV_11\3&11583659&0&FC\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000000
+"MessageNumberLimit"=-
+
+; ::: NVIDIA_GeForce_RTX_3080
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_10DE&DEV_220A&SUBSYS_886B1043&REV_A1\4&26196085&0&0008\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_10DE&DEV_220A&SUBSYS_886B1043&REV_A1\4&26196085&0&0008\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:c0
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_10DE&DEV_220A&SUBSYS_886B1043&REV_A1\4&26196085&0&0008\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000001
+
+; ::: Standard_NVM_Express_Controller(1)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&97a1985&0&0030\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&97a1985&0&0030\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:ff,ff,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&97a1985&0&0030\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000064
+
+; ::: Standard_NVM_Express_Controller(2)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&447857b&0&00D0\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&447857b&0&00D0\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:ff,ff,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&447857b&0&00D0\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000064
+
+; ::: Standard_NVM_Express_Controller(3)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&447857b&0&00D0\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&447857b&0&00D0\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:ff,ff,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_15B7&DEV_5011&SUBSYS_501115B7&REV_01\4&447857b&0&00D0\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000064
+
+; ::: Standard_SATA_AHCI_Controller
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE2&SUBSYS_7D301462&REV_11\3&11583659&0&B8\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE2&SUBSYS_7D301462&REV_11\3&11583659&0&B8\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:ff,ff,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE2&SUBSYS_7D301462&REV_11\3&11583659&0&B8\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000001
+
+; ::: USB_Root_Hub_(USB_3.0)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\ROOT_HUB30\4&7dbe872&0&0\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\ROOT_HUB30\4&7dbe872&0&0\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:2
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB\ROOT_HUB30\4&7dbe872&0&0\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000002
+"MessageNumberLimit"=-
+
+; ::: USB_xHCI_Compliant_Host_Controller
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE0&SUBSYS_7D301462&REV_11\3&11583659&0&A0\Device Parameters\Interrupt Management]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE0&SUBSYS_7D301462&REV_11\3&11583659&0&A0\Device Parameters\Interrupt Management\Affinity Policy]
+"DevicePolicy"=dword:00000004
+"DevicePriority"=dword:00000003
+"AssignmentSetOverride"=hex:c
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&DEV_7AE0&SUBSYS_7D301462&REV_11\3&11583659&0&A0\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties]
+"MSISupported"=dword:00000001
+"MessageNumberLimit"=dword:00000008
+
