@@ -173,12 +173,6 @@ for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PC
 	reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "0" /f
 )
 
-rem ::: Last key changes based on Network Adapter card registry ID
-rem ::: Find "Class Guid" under Device Manager > Network adapters > Properties > Details tab
-rem ::: Go to "HKLM\SYSTEM\CurrentControlSet\Control\Network\"Class Guid"\<Network Adapter ID>\Connection" to get Network Adapter ID
-rem ::: https://www.elevenforum.com/members/garlin.5387/
-rem ::: https://www.elevenforum.com/t/find-Network Adapter-class-guid-in-batch-script-using-wmic-or-anything-else.30083/
-
 rem ::: Disable Nagle's Algorithm and NETBIOS
 
 for /f "delims=" %%n in ('wmic Network Adapter where "GUID is not null" get guid ^| findstr /v GUID') do (
