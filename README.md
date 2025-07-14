@@ -273,3 +273,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Calypto's Latency Guide - https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0
 - N1kobg - https://n1kobg.blogspot.com/p/blog-page_23.html
 - Geoff Chappell - https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=66
+
+***
+<p align="center"> Plundered with ❤️ by NEKR1D </p>
+***
