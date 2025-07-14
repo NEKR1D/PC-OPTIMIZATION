@@ -194,13 +194,14 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "EnablePMTU
 rem ::: Setting MTU size to 1500 on Network Adapter
 netsh interface ipv4 set subinterface "Ethernet" mtu=1500 store=persistent
 
-rem ::: Setting congestion provider to BBR2 
-rem ::: New option available in Windows 11 that is faster
-powershell -Command "netsh int tcp set supplemental Template=Internet CongestionProvider=bbr2" >nul
-powershell -Command "netsh int tcp set supplemental Template=Datacenter CongestionProvider=bbr2" >nul
-powershell -Command "netsh int tcp set supplemental Template=Compat CongestionProvider=bbr2" >nul
-powershell -Command "netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=bbr2" >nul
-powershell -Command "netsh int tcp set supplemental Template=InternetCustom CongestionProvider=bbr2" >nul
+rem ::: Setting Congestion Provider to CUBIC
+rem ::: CUBIC = Introduced in Windows 10?
+rem ::: BBR2 = New option available in Windows 11 that is better/faster
+powershell -Command "netsh int tcp set supplemental Internet CongestionProvider=CUBIC" >nul
+powershell -Command "netsh int tcp set supplemental Datacenter CongestionProvider=CUBIC" >nul
+powershell -Command "netsh int tcp set supplemental Compat CongestionProvider=CUBIC" >nul
+powershell -Command "netsh int tcp set supplemental DatacenterCustom CongestionProvider=CUBIC" >nul
+powershell -Command "netsh int tcp set supplemental InternetCustom CongestionProvider=CUBIC" >nul
 
 rem ::: Enabling Network Direct Memory Access and Disabling Direct Cache Access, RSS and RSC settings globally.
 powershell -Command "netsh int tcp set global netdma=enabled" >nul
