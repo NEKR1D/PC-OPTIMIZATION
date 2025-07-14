@@ -97,9 +97,9 @@ rem ::: Get the Sub ID of the Network Adapter
 
 for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}" /v "*SpeedDuplex" /s ^| findstr  "HKEY"') do (
 
-rem ::: Setting Network Adapter SpeedDuplex to 2.5 Gbit [1Gbit = 6] [2.5Gbit = 24]
+rem ::: Setting Network Adapter SpeedDuplex to 2.5 Gbit [1Gbit = 6] [Auto Negotiation = 0]
 rem ::: Speed & Duplex must be set to "Auto Negotiation" or internet breaks unless you know the correct value
-reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "24" /f
+reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "6" /f
 
 rem ::: Disabling MIMO Power Save Mode -  Disable = 1
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
@@ -110,7 +110,7 @@ rem ::: Intel i-225v no longer supports RSS [officially removed in .inf]
 
 rem ::: Disabling Network Adapter offloading, rss, wake-on-LAN, mircast, etc.
 reg add "%%n" /v "*WakeOnMagicPacket" /t REG_SZ /d "0" /f
-reg add "%%n" /v "*WakeOnMagicPacketFromS5" /t REG_SZ /d "0" /f
+reg add "%%n" /v "WakeOnS5" /t REG_DWORD /d 0 /f
 reg add "%%n" /v "*WakeOnPattern" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*PacketCoalescing" /t REG_SZ /d "0" /f
 reg add "%%n" /v "ThroughputBoosterEnabled" /t REG_SZ /d "1" /f
@@ -249,6 +249,7 @@ powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialConge
 rem ::: Setting TCP AutoTuningLevel to Normal and disabling ScalingHeuristics for InternetCustom profile.
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled" >nul
 
+@echo off
 echo REBOOT RECOMMENDED
 
 echo.
