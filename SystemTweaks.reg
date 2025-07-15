@@ -4,8 +4,6 @@
 
 ; ::: Plundered by NEKR1D
 
-; ::: Disable Hibernate
-
 ; ::: Disable NTFS Tunneling and Timestamps
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
