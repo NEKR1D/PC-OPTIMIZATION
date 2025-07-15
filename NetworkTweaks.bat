@@ -323,7 +323,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\NetBT\Parameters" /v EnableLMHOS
 
 echo.
 
-echo REBOOT RECOMMENDED
+echo REBOOT YOUR PC
 
 echo.
 
