@@ -6,20 +6,11 @@
 
 ; ::: Disable Hibernate
 
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
-"HibernateEnabledDefault"=dword:00000000
-
 ; ::: Disable NTFS Tunneling and Timestamps
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
 "MaximumTunnelEntries"=dword:00000000
 "NtfsDisableLastAccessUpdate"=dword:00000000
-
-; ::: Disable Core Isolation Memory Integrity
-; ::: https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity]
-"Enabled"=dword:00000000
 
 ; ::: Disable Distribute Timers
 
