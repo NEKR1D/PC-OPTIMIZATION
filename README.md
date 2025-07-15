@@ -250,6 +250,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Windows - Worker/Critical Threads - https://notes.ponderworthy.com/additional-critical-worker-threads-in-windows-speed-tweak
 - Windows - Threaded DPCs - https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-threaded-dpcs
 - Windows - Real Time Performance - https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/soft-real-time/soft-real-time-device
+- Windows - Interrupt Affinity - https://video2.skills-academy.com/en-us/windows-hardware/drivers/kernel/interrupt-affinity-and-priority
 - Network - BBR2 - https://dlsj.xlog.app/windows11-bbr2?locale=en
 - Network - Congestion Providers - https://techcommunity.microsoft.com/blog/networkingblog/windows-transport-converges-on-two-congestion-providers-cubic-and-ledbat/339819
 - Network - NIC Tweaks - https://www.speedguide.net/articles/gaming-tweaks-5812
