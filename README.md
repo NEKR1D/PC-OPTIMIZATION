@@ -182,7 +182,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Vertical Sync - Smooth AFR Behavior ```Off```
 - Vertical Sync - Tear Control ```Standard```
 - Antialiasing - Line Gamma ```On```
-- Ansel - Enabled ```Off``` [This disables NVIDIA APP/GUI and Overlay, does not impact NVIDIA Control Panel]
+- Ansel - Enabled ```Off``` [_This disables NVIDIA APP/GUI and Overlay, does not impact NVIDIA Control Panel_]
 - CUDA - Forced P2 State ```Off```
 - DLSS - Enable DLL Override - ```On - DLSS Overridden by latest available```
 - DLSS - Forced Preset Letter -  ```Always use latest```
