@@ -41,14 +41,14 @@
 - Intel Virtualization Technology ```Disable``` 
 - VT-d ```Disable``` 
 - Hyper-Threading ```Disable``` 
-- Spread Spectrum _[When Overclocking] _```Disable``` 
+- Spread Spectrum [_When Overclocking__]```Disable``` 
 - CPU C-States ```Disable``` 
 - CPU Power Throttling ```Disable``` 
 - CPU Thermal Protection```Disable``` 
 - Intel SpeedStep ```Disable``` 
 - Intel TurboBoost ```Disable``` 
 - TPM ```Disable``` 
-- Integrated/On-board devices (Audio, Video, Bluetooth, WiFi) ```Disable```
+- Integrated/On-board devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
   
 **Enable:**
@@ -56,8 +56,8 @@
 - AHCI ```Enable``` 
 - XMP _[Profiling for RAM] _```Enable``` 
 - High Performance Power Mode ```Enable``` 
-- BCLK size - _[Set to 100.00 Mhz] _```Enable``` 
-- CPU VRM Switching Frequency - _[Set to 500 Khz or higher]_ ```Enable```  
+- BCLK size - [_Set to 100.00 Mhz_]```Enable``` 
+- CPU VRM Switching Frequency - [_Set to 500 Khz or higher_] ```Enable```  
 - AVX Offset - Set to ```Enable``` and ```0```
   
 ## BIOS - Enable Resizable BAR
@@ -69,7 +69,7 @@
 - **In NVIDIA Profile Inspector:**
    - Set rBAR - Feature to ```Enable```
    - Set rBAR - Options to  ```0x00000001 (Returnal, Red Dead Redemption 2)```
-   - Set rBAR - Size Limit to ```0x0000000060000000``` _[1.5GB]_
+   - Set rBAR - Size Limit to ```0x0000000060000000``` [_1.5GB_]
   
 > [!NOTE]
 > - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
