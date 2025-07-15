@@ -54,7 +54,7 @@
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
 - AHCI ```Enable``` 
-- XMP _[Profiling for RAM] _```Enable``` 
+- XMP [_Profiles for RAM_]```Enable``` 
 - High Performance Power Mode ```Enable``` 
 - BCLK size - [_Set to 100.00 Mhz_]```Enable``` 
 - CPU VRM Switching Frequency - [_Set to 500 Khz or higher_] ```Enable```  
