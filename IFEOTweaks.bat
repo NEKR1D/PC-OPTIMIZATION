@@ -19,6 +19,8 @@ setlocal
 
 set "IFEO_BASE=HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
 
+rem ::: Games
+
 set "APP_KEY=%IFEO_BASE%\bf2042.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
@@ -30,16 +32,6 @@ reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 set "APP_KEY=%IFEO_BASE%\csgo.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
-
-set "APP_KEY=%IFEO_BASE%\csrss.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
-
-set "APP_KEY=%IFEO_BASE%\dwm.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
@@ -64,11 +56,6 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
-set "APP_KEY=%IFEO_BASE%\LSASS.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 1 /f
-
 set "APP_KEY=%IFEO_BASE%\quake2.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
@@ -89,10 +76,27 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
+rem ::: System
+
 set "APP_KEY=%IFEO_BASE%\svchost.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 1 /f
+
+set "APP_KEY=%IFEO_BASE%\LSASS.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 1 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 1 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 1 /f
+
+set "APP_KEY=%IFEO_BASE%\csrss.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\dwm.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 endlocal
 

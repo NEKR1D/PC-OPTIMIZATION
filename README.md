@@ -243,11 +243,13 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Windows - Win32PrioritySeparation - https://learn.microsoft.com/en-us/previous-versions/cc976120(v=technet.10)?redirectedfrom=MSDN
 - Windows - Psched - Use 100% NIC - https://dottech.org/26628/how-to-force-windows-to-use-100-of-your-network-bandwidth-how-to-guide/
 - Windows - Psched - Set Timer Resolution - https://www.windows-security.org/df711f090da6ddbbc1bab472114bac01/set-timer-resolution
-- Windows - https://martin77s.wordpress.com/2010/04/05/performance-tuning-your-windows-server-part-3/
-- Windows - https://www.thewindowsclub.com/improve-network-speed-using-smb-compression
-- Windows - https://james-rankin.com/features/the-ultimate-guide-to-windows-logon-optimizations-part-5/
-- Windows - https://www.wilderssecurity.com/threads/increase-number-of-threads-per-process.317532/
-- Windows - https://notes.ponderworthy.com/additional-critical-worker-threads-in-windows-speed-tweak
+- Windows - Performance Tuning - https://martin77s.wordpress.com/2010/04/05/performance-tuning-your-windows-server-part-3/
+- Windows - SMB Compression - https://www.thewindowsclub.com/improve-network-speed-using-smb-compression
+- Windows - Windows Logon - https://james-rankin.com/features/the-ultimate-guide-to-windows-logon-optimizations-part-5/
+- Windows - Increasing Threads - https://www.wilderssecurity.com/threads/increase-number-of-threads-per-process.317532/
+- Windows - Worker/Critical Threads - https://notes.ponderworthy.com/additional-critical-worker-threads-in-windows-speed-tweak
+- Windows - Threaded DPCs - https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-threaded-dpcs
+- Windows - Real Time Performance - https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/soft-real-time/soft-real-time-device
 - Network - BBR2 - https://dlsj.xlog.app/windows11-bbr2?locale=en
 - Network - Congestion Providers - https://techcommunity.microsoft.com/blog/networkingblog/windows-transport-converges-on-two-congestion-providers-cubic-and-ledbat/339819
 - Network - NIC Tweaks - https://www.speedguide.net/articles/gaming-tweaks-5812
