@@ -231,8 +231,8 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - DirectX - Demystifying Full Screen Optimizations - https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/
 - GPU - NVIDIA GPU PState - https://docs.nvidia.com/gameworks/content/gameworkslibrary/coresdk/nvapi/group__gpupstate.html
 - GPU - NVIDIA System Latency Optimization - https://www.nvidia.com/en-us/geforce/guides/gfecnt/202010/system-latency-optimization-guide/
-- GPU - Input Lag Revisited: V-Sync Off and NVIDIA Reflex - https://www.youtube.com/watch?v=dPMHEyz38TM
-- GPU - Gsync 101 - Input Lag Tests - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
+- GPU - Input Lag Revisited: V-Sync and NVIDIA Reflex - https://www.youtube.com/watch?v=dPMHEyz38TM
+- GPU - Gsync 101 - Input Lag - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
 - GPU - Nvidia Profile Inspector - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
 - Windows - Virtualization Protections - Code Integrity - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
 - Windows - Resource Sets Tweaks Gave FPS Boost - Perf Analysis - https://www.youtube.com/watch?v=U1xFWbJBEMk
