@@ -303,15 +303,24 @@ Set these as the global profile for NVIDIA and individually set specific values 
   - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
 
 ## Credits
-- [MarkC](https://donewmouseaccel.blogspot.com/)  
-- [Alchemy Tweaks](https://github.com/AlchemyTweaks/Verified-Tweaks)  
-- [BoringBoredom](https://github.com/BoringBoredom/PC-Optimization-Hub/)  
-- [DjDallmann](https://github.com/djdallmann/GamingPCSetup/)  
-- [Shoober420](https://github.com/shoober420/windows11-scripts)  
-- [Melodys Tweaks](https://sites.google.com/view/melodystweaks/basictweaks)  
-- [Calypto's Latency Guide](https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0)  
-- [N1kobg](https://n1kobg.blogspot.com/p/blog-page_23.html)  
-- [Geoff Chappell](https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=66)
+- Alchemy Tweaks  
+	- https://github.com/AlchemyTweaks/Verified-Tweaks
+- BoringBoredom  
+	- https://github.com/BoringBoredom/PC-Optimization-Hub/
+- Calypto's Latency Guide  
+	- https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0
+- DjDallmann  
+	- https://github.com/djdallmann/GamingPCSetup/
+- Geoff Chappell  
+	- https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=66
+- MarkC  
+	- https://donewmouseaccel.blogspot.com/
+- Melodys Tweaks  
+	- https://sites.google.com/view/melodystweaks/basictweaks
+- N1kobg  
+	- https://n1kobg.blogspot.com/p/blog-page_23.html
+- Shoober420  
+	- https://github.com/shoober420/windows11-scripts
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
