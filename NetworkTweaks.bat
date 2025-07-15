@@ -21,10 +21,10 @@ if not exist C:\Windows\System32\wbem\WMIC.exe (
 
 TIMEOUT 1
 
+rem ::: Disable Nagle's Algorithm and modify ACK
 @echo off
 setlocal enabledelayedexpansion
 
-rem ::: Disable Nagle's Algorithm and modify ACK
 rem ::: Get list of physical adapters where NetEnabled=true and AdapterTypeID=0 (Ethernet)
 rem ::: First check to confirm we only want to select the active physical network adapter
 for /f "tokens=2 delims==" %%A in ('wmic nic where "NetEnabled=true and AdapterTypeID=0" get DeviceID /value ^| find "DeviceID"') do (
@@ -225,7 +225,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "EnablePMTU
 rem ::: Setting MTU size to 1500 on Network Adapter
 netsh interface ipv4 set subinterface "Ethernet" mtu=1500 store=persistent
 
-rem ::: Disabling TCP 1323 Options
+rem ::: Disabling TCP 1323 Options (Removes Timestamps - extra headers)
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v Tcp1323Opts /t REG_DWORD /d "0" /f
 
 rem ::: Setting Congestion Provider to CUBIC
@@ -284,7 +284,7 @@ rem ::: Setting Initial Congestion Window size to 10 segments for InternetCustom
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialCongestionWindow 10" >nul
 
 rem ::: Setting TCP AutoTuningLevel to Normal and disabling ScalingHeuristics for InternetCustom profile.
-powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Disabled -ScalingHeuristics Disabled" >nul
+powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Enabled -ScalingHeuristics Disabled" >nul
 
 rem ::: Disable Client for Microsoft Networks
 powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_msclient' -Confirm:$false }"
