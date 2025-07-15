@@ -33,18 +33,11 @@
 "MaxQueuedPresentBuffers"=dword:00000001
 
 ; ::: Enable GPU Preemption
-; ::: https://learn.microsoft.com/en-us/windows-hardware/drivers/display/changing-the-behavior-of-the-gpu-scheduler-for-debugging
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Scheduler]
 "EnablePreemption"=dword:00000001
 
-; ::: Disable Interrupt Steering
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
-"InterruptSteeringDisabled"=1
-
 ; ::: Serialize Timer Expiration Optimization
-; ::: https://github.com/AlchemyTweaks/Officially-Verified/tree/main/Serialize%20Timer%20Expiration
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel]
 "SerializeTimerExpiration"=dword:00000001
