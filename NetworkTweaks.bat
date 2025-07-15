@@ -25,11 +25,13 @@ TIMEOUT 1
 setlocal enabledelayedexpansion
 
 rem ::: Disable Nagle's Algorithm and modify ACK
-rem ::: Get list of physical adapters with NetEnabled=true and AdapterTypeID=0 (Ethernet)
+rem ::: Get list of physical adapters where NetEnabled=true and AdapterTypeID=0 (Ethernet)
+rem ::: First check to confirm we only want to select the active physical network adapter
 for /f "tokens=2 delims==" %%A in ('wmic nic where "NetEnabled=true and AdapterTypeID=0" get DeviceID /value ^| find "DeviceID"') do (
     set DEV_ID=%%A
 
     rem ::: Get matching SettingID from nicconfig where DHCPEnabled=true
+	rem ::: Second check to confirm we only want to select the active physical network adapter
     for /f "tokens=1,2 delims==" %%B in ('wmic nicconfig where "IPEnabled=true and DHCPEnabled=true and Index=%%A" get SettingID /value ^| find "SettingID"') do (
         set GUID=%%C
         goto :found
@@ -42,7 +44,7 @@ if "%GUID%"=="" (
     exit /b 1
 )
 
-rem ::: Registry path for TCP parameters per interface
+rem ::: Set Registry path to TCP/IP parameters\interface of the active physical network adapter
 set REG_PATH=HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%GUID%
 
 echo Disabling Nagle's Algorithm for adapter with GUID: %GUID%
