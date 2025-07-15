@@ -220,7 +220,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Enable ```Exclusive Mode```
 - Open ```Control Panel``` > ```Hardware and Sound``` > ```Sound``` > ```Communications``` > Set to ```Do Nothing```
 - Set ```Audio Output``` to ```Headphones``` mode in games whenever possible
-- Increase Windows volume to ```100%``` _(Use your DAC/AMP or in-game settings to decrease volume instead)_
+- Increase Windows volume to ```100%``` (_Use your DAC/AMP or in-game settings to control volume levels instead_)
 
 ## References & Research
 - CPU - Disable Core Isolation -
