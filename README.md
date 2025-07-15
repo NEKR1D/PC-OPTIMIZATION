@@ -41,7 +41,7 @@
 - Intel Virtualization Technology ```Disable``` 
 - VT-d ```Disable``` 
 - Hyper-Threading ```Disable``` 
-- Spread Spectrum [_When Overclocking__]```Disable``` 
+- Spread Spectrum [_When Overclocking_]```Disable``` 
 - CPU C-States ```Disable``` 
 - CPU Power Throttling ```Disable``` 
 - CPU Thermal Protection```Disable``` 
