@@ -12,8 +12,6 @@ rem ::: RECOMMENDED TO DISABLE ONBOARD INTEGRATED GPU IN BIOS AND DEVICE MANAGER
 
 PAUSE
 
-rem ::: https://www.elevenforum.com/members/garlin.5387/
-rem ::: https://www.elevenforum.com/t/gpu-tweaks-batch-script.30134/post-521530
 if not exist C:\Windows\System32\wbem\WMIC.exe (
     echo Installing WMIC...
     DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
@@ -24,8 +22,6 @@ rem ::: MAY CAUSE CRASHES
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v "PlatformSupportMiracast" /t REG_DWORD /d "0" /f
 
 rem ::: Affinity tweak
-rem ::: garlin: https://www.elevenforum.com/members/garlin.5387/
-rem ::: https://www.elevenforum.com/t/wmic-query-cpu-core-count-to-execute-setting.30155/post-521450
 
 for /f "tokens=2 delims=^=" %%f in ('wmic cpu get NumberOfCores /value ^| find "="') do set Cores=24
 
