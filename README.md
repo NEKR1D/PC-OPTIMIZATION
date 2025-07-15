@@ -9,8 +9,9 @@
 - Serves mainly as a document to track my own configuration changes.
 
 > [!WARNING]
-> - Tweaks are experimental and will likely cause increased temperatures, power consumption and CPU/GPU usage.
-> - Use the scripts provided as a reference to test and tailor settings to your own experience.
+> - Tweaks are experimental
+> - Expect increased temperatures, power consumption and CPU/GPU usage.
+> - Use the scripts provided as a reference to test and tailor settings to your own environment.
 
 > [!CAUTION]
 > - **Use at your own risk**.
