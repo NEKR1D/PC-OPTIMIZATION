@@ -223,103 +223,103 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Increase Windows volume to ```100%``` (_Use your DAC/AMP or in-game settings to control volume levels instead_)
 
 ## References & Research
-- CPU - Disable Core Isolation -
+CPU - Disable Core Isolation -
   - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
-- CPU - Intel - Optimization Applications for Latency
+CPU - Intel - Optimization Applications for Latency
   - https://www.intel.com/content/www/us/en/developer/articles/technical/optimizing-computer-applications-for-latency-part-1-configuring-the-hardware.html
-- Mouse - MouseDataQueueSize
+Mouse - MouseDataQueueSize
   - https://www.xbitlabs.com/mousedataqueuesize/
-- Mouse - High DPI For Lowest Latency
+Mouse - High DPI For Lowest Latency
   - https://www.youtube.com/watch?v=6AoRfv9W110&t=154s
-- Mouse - Designing Games for High DPI
+Mouse - Designing Games for High DPI
   - https://forums.blurbusters.com/viewtopic.php?f=22&p=81380
-- DirectX - Demystifying Full Screen Optimizations
+DirectX - Demystifying Full Screen Optimizations
   - https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/
-- GPU - NVIDIA GPU PState
+GPU - NVIDIA GPU PState
   - https://docs.nvidia.com/gameworks/content/gameworkslibrary/coresdk/nvapi/group__gpupstate.html
-- GPU - NVIDIA System Latency Optimization
+GPU - NVIDIA System Latency Optimization
   - https://www.nvidia.com/en-us/geforce/guides/gfecnt/202010/system-latency-optimization-guide/
-- GPU - Input Lag Revisited: V-Sync and NVIDIA Reflex
+GPU - Input Lag Revisited: V-Sync and NVIDIA Reflex
   - https://www.youtube.com/watch?v=dPMHEyz38TM
-- GPU - Gsync 101 - Input Lag
+GPU - Gsync 101 - Input Lag
   - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
-- GPU - Nvidia Profile Inspector
+GPU - Nvidia Profile Inspector
   - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
-- Windows - Virtualization Protections
+Windows - Virtualization Protections
   - Code Integrity - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
-- Windows - Resource Sets Tweaks Gave FPS Boost
+Windows - Resource Sets Tweaks Gave FPS Boost
   - Perf Analysis - https://www.youtube.com/watch?v=U1xFWbJBEMk
-- Windows - Serialize Timer Expiration
+Windows - Serialize Timer Expiration
   - https://www.youtube.com/watch?v=wil-09_5H0M
-- Windows - Win32priorityseparation
+Windows - Win32priorityseparation
   - https://github.com/LuSlower/win32ps-changer
-- Windows - Win32PrioritySeparation
+Windows - Win32PrioritySeparation
   - https://forums.blurbusters.com/viewtopic.php?f=10&t=8535
-- Windows - Win32priorityseparation
+Windows - Win32priorityseparation
   - https://www.xbitlabs.com/win32priorityseparation-performance/
-- Windows - Win32PrioritySeparation
+Windows - Win32PrioritySeparation
   - https://learn.microsoft.com/en-us/previous-versions/cc976120(v=technet.10)?redirectedfrom=MSDN
-- Windows - Psched - Use 100% NIC
+Windows - Psched - Use 100% NIC
   - https://dottech.org/26628/how-to-force-windows-to-use-100-of-your-network-bandwidth-how-to-guide/
-- Windows - Psched - Set Timer Resolution
+Windows - Psched - Set Timer Resolution
   - https://www.windows-security.org/df711f090da6ddbbc1bab472114bac01/set-timer-resolution
-- Windows - Performance Tuning
+Windows - Performance Tuning
   - https://martin77s.wordpress.com/2010/04/05/performance-tuning-your-windows-server-part-3/
-- Windows - SMB Compression
+Windows - SMB Compression
   - https://www.thewindowsclub.com/improve-network-speed-using-smb-compression
-- Windows - Windows Logon
+Windows - Windows Logon
   - https://james-rankin.com/features/the-ultimate-guide-to-windows-logon-optimizations-part-5/
-- Windows - Increasing Threads
+Windows - Increasing Threads
   - https://www.wilderssecurity.com/threads/increase-number-of-threads-per-process.317532/
-- Windows - Worker/Critical Threads
+Windows - Worker/Critical Threads
   - https://notes.ponderworthy.com/additional-critical-worker-threads-in-windows-speed-tweak
-- Windows - Threaded DPCs
+Windows - Threaded DPCs
   - https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-threaded-dpcs
-- Windows - Real Time Performance
+Windows - Real Time Performance
   - https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/soft-real-time/soft-real-time-device
-- Windows - Interrupt Affinity
+Windows - Interrupt Affinity
   - https://video2.skills-academy.com/en-us/windows-hardware/drivers/kernel/interrupt-affinity-and-priority
-- Network - BBR2
+Network - BBR2
   - https://dlsj.xlog.app/windows11-bbr2?locale=en
-- Network - Congestion Providers
+Network - Congestion Providers
   - https://techcommunity.microsoft.com/blog/networkingblog/windows-transport-converges-on-two-congestion-providers-cubic-and-ledbat/339819
-- Network - NIC Tweaks
+Network - NIC Tweaks
   - https://www.speedguide.net/articles/gaming-tweaks-5812
-- Network - NIC Definitions
+Network - NIC Definitions
   - https://www.speedguide.net/articles/network-adapter-optimization-3449
-- Network - Intel NIC Optimizing Performance
+Network - Intel NIC Optimizing Performance
   - https://edc.intel.com/content/www/us/en/design/products/ethernet/adapters-and-devices-user-guide/optimizing-performance/
-- Network - RSS Queues
+Network - RSS Queues
   - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/standardized-inf-keywords-for-rss
-- Network - RSS INFs
+Network - RSS INFs
   - https://docs.microsoft.com/de-de/windows-hardware/drivers/network/standardized-inf-keywords-for-rss
-- Network - Task Offloading
+Network - Task Offloading
   - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/task-offload
-- Network - Task Offloading
+Network - Task Offloading
   - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/using-registry-values-to-enable-and-disable-task-offloading
-- Network - RSS
+Network - RSS
   - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
-- Network - Performance Tuning
+Network - Performance Tuning
   - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
 
 ## Credits
-- Alchemy Tweaks  
+Alchemy Tweaks  
 	- https://github.com/AlchemyTweaks/Verified-Tweaks
-- BoringBoredom  
+BoringBoredom  
 	- https://github.com/BoringBoredom/PC-Optimization-Hub/
-- Calypto's Latency Guide  
+Calypto's Latency Guide  
 	- https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0
-- DjDallmann  
+DjDallmann  
 	- https://github.com/djdallmann/GamingPCSetup/
-- Geoff Chappell  
+Geoff Chappell  
 	- https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=66
-- MarkC  
+MarkC  
 	- https://donewmouseaccel.blogspot.com/
-- Melodys Tweaks  
+Melodys Tweaks  
 	- https://sites.google.com/view/melodystweaks/basictweaks
-- N1kobg  
+N1kobg  
 	- https://n1kobg.blogspot.com/p/blog-page_23.html
-- Shoober420  
+Shoober420  
 	- https://github.com/shoober420/windows11-scripts
 
 ***
