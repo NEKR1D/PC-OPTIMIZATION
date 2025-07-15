@@ -223,9 +223,10 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Increase Windows volume to ```100%``` _(Use your DAC/AMP or in-game settings to decrease volume instead)_
 
 ## References & Research
-```
-- CPU - Disable Core Isolation - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
-- CPU - Intel - Optimization Applications for Latency - https://www.intel.com/content/www/us/en/developer/articles/technical/optimizing-computer-applications-for-latency-part-1-configuring-the-hardware.html
+- CPU - Disable Core Isolation -
+  - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
+- CPU - Intel - Optimization Applications for Latency
+  - https://www.intel.com/content/www/us/en/developer/articles/technical/optimizing-computer-applications-for-latency-part-1-configuring-the-hardware.html
 - Mouse - MouseDataQueueSize - https://www.xbitlabs.com/mousedataqueuesize/
 - Mouse - High DPI For Lowest Latency - https://www.youtube.com/watch?v=6AoRfv9W110&t=154s
 - Mouse - Designing Games for High DPI - https://forums.blurbusters.com/viewtopic.php?f=22&p=81380
@@ -263,7 +264,6 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Network - Task Offloading - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/using-registry-values-to-enable-and-disable-task-offloading
 - Network - RSS - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
 - Network - Performance Tuning - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
-```
 
 ## Credits
 - MarkC - https://donewmouseaccel.blogspot.com/
