@@ -5,13 +5,10 @@ rem ::: Plundered by NEKR1D
 rem ::: Originally created by AlchemyTweaks
 rem ::: https://github.com/AlchemyTweaks/Verified-Tweaks/tree/main/DWM
 
-
-
 @Echo Off
 Title Reg Converter v1.2 & Color 1A
 cd %systemroot%\system32
 call :IsAdmin
-
 
 reg add "HKLM\SOFTWARE\Microsoft\WINDOWS\DWM" /v SuperWetEnabled /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Microsoft\WINDOWS\DWM" /v SDRBoostPercentOverride /t REG_DWORD /d 1 /f
