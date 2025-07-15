@@ -56,8 +56,8 @@
 - AHCI ```Enable``` 
 - XMP [_Profiles for RAM_]```Enable``` 
 - High Performance Power Mode ```Enable``` 
-- BCLK size - [_Set to 100.00 Mhz_]```Enable``` 
-- CPU VRM Switching Frequency - [_Set to 500 Khz or higher_] ```Enable```  
+- BCLK size [_Set to 100.00 Mhz_]```Enable``` 
+- CPU VRM Switching Frequency [_Set to 500 Khz or higher_] ```Enable```  
 - AVX Offset - Set to ```Enable``` and ```0```
   
 ## BIOS - Enable Resizable BAR
