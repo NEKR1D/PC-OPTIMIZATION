@@ -52,12 +52,12 @@
 - Unused USB ports ```Disable```
   
 **Enable:**
-- Above 4G Decoding [Resizable Bar] ```Enable``` 
+- Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
 - AHCI ```Enable``` 
-- XMP [Profile for RAM] ```Enable``` 
+- XMP _[Profiling for RAM] _```Enable``` 
 - High Performance Power Mode ```Enable``` 
-- BCLK size - Set to 100.00 Mhz ```Enable``` 
-- CPU VRM Switching Frequency - Set to 500 Khz or higher. ```Enable```  
+- BCLK size - _[Set to 100.00 Mhz] _```Enable``` 
+- CPU VRM Switching Frequency - _[Set to 500 Khz or higher]_ ```Enable```  
 - AVX Offset - Set to ```Enable``` and ```0```
   
 ## BIOS - Enable Resizable BAR
