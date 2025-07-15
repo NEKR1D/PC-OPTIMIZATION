@@ -21,6 +21,40 @@ if not exist C:\Windows\System32\wbem\WMIC.exe (
 
 TIMEOUT 1
 
+@echo off
+setlocal enabledelayedexpansion
+
+rem ::: Disable Nagle's Algorithm and modify ACK
+rem ::: Get list of physical adapters with NetEnabled=true and AdapterTypeID=0 (Ethernet)
+for /f "tokens=2 delims==" %%A in ('wmic nic where "NetEnabled=true and AdapterTypeID=0" get DeviceID /value ^| find "DeviceID"') do (
+    set DEV_ID=%%A
+
+    rem ::: Get matching SettingID from nicconfig where DHCPEnabled=true
+    for /f "tokens=1,2 delims==" %%B in ('wmic nicconfig where "IPEnabled=true and DHCPEnabled=true and Index=%%A" get SettingID /value ^| find "SettingID"') do (
+        set GUID=%%C
+        goto :found
+    )
+)
+
+:found
+if "%GUID%"=="" (
+    echo Failed to find a physical network adapter with DHCP enabled.
+    exit /b 1
+)
+
+rem ::: Registry path for TCP parameters per interface
+set REG_PATH=HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\%GUID%
+
+echo Disabling Nagle's Algorithm for adapter with GUID: %GUID%
+
+rem ::: Apply registry settings to disable Nagle's Algorithm and modify ACK behavior
+reg add "%REG_PATH%" /v TcpAckFrequency /t REG_DWORD /d 1 /f
+reg add "%REG_PATH%" /v TCPNoDelay /t REG_DWORD /d 1 /f
+reg add "%REG_PATH%" /v TCPDelAckTicks /t REG_DWORD /d 0 /f
+
+echo Nagle's Algorithm disabled.
+endlocal
+
 @echo on
 
 rem ::: Setting DNS as CloudFlare 1.1.1.1 / 1.0.0.1
@@ -136,10 +170,10 @@ reg add "%%n" /v "Downshift" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 
 rem ::: Enable Interrupt Moderation on Network Adapter
-rem ::: Set Interrupt Moderation // ON = 1
+rem ::: Set Interrupt Moderation // ON = 1 OFF = 0
 rem ::: Set Interrupt Throttling Rate (ITR) // 125 = Medium 0 = Off
-reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "1" /f
-reg add "%%n" /v "ITR" /t REG_SZ /d "125" /f
+reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "0" /f
+reg add "%%n" /v "ITR" /t REG_SZ /d "0" /f
 
 rem ::: Disabling JumboPackets: 1514 = Disabled
 reg add "%%n" /v "*JumboPacket" /t REG_SZ /d "1514" /f
@@ -189,9 +223,13 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "EnablePMTU
 rem ::: Setting MTU size to 1500 on Network Adapter
 netsh interface ipv4 set subinterface "Ethernet" mtu=1500 store=persistent
 
+rem ::: Disabling TCP 1323 Options
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v Tcp1323Opts /t REG_DWORD /d "0" /f
+
 rem ::: Setting Congestion Provider to CUBIC
 rem ::: CUBIC = Introduced in Windows 10? // pushes throughput until packet loss then reduces
 rem ::: BBR2 = New option available in Windows 11 // better/faster but can cause connectivity issues
+powershell -Command "netsh int tcp set global congestionprovider=CUBIC" >nul
 powershell -Command "netsh int tcp set supplemental Internet CongestionProvider=CUBIC" >nul
 powershell -Command "netsh int tcp set supplemental Datacenter CongestionProvider=CUBIC" >nul
 powershell -Command "netsh int tcp set supplemental Compat CongestionProvider=CUBIC" >nul
@@ -244,7 +282,7 @@ rem ::: Setting Initial Congestion Window size to 10 segments for InternetCustom
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialCongestionWindow 10" >nul
 
 rem ::: Setting TCP AutoTuningLevel to Normal and disabling ScalingHeuristics for InternetCustom profile.
-powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Normal -ScalingHeuristics Disabled" >nul
+powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Disabled -ScalingHeuristics Disabled" >nul
 
 rem ::: Disable Client for Microsoft Networks
 powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_msclient' -Confirm:$false }"
