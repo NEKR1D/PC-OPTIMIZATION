@@ -303,7 +303,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
   - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
 
 ## Credits
-- Alchemy Tweaks
+- AlchemyTweaks
   - https://github.com/AlchemyTweaks/Verified-Tweaks
 - BoringBoredom
   - https://github.com/BoringBoredom/PC-Optimization-Hub/
@@ -315,7 +315,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
   - https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=66
 - MarkC
   - https://donewmouseaccel.blogspot.com/
-- Melodys Tweaks
+- Melody's Tweaks
   - https://sites.google.com/view/melodystweaks/basictweaks
 - N1kobg
   - https://n1kobg.blogspot.com/p/blog-page_23.html
