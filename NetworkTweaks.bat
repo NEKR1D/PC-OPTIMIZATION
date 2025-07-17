@@ -54,7 +54,12 @@ reg add "%REG_PATH%" /v TcpAckFrequency /t REG_DWORD /d 1 /f
 reg add "%REG_PATH%" /v TCPNoDelay /t REG_DWORD /d 1 /f
 reg add "%REG_PATH%" /v TCPDelAckTicks /t REG_DWORD /d 0 /f
 
+echo TcpAckFrequency set to 1
+echo TCPNoDelay set to 1
+echo TCPDelAckTicks set to 0
+echo.
 echo Nagle's Algorithm disabled.
+echo.
 endlocal
 
 @echo on
