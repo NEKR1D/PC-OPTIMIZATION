@@ -2,15 +2,12 @@ rem ::: Network Tweaks
 
 rem ::: Plundered by NEKR1D
 
-rem ::: Originally created by Shoober420
-rem ::: https://github.com/shoober420/windows11-scripts
-
 rem ::: !!! Warning !!!
 rem ::: !!! Your hardware and devices are different !!!
 rem ::: !!! May brick your Network Adapter and connectivity !!!
 rem ::: !!! Use script as reference only !!!
 
-rem ::: !!! Setting things at tcp stack, device or registry level can have unintended behavior if they are mismatched !!!
+rem ::: !!! Mismatched settings at tcp stack, device or registry level can have unintended behavior !!!
 rem ::: !!! Some settings could take priority over the other !!!
 
 if not exist C:\Windows\System32\wbem\WMIC.exe (
@@ -64,9 +61,9 @@ endlocal
 
 @echo on
 
-rem ::: Setting DNS as CloudFlare 1.1.1.3 / 1.0.0.3 [Malware and Family safety]
-netsh interface ipv4 set dns name="Ethernet" static 1.1.1.3 primary
-netsh interface ipv4 add dns name="Ethernet" addr=1.0.0.3 index=2
+rem ::: Setting DNS as CloudFlare 1.1.1.1 / 1.0.0.1
+netsh interface ipv4 set dns name="Ethernet" static 1.1.1.1 primary
+netsh interface ipv4 add dns name="Ethernet" addr=1.0.0.1 index=2
 
 rem ::: Adding Cloudflare Malware and Family safety DNS over HTTPS (DoH)
 rem ::: Use Get-DNSClientDohServerAddress to see current list
@@ -186,6 +183,8 @@ reg add "%%n" /v "*EEE" /t REG_SZ /d "0" /f
 rem ::: Enable Interrupt Moderation on Network Adapter
 rem ::: Set Interrupt Moderation // ON = 1 OFF = 0
 rem ::: Set Interrupt Throttling Rate (ITR) // 125 = Medium 0 = Off
+rem ::: Recommended // ON + Medium for lowest IRQ/DPC latency and errors
+rem ::: Not Recommended // Most gamers do OFF + OFF for theoretical lowest packet handling latency
 reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "1" /f
 reg add "%%n" /v "ITR" /t REG_SZ /d "125" /f
 
