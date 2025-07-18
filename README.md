@@ -41,7 +41,7 @@
 - Hyper-V ```Disable``` 
 - Intel Virtualization Technology ```Disable``` 
 - VT-d ```Disable``` 
-- Hyper-Threading ```Disable``` 
+- Hyper-Threading ```Disable```
 - Spread Spectrum [_When Overclocking_]```Disable``` 
 - CPU C-States ```Disable``` 
 - CPU Power Throttling ```Disable``` 
@@ -51,6 +51,9 @@
 - TPM ```Disable``` 
 - Integrated/On-board devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
+
+> [!NOTE]
+> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit by; decreasing power draw and temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs. Don't forget to set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
@@ -69,7 +72,7 @@
   
 - **In NVIDIA Profile Inspector:**
    - Set rBAR - Feature to ```Enable```
-   - Set rBAR - Options to  ```0x00000001 (Returnal, Red Dead Redemption 2)```
+   - Set rBAR - Options to  ```0x00000001```
    - Set rBAR - Size Limit to ```0x0000000060000000``` [_1.5GB_]
   
 > [!NOTE]
@@ -183,7 +186,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Vertical Sync - Smooth AFR Behavior ```Off```
 - Vertical Sync - Tear Control ```Standard```
 - Antialiasing - Line Gamma ```On```
-- Ansel - Enabled ```Off``` [_This disables NVIDIA APP/GUI and Overlay, does not impact NVIDIA Control Panel_]
+- Ansel - Enabled ```Off``` [_Disables NVIDIA APP/GUI and Overlay, does not impact NVIDIA Control Panel_]
 - CUDA - Forced P2 State ```Off```
 - DLSS - Enable DLL Override - ```On - DLSS Overridden by latest available```
 - DLSS - Forced Preset Letter -  ```Always use latest```

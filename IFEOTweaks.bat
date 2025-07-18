@@ -41,16 +41,6 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
-set "APP_KEY=%IFEO_BASE%\hl.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
-
-set "APP_KEY=%IFEO_BASE%\hl2.exe\PerfOptions"
-reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
-reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
-
 set "APP_KEY=%IFEO_BASE%\HuntGame.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
