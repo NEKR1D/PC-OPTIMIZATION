@@ -72,7 +72,7 @@
   
 - **In NVIDIA Profile Inspector:**
    - Set rBAR - Feature to ```Enable```
-   - Set rBAR - Options to  ```0x00000001 (Returnal, Red Dead Redemption 2)```
+   - Set rBAR - Options to  ```0x00000001```
    - Set rBAR - Size Limit to ```0x0000000060000000``` [_1.5GB_]
   
 > [!NOTE]
