@@ -57,6 +57,6 @@ bcdedit /set graphicsmodedisabled No
 rem ::: Set Number of Processors 
 rem ::: define processor count (includes counting cores with HT on as 2 processors example; 8 cores = 16 processor threads if HT is on)
 rem ::: intel 12900K with HT disabled = 16 cores/processors (8 P-core and 8 E-core)
-bcdedit /set numproc 16
+bcdedit /set numproc 24
 
 PAUSE

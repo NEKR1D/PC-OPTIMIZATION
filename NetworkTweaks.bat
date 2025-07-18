@@ -76,7 +76,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableA
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
 
 rem ::: Require DoH / 2 - Allow DoH / 1 - Prohibit DoH
-reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "3" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "2" /f
 
 rem ::: Disable TCP/IP NetBIOS Helper Service (lmhosts)
 net stop lmhosts

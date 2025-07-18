@@ -26,8 +26,8 @@ rem ::: AdditionalCriticalWorkerThreads value increases the number of critical w
 rem ::: By increasing the value of this one, you can get more additional worker threads which will allow for more queued I/O in the storage subsystem
 rem ::: Allow more I/O to queue in the storage subsystem
 rem ::: Value is determined by RAM size NOT thread or core count
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalCriticalWorkerThreads" /t REG_DWORD /d "16" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalDelayedWorkerThreads" /t REG_DWORD /d "16"  /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalCriticalWorkerThreads" /t REG_DWORD /d "24" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalDelayedWorkerThreads" /t REG_DWORD /d "24"  /f
 
 rem ::: Disable Core Parking
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "CoreParkingDisabled" /t REG_DWORD /d "1" /f
