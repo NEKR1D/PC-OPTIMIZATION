@@ -57,7 +57,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "C
 rem ::: Disable Look for an app in the Store (How do you want to open this file)
 reg add "HKLM\Software\Policies\Microsoft\Windows\Explorer" /v "NoUseStoreOpenWith" /t REG_DWORD /d "1" /f
 
-
 rem ::: ================================ Windows Optimizations =================================
 
 rem ::: https://prod.support.services.microsoft.com/en-us/windows/options-to-optimize-gaming-performance-in-windows-11-a255f612-2949-4373-a566-ff6f3f474613
@@ -156,9 +155,7 @@ reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\DiagLog" /v "Start
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener" /v "Start" /t REG_DWORD /d "0" /f
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\WiFiSession" /v "Start" /t REG_DWORD /d "0" /f
 
-
 rem ::: =================================== Windows Policies ===================================
-
 
 rem ::: rem ::: https://admx.help/?Category=Windows_11_2022
 rem ::: https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services
@@ -390,7 +387,6 @@ taskkill /im GameBarPresenceWriter.exe /f
 rem ::: del "%WINDIR%\System32\GameBarPresenceWriter.exe" /s /f /q
 ren "%WINDIR%\System32\GameBarPresenceWriter.exe" "GameBarPresenceWriter.exe.bak"
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------------- Gaming ----------------------------------------
 rem ::: .................................... Xbox Game Bar .....................................
@@ -398,15 +394,12 @@ rem ::: .................................... Xbox Game Bar .....................
 rem ::: Open Xbox Game Bar
 reg add "HKCU\Software\Microsoft\GameBar" /v "UseNexusForGameBarEnabled" /t REG_DWORD /d "0" /f
 
-
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ------------------------------------ Accessibility ------------------------------------
 rem ::: ........................................ Mouse ........................................
 
 rem ::: Mouse Keys / 62 - Disable / 63 - Default
 reg add "HKCU\Control Panel\Accessibility\MouseKeys" /v "Flags" /t REG_SZ /d "62" /f
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ------------------------------------ Accessibility ------------------------------------
@@ -448,8 +441,6 @@ rem ::: reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "DisableLog
 
 rem ::: Disable Sign-in screen acrylic (blur) background 
 reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v "DisableAcrylicBackgroundOnLogon" /t REG_DWORD /d "1" /f
-
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ----------------------------------- Personalization ------------------------------------
@@ -497,7 +488,6 @@ rem ::: ________________________________________________________________________
 rem ::: Allow/Deny - Allow access to account info on this device
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation" /v "Value" /t REG_SZ /d "Deny" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: .................................... App diagnostic ....................................
@@ -518,7 +508,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let apps access your call history
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCallHistory" /v "Value" /t REG_SZ /d "Deny" /f
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -541,8 +530,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 rem ::: Allow/Deny - Let apps access your contacts
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts" /v "Value" /t REG_SZ /d "Deny" /f
 
-
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ....................................... Documents ......................................
@@ -564,7 +551,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 rem ::: Allow/Deny - Let apps access your downloads folder
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\downloadsFolder" /v "Value" /t REG_SZ /d "Deny" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ......................................... Email ........................................
@@ -574,7 +560,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let apps access your email
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\email" /v "Value" /t REG_SZ /d "Deny" /f
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -606,7 +591,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353694Enabled" /t REG_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353696Enabled" /t REG_DWORD /d "0" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ....................................... Location .......................................
@@ -617,7 +601,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 rem ::: Allow/Deny - Let apps access your location
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location" /v "Value" /t REG_SZ /d "Deny" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ...................................... Messaging .......................................
@@ -627,7 +610,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let apps read or send messages
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\chat" /v "Value" /t REG_SZ /d "Deny" /f
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -640,7 +622,6 @@ rem ::: Allow/Deny - Let apps access your microphone
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone" /v "Value" /t REG_SZ /d "Allow" /f
 
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: .................................... Music library .....................................
@@ -651,7 +632,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 rem ::: Allow/Deny - Allow apps to access your music library
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\musicLibrary" /v "Value" /t REG_SZ /d "Deny" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ..................................... Notifications ....................................
@@ -661,8 +641,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let apps access your notifications
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userNotificationListener" /v "Value" /t REG_SZ /d "Deny" /f
-
-
 
 rem ::: Enable and Prioritize Outlook extension notifications by not showing them in the notification center 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe!chrome-extension://kkpalkknhlklpbflpcpkepmmbnmfailf/" /v "ShowInActionCenter" /t REG_DWORD /d "0" /f
@@ -682,8 +660,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\W
 rem ::: Startup App Notification
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.StartupApp" /v "Enabled" /t REG_DWORD /d "0" /f
 
-
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ..................................... Other devices ....................................
@@ -702,7 +678,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 rem ::: Allow/Deny - Let apps make phone calls
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall" /v "Value" /t REG_SZ /d "Deny" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ....................................... Pictures .......................................
@@ -712,8 +687,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let apps access your pictures library
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary" /v "Value" /t REG_SZ /d "Deny" /f
-
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -733,7 +706,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 rem ::: Allow/Deny - Let apps control device radios
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\radios" /v "Value" /t REG_SZ /d "Deny" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
 rem ::: ................................. Screenshots and apps .................................
@@ -746,7 +718,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let desktop apps take screenshots of various windows or displays
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\graphicsCaptureProgrammatic\NonPackaged" /v "Value" /t REG_SZ /d "Deny" /f
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -763,8 +734,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v "IsMS
 
 rem ::: SafeSearch / 0 - Off / 1 - Moderate - 2 - Strict
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v "SafeSearchMode" /t REG_DWORD /d "0" /f
-
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -786,8 +755,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 
 rem ::: Allow/Deny - Let apps access your videos library
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary" /v "Value" /t REG_SZ /d "Deny" /f
-
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -824,7 +791,6 @@ reg add "HKLM\Software\Policies\Microsoft\Windows NT\Terminal Services" /v "TSAp
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\Terminal Services" /v "TSEnabled" /t REG_DWORD /d "0" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\Terminal Services" /v "TSUserEnabled" /t REG_DWORD /d "0" /f
 
-
 rem ::: =================================== Windows Settings ===================================
 rem ::: --------------------------------------- System -----------------------------------------
 rem ::: ..................................... Clipboard ........................................
@@ -854,7 +820,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\PushNotifications" /v "T
 rem ::: Offer suggestions on how I can set up my device
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d "0" /f
 
-
 rem ::: -----------------------------------------------------------------------------------------
 rem :::                       !!!WARNING!!! !!!WARNING!!! !!!WARNING!!!
 rem ::: -----------------------------------------------------------------------------------------
@@ -862,43 +827,6 @@ rem ::: _________________________________shoober420's tweaks____________________
 rem ::: -----------------------------------------------------------------------------------------
 rem :::                            !!!USE WITH EXTREME CAUTION!!!
 rem ::: -----------------------------------------------------------------------------------------
-
-
-rem ::: System profiles always on
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "AlwaysOn" /t REG_DWORD /d "1" /f
-
-rem ::: Disable lazy mode
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "NoLazyMode" /t REG_DWORD /d "1" /f
-
-rem ::: Games system profile tweaks 
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Affinity" /t REG_DWORD /d "0" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Background Only" /t REG_SZ /d "False" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Clock Rate" /t REG_DWORD /d "2710" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "GPU Priority" /t REG_DWORD /d "8" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Priority" /t REG_DWORD /d "6" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Scheduling Category" /t REG_SZ /d "High" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "SFIO Priority" /t REG_SZ /d "High" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Latency Sensitive" /t REG_SZ /d "True" /f
-
-rem ::: Audio system profile tweaks 
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "Affinity" /t REG_DWORD /d "0" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "Background Only" /t REG_SZ /d "False" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "Clock Rate" /t REG_DWORD /d "2710" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "GPU Priority" /t REG_DWORD /d "8" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "Priority" /t REG_DWORD /d "6" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "Scheduling Category" /t REG_SZ /d "High" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "SFIO Priority" /t REG_SZ /d "High" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Audio" /v "Latency Sensitive" /t REG_SZ /d "True" /f
-
-rem ::: DisplayPostProcessing system profile tweaks 
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "Affinity" /t REG_DWORD /d "0" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "Background Only" /t REG_SZ /d "False" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "Clock Rate" /t REG_DWORD /d "2710" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "GPU Priority" /t REG_DWORD /d "8" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "Priority" /t REG_DWORD /d "6" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "Scheduling Category" /t REG_SZ /d "High" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "SFIO Priority" /t REG_SZ /d "High" /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\DisplayPostProcessing" /v "Latency Sensitive" /t REG_SZ /d "True" /f
 
 rem ::: Disable OneDrive sync
 reg add "HKCU\SOFTWARE\Microsoft\OneDrive" /v "DisableFileSyncNGSC" /t REG_DWORD /d "1" /f
@@ -2623,7 +2551,6 @@ rem ::: Disable Quiet Hours Notification Mirroring
 reg add "HKCU\Software\Policies\Microsoft\Windows\CurrentVersion\QuietHours" /v "DisallowNotificationMirroring" /t REG_DWORD /d "1" /f
 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoSystraySystemPromotion" /t REG_DWORD /d "1" /f
-
 
 rem ::: App Privacy tweaks / 1= Enabled 2 = Disabled
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v "LetAppsAccessPhone" /t REG_DWORD /d "2" /f
