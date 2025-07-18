@@ -44,6 +44,7 @@
 - Windows - DNS over HTTPS (DoH)
   - https://www.elevenforum.com/t/how-to-set-dns-over-https-via-command-prompt.1232/
   - https://learn.microsoft.com/en-us/windows-server/networking/dns/doh-client-support
+  - https://techcommunity.microsoft.com/blog/networkingblog/making-doh-discoverable-introducing-ddr/2887289
 - Windows - Virtualization Protections
   - Code Integrity - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
 - Windows - Resource Sets Tweaks Gave FPS Boost
