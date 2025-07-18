@@ -249,6 +249,8 @@ Set these as the global profile for NVIDIA and individually set specific values 
   - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
 - GPU - Nvidia Profile Inspector
   - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
+- Windows - DNS over HTTPS (DoH)
+  - https://www.elevenforum.com/t/how-to-set-dns-over-https-via-command-prompt.1232/
 - Windows - Virtualization Protections
   - Code Integrity - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
 - Windows - Resource Sets Tweaks Gave FPS Boost
