@@ -41,7 +41,7 @@
 - Hyper-V ```Disable``` 
 - Intel Virtualization Technology ```Disable``` 
 - VT-d ```Disable``` 
-- Hyper-Threading ```Disable``` 
+- Hyper-Threading ```Disable```
 - Spread Spectrum [_When Overclocking_]```Disable``` 
 - CPU C-States ```Disable``` 
 - CPU Power Throttling ```Disable``` 
@@ -51,6 +51,9 @@
 - TPM ```Disable``` 
 - Integrated/On-board devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
+
+> [!NOTE]
+> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit from decreased power draw, temperatures, specific core/instruction assignments and increase overclock stability or capabilities. Don't forget to set approrirate number of cores value in ```BCDTweaks.bat```.
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
