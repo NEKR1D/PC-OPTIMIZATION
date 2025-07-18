@@ -307,6 +307,8 @@ Set these as the global profile for NVIDIA and individually set specific values 
   - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
 - Network - Performance Tuning
   - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
+- DNS - CloudFlare DNS Options
+  - https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
 
 ## Credits
 - AlchemyTweaks
