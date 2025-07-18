@@ -53,7 +53,7 @@
 - Unused USB ports ```Disable```
 
 > [!NOTE]
-> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit from decreased power draw, temperatures, specific core/instruction assignments and increase overclock stability or capabilities. Don't forget to set approrirate number of cores value in ```BCDTweaks.bat```.
+> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit from decreased power draw, temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs. Don't forget to set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
