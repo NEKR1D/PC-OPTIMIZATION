@@ -65,11 +65,6 @@ rem ::: Setting DNS as CloudFlare 1.1.1.1 / 1.0.0.1
 netsh interface ipv4 set dns name="Ethernet" static 1.1.1.1 primary
 netsh interface ipv4 add dns name="Ethernet" addr=1.0.0.1 index=2
 
-rem ::: Adding Cloudflare Malware and Family safety DNS over HTTPS (DoH)
-rem ::: Use Get-DNSClientDohServerAddress to see current list
-powershell -Command Add-DnsClientDohServerAddress -ServerAddress '1.1.1.3' -DohTemplate 'https://family.cloudflare-dns.com/dns-query' -AllowFallbackToUdp $False -AutoUpgrade $True
-powershell -Command Add-DnsClientDohServerAddress -ServerAddress '1.0.0.3' -DohTemplate 'https://family.cloudflare-dns.com/dns-query' -AllowFallbackToUdp $False -AutoUpgrade $True
-
 rem ::: Flush DNS
 ipconfig /flushdns
 
