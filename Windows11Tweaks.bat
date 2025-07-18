@@ -3131,6 +3131,9 @@ rem ::: Disable SuperFetch
 rem ::: Disable SuperFetch = 0 / Enable SuperFetch when the application starts up = 1 / Enable SuperFetch when the device starts up = 2 /  Enable SuperFetch when the application or device starts up = 3
 reg add "HKLM\System\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters" /v "EnableSuperfetch" /t REG_DWORD /d "0" /f
 
+rem ::: Disable Windows Update from Installing Drivers
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ExcludeWUDriversInQualityUpdate /t REG_DWORD /d 1 /f
+
 rem ::: REBOOT YOUR PC
 
 PAUSE
