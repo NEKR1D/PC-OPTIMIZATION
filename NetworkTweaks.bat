@@ -75,8 +75,9 @@ rem ::: Enabling DNS over HTTPS (DoH)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
 
-rem ::: Require DoH = 3 / Allow DoH = 2 / Prohibit DoH = 1
-rem ::: Forcing DoH with 3 can break some VPN applications that aren't configurable for this flag
+rem ::: Require DoH = 3 / Enable DoH = 2 / Prohibit DoH = 1
+rem ::: Requiring DoH (3) can cause conflicts with  ISP DNS and VPN applications' DNS that aren't configurable and can't handle this flag correctly
+rem ::: Enabling DoH (2) resolved conflicts and isn't worth investigating furthur
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "2" /f
 
 rem ::: Disable TCP/IP NetBIOS Helper Service (lmhosts)
