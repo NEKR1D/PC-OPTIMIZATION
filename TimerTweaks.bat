@@ -8,7 +8,7 @@ rem ::: https://github.com/shoober420/windows11-scripts
 rem ::: Leave HPET enabled in BIOS
 
 rem ::: Timer Resolution Tweak
-rem ::: Forces Windows 11 to obey timer resolution settings (otherwise timer settings in ILSC will not take effect)
+rem ::: Forces Windows 11 to obey timer resolution settings (otherwise timer settings will not take effect)
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "GlobalTimerResolutionRequests" /t REG_DWORD /d "1" /f
 
 rem ::: Disable HPET in Windows
