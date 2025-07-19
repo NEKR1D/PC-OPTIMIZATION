@@ -10,10 +10,10 @@ rem ::: !!! Use script as reference only, modify and add your own games/software
 
 rem ::: 1: Idle
 rem ::: 2: Normal
-rem ::: 3: High (Can lower performance)
-rem ::: 4: Real Time (DO NOT USE THIS)
+rem ::: 3: High // (LOWERS PERFORMANCE)
+rem ::: 4: Real Time // (DO NOT USE THIS)
 rem ::: 5: Below Normal
-rem ::: 6: Above Normal
+rem ::: 6: Above Normal // (USE THIS)
 
 setlocal
 
@@ -62,6 +62,11 @@ reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 set "APP_KEY=%IFEO_BASE%\STRAFTAT.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\destiny2.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
@@ -119,5 +124,6 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\HellDivers2.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\STRAFTAT.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\cs2.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\destiny2.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 
 PAUSE
