@@ -18,7 +18,7 @@ rem ::: High Foreground Boost (2)
 rem ::: 0x26 Hex 38 Decimal = Short/Variable/2 93.75ms/31.25ms/125.00ms (Windows Default for Processor Scheduling set to "Programs")
 rem ::: 0x2A Hex 42 Decimal = Short/Fixed/2 93.75ms/93.75ms/281.25ms
 
-reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d 0x00000026 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d 0x00000028 /f
 
 rem ::: Add Critical and Delayed Worker Threads
 
@@ -26,8 +26,8 @@ rem ::: AdditionalCriticalWorkerThreads value increases the number of critical w
 rem ::: By increasing the value of this one, you can get more additional worker threads which will allow for more queued I/O in the storage subsystem
 rem ::: Allow more I/O to queue in the storage subsystem
 rem ::: Value is determined by RAM size NOT thread or core count
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalCriticalWorkerThreads" /t REG_DWORD /d "24" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalDelayedWorkerThreads" /t REG_DWORD /d "24"  /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalCriticalWorkerThreads" /t REG_DWORD /d "16" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Executive" /v "AdditionalDelayedWorkerThreads" /t REG_DWORD /d "16"  /f
 
 rem ::: Disable Core Parking
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "CoreParkingDisabled" /t REG_DWORD /d "1" /f
