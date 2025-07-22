@@ -271,7 +271,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
   - SATA/NVME Controllers // E-cores 8-15
 
 > [!NOTE]
-> - Core 0 - Do not use this threads on this core. Typically the default threads for all devices IRQ/MSI, also in many cases already has significant usage by OS, applications and games.
+> - Core 0 - Do not use any threads on this core. Typically the default interrupt threads for all devices IRQ/MSI, also in many cases already has significant usage by OS, applications and games.
 
 
 ***
