@@ -71,7 +71,7 @@
   - https://techcommunity.microsoft.com/blog/networkingblog/making-doh-discoverable-introducing-ddr/2887289
 - Windows - Virtualization Protections - Code Integrity
   - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
-- Windows - Message Signal Intterupts
+- Windows - Message Signaled Interrupts (MSI)
   - https://www.techonline.com/wp-content/uploads/2020/09/media-1036817-intel_321070.pdf
 - Windows - Resource Sets - Perf Analysis
   - https://www.youtube.com/watch?v=U1xFWbJBEMk
