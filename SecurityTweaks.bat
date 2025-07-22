@@ -6,12 +6,9 @@ rem ::: Originally created by Shoober420
 rem ::: https://github.com/shoober420/windows11-scripts
 
 rem ::: !!! WARNING !!!
-
 rem ::: SCRIPT FOR REFERENCE ONLY
 rem ::: NOT RECOMENDED (BUT HAS POTENTIAL TO INCEASE YOUR CPU PERFORMANCE)
 rem ::: USE ON GAMING IMAGE ONLY, DONT DO SENSITIVE TASKS SUCH AS BANKING
-
-rem ::: !!! WARNING !!!
 
 PAUSE
 
