@@ -23,6 +23,8 @@
   - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
 - CPU - Intel - Optimization Applications for Latency
   - https://www.intel.com/content/www/us/en/developer/articles/technical/optimizing-computer-applications-for-latency-part-1-configuring-the-hardware.html
+- DNS - CloudFlare DNS Options
+  - https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
 - Mouse - MouseDataQueueSize
   - https://www.xbitlabs.com/mousedataqueuesize/
 - Mouse - High DPI For Lowest Latency
@@ -101,8 +103,6 @@
   - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
 - Network - Performance Tuning
   - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
-- DNS - CloudFlare DNS Options
-  - https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
