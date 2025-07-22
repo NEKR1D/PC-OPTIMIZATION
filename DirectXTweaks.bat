@@ -6,8 +6,6 @@ rem ::: Originally created by AlchemyTweaks
 rem ::: https://github.com/AlchemyTweaks/Verified-Tweaks/tree/main/DirectX
 
 @Echo Off
-Title DirectX Tweaks
-Color 04
 
 cd %systemroot%\system32
 call :IsAdmin
