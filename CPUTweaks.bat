@@ -18,7 +18,7 @@ rem ::: High Foreground Boost (2)
 rem ::: 0x26 Hex 38 Decimal = Short/Variable/2 93.75ms/31.25ms/125.00ms (Windows Default for Processor Scheduling set to "Programs")
 rem ::: 0x2A Hex 42 Decimal = Short/Fixed/2 93.75ms/93.75ms/281.25ms
 
-reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d 0x00000028 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d 0x00000024 /f
 
 rem ::: Add Critical and Delayed Worker Threads
 
