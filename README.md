@@ -236,7 +236,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Check Use GlobalTimerResolutionRequests ** [we already force this in the registry in ```TimerTweaks.bat```]
 - The Wanted Timer Resolution field should have a value extremely close to 0.5ms
   
-- > [!NOTE]
+> [!NOTE]
 > - The default Windows setting is around ~15ms.
 > - You can use the Measure Sleep application to view the current resolution, sleep and delta
 > - Your system will need to have a different timer resolution such that you achieve the lowest and most consistent sleep metric
