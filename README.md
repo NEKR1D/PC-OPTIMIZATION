@@ -167,13 +167,13 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Click ```Manage 3D Settings```
 - Click ```Program Settings```
 - Click ```Add``` set ```Power Management Mode``` to ```High Performance``` for;
-- DWM.exe (located in \Windows\System32)
-- Explorer.exe (located in \Windows)
-- MicrosoftShellExperienceHost
-- Steam
-- Browsers
-- VLC
-- Any other games or apps with this toggle not set correctly
+  - DWM.exe (located in \Windows\System32)
+  - Explorer.exe (located in \Windows)
+  - MicrosoftShellExperienceHost
+  - Steam
+  - Browsers
+  - VLC
+  - Any other games or apps with this toggle not set correctly
 
 > [!NOTE]
 > - Simple method for forcing ```High Performance``` individually for specific Windows apps and game .exes ensuring Power Management Mode is NOT set to ```NVIDIA Recommended```.
