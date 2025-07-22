@@ -61,6 +61,31 @@ powershell -Command "Stop-Service -Name 'DPS' -Force -ErrorAction SilentlyContin
 powershell -Command "Set-Service -Name 'DPS' -StartupType Disabled"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\DPS" /v "Start" /t REG_DWORD /d 4 /f
 
+rem ::: BitLocker 
+powershell -Command "Stop-Service -Name 'BDESVC' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'BDESVC' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\BDESVC" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Fax 
+powershell -Command "Stop-Service -Name 'Fax' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'Fax' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\Fax" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Download Maps Manager 
+powershell -Command "Stop-Service -Name 'MapsBroker' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'MapsBroker' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\MapsBroker" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Geolocation Service 
+powershell -Command "Stop-Service -Name 'lfsvc' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'lfsvc' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\lfsvc" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Parental Controls 
+powershell -Command "Stop-Service -Name 'WPCSvc' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'WPCSvc' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\WPCSvc" /v "Start" /t REG_DWORD /d 4 /f
+
 rem ::: Windows Event Log
 powershell -Command "Stop-Service -Name 'EventLog' -Force -ErrorAction SilentlyContinue"
 powershell -Command "Set-Service -Name 'EventLog' -StartupType Disabled"
@@ -135,6 +160,16 @@ rem ::: Routing and Remote Access
 powershell -Command "Stop-Service -Name 'remoteAccess' -Force -ErrorAction SilentlyContinue"
 powershell -Command "Set-Service -Name 'remoteAccess' -StartupType Disabled"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\remoteAccess" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Netlogon 
+powershell -Command "Stop-Service -Name 'Netlogon' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'Netlogon' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\Netlogon" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: AllJoyn Router Service 
+powershell -Command "Stop-Service -Name 'AJRouter' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'AJRouter' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\AJRouter" /v "Start" /t REG_DWORD /d 4 /f
 
 rem ::: Remote Registry
 powershell -Command "Stop-Service -Name 'remoteRegistry' -Force -ErrorAction SilentlyContinue"
@@ -225,6 +260,11 @@ rem ::: Windows Search
 powershell -Command "Stop-Service -Name 'WSearch' -Force -ErrorAction SilentlyContinue"
 powershell -Command "Set-Service -Name 'WSearch' -StartupType Disabled"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\WSearch" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Work Folders 
+powershell -Command "Stop-Service -Name 'WorkFolders' -Force -ErrorAction SilentlyContinue" 
+powershell -Command "Set-Service -Name 'WorkFolders' -StartupType Disabled" 
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\WorkFolders" /v "Start" /t REG_DWORD /d 4 /f
 
 rem ::: Microsoft Account Sign-in Assistant
 powershell -Command "Stop-Service -Name 'wlidsvc' -Force -ErrorAction SilentlyContinue"
