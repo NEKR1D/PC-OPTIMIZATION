@@ -49,3 +49,5 @@ If Not %ERRORLEVEL% EQU 0 (
 )
 Cls
 goto:eof
+
+PAUSE
