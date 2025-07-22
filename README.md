@@ -258,7 +258,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 > - You can use the Measure Sleep application to view the current resolution, sleep and delta
 > - Your system will need to have a different timer resolution such that you achieve the lowest and most consistent sleep metric
 > - You will know your setting isn't optmial when you see the sleep measurment values are varying too much (such as 1ms spiking to 2ms or higher)
-> - For my system configuration, setting the value to 0.5050 produced the best result (each sleep metric is at exact to 2 decimal places - 1.00ms)
+> - For my system configuration, setting the value to 0.5050 produced the best result (each sleep metric is exact/accurate to 2 decimal places - 1.00ms)
 
 
 ***
