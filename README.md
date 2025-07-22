@@ -229,6 +229,51 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Set ```Audio Output``` to ```Headphones``` mode in games whenever possible
 - Increase Windows volume to ```100%``` (_Use your DAC/AMP or in-game settings to control volume levels instead_)
 
+## Timer Resolution
+- Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
+- Start this program with windows and always running in the background
+- Check Enable custome timer resolution *
+- Check Use GlobalTimerResolutionRequests ** [we already force this in the registry in ```TimerTweaks.bat```]
+- The Wanted Timer Resolution field should have a value extremely close to 0.5ms
+
+```
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0038ms (delta: 0.0038)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0040ms (delta: 0.0040)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0036ms (delta: 0.0036)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0042ms (delta: 0.0042)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0045ms (delta: 0.0045)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0076ms (delta: 0.0076)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0045ms (delta: 0.0045)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0031ms (delta: 0.0031)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0035ms (delta: 0.0035)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
+```
+  
+> [!NOTE]
+> - The default Windows setting is around ~15ms.
+> - You can use the Measure Sleep application to view the current resolution, sleep and delta
+> - Your system will need to have a different timer resolution such that you achieve the lowest and most consistent sleep metric
+> - You will know your setting isn't optimal when you see the sleep measurment values are varying too much (such as 1ms spiking to 2ms or higher)
+> - For my system configuration, setting the Timer Resolution value to 0.5050 produced the best result (each sleep metric is exact/accurate to 2 decimal places - 1.00ms)
+
+## Interrupt Affinity
+- Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts including defining which cpu core intterupts are sent to by each device
+  
+- Example [_with HyperThreading disabled_];
+  - GPU // P-Cores 4,5,6,7
+  - Network Controller // P-Cores 1,2,3
+  - USB Host Controllers // P-Cores 1,2,3
+  - NVME Drives // E-cores 8-15
+  - SATA/NVME Controllers // E-cores 8-15
+
+> [!NOTE]
+> - Core 0 - Do not use any threads on this core. Typically the default interrupt threads for all devices IRQ/MSI, also in many cases already has significant usage by OS, applications and games.
+
+
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
 <br>
