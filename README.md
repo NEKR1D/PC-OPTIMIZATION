@@ -229,6 +229,34 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Set ```Audio Output``` to ```Headphones``` mode in games whenever possible
 - Increase Windows volume to ```100%``` (_Use your DAC/AMP or in-game settings to control volume levels instead_)
 
+## Timer Resolution
+- Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
+- Leave this program started and running in the background
+- Check Enable custome timer resolution *
+- Check Use GlobalTimerResolutionREquests ** [we also force this in the registry in .bat]
+- The Wanted Timer Resolution field should have a value around 0.5
+- You need to use the Measure Sleep application to view the current resoltuon and delta
+- Your system will differ and need to have a different timer resolution such that you achieve the lowest and consistent sleep metric
+- When this value is wrong when the sleep measurment is varying too much (such as 1ms then spiking to 2ms)
+- For my system configuration, setting the value to 0.5050 produced the best result
+
+```
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0038ms (delta: 0.0038)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0040ms (delta: 0.0040)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0036ms (delta: 0.0036)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0042ms (delta: 0.0042)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0045ms (delta: 0.0045)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0076ms (delta: 0.0076)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0045ms (delta: 0.0045)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0031ms (delta: 0.0031)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0035ms (delta: 0.0035)
+Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
+```
+
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
 <br>
