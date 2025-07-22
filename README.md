@@ -256,8 +256,8 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 > - The default Windows setting is around ~15ms.
 > - You can use the Measure Sleep application to view the current resolution, sleep and delta
 > - For my system, setting the Timer Resolution value to 0.5050 produced the best result (each sleep metric is exact/accurate to 2 decimal places - 1.00ms)
-> - Your system will need to have a different Timer Resolution value such that you achieve the lowest and most consistent sleep metric
-> - You will know your setting isn't optimal when you see the sleep measurment values are varying too much (such as 1ms spiking to 2ms or higher)
+> - Test different Timer Resolution values on your system so that you achieve the lowest and most consistent sleep metric
+> - Your Timer Resolution isn't optimal when you see the sleep values vary too much (spiking from 1ms to 2ms or higher)
 
 ## Interrupt Affinity
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
