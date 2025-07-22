@@ -261,7 +261,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 
 ## Interrupt Affinity
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
-- Specify and separate by each device which cpu cores interrupts are sent to
+- Assign cpu cores to separate devices where interrupts are sent to
   
 - Example [_with HyperThreading disabled_];
   - GPU // P-Cores 4,5,6,7
