@@ -19,7 +19,7 @@
   - https://github.com/shoober420/windows11-scripts
 
 ## References & Research
-- CPU - Disable Core Isolation -
+- CPU - Disable Core Isolation
   - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
 - CPU - Intel - Optimization Applications for Latency
   - https://www.intel.com/content/www/us/en/developer/articles/technical/optimizing-computer-applications-for-latency-part-1-configuring-the-hardware.html
@@ -29,10 +29,6 @@
   - https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
 - Mouse - MouseDataQueueSize
   - https://www.xbitlabs.com/mousedataqueuesize/
-- Mouse - High DPI For Lowest Latency
-  - https://www.youtube.com/watch?v=6AoRfv9W110&t=154s
-- Mouse - Designing Games for High DPI
-  - https://forums.blurbusters.com/viewtopic.php?f=22&p=81380
 - GPU - NVIDIA GPU PState
   - https://docs.nvidia.com/gameworks/content/gameworkslibrary/coresdk/nvapi/group__gpupstate.html
 - GPU - NVIDIA System Latency Optimization
@@ -43,12 +39,40 @@
   - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
 - GPU - Nvidia Profile Inspector
   - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
+- Mouse - High DPI For Lowest Latency
+  - https://www.youtube.com/watch?v=6AoRfv9W110&t=154s
+- Mouse - Designing Games for High DPI
+  - https://forums.blurbusters.com/viewtopic.php?f=22&p=81380
+- Network - BBR2
+  - https://dlsj.xlog.app/windows11-bbr2?locale=en
+- Network - Congestion Providers
+  - https://techcommunity.microsoft.com/blog/networkingblog/windows-transport-converges-on-two-congestion-providers-cubic-and-ledbat/339819
+- Network - NIC Tweaks
+  - https://www.speedguide.net/articles/gaming-tweaks-5812
+- Network - NIC Definitions
+  - https://www.speedguide.net/articles/network-adapter-optimization-3449
+- Network - Intel NIC Optimizing Performance
+  - https://edc.intel.com/content/www/us/en/design/products/ethernet/adapters-and-devices-user-guide/optimizing-performance/
+- Network - RSS Queues
+  - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/standardized-inf-keywords-for-rss
+- Network - RSS INFs
+  - https://docs.microsoft.com/de-de/windows-hardware/drivers/network/standardized-inf-keywords-for-rss
+- Network - Task Offloading
+  - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/task-offload
+- Network - Task Offloading
+  - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/using-registry-values-to-enable-and-disable-task-offloading
+- Network - RSS
+  - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
+- Network - Performance Tuning
+  - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
 - Windows - DNS over HTTPS (DoH)
   - https://www.elevenforum.com/t/how-to-set-dns-over-https-via-command-prompt.1232/
   - https://learn.microsoft.com/en-us/windows-server/networking/dns/doh-client-support
   - https://techcommunity.microsoft.com/blog/networkingblog/making-doh-discoverable-introducing-ddr/2887289
 - Windows - Virtualization Protections - Code Integrity
   - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
+- Windows - Message Signal Intterupts
+  - https://www.techonline.com/wp-content/uploads/2020/09/media-1036817-intel_321070.pdf
 - Windows - Resource Sets - Perf Analysis
   - https://www.youtube.com/watch?v=U1xFWbJBEMk
 - Windows - Serialize Timer Expiration
@@ -81,28 +105,6 @@
   - https://learn.microsoft.com/en-us/windows/iot/iot-enterprise/soft-real-time/soft-real-time-device
 - Windows - Interrupt Affinity
   - https://video2.skills-academy.com/en-us/windows-hardware/drivers/kernel/interrupt-affinity-and-priority
-- Network - BBR2
-  - https://dlsj.xlog.app/windows11-bbr2?locale=en
-- Network - Congestion Providers
-  - https://techcommunity.microsoft.com/blog/networkingblog/windows-transport-converges-on-two-congestion-providers-cubic-and-ledbat/339819
-- Network - NIC Tweaks
-  - https://www.speedguide.net/articles/gaming-tweaks-5812
-- Network - NIC Definitions
-  - https://www.speedguide.net/articles/network-adapter-optimization-3449
-- Network - Intel NIC Optimizing Performance
-  - https://edc.intel.com/content/www/us/en/design/products/ethernet/adapters-and-devices-user-guide/optimizing-performance/
-- Network - RSS Queues
-  - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/standardized-inf-keywords-for-rss
-- Network - RSS INFs
-  - https://docs.microsoft.com/de-de/windows-hardware/drivers/network/standardized-inf-keywords-for-rss
-- Network - Task Offloading
-  - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/task-offload
-- Network - Task Offloading
-  - https://learn.microsoft.com/en-us/windows-hardware/drivers/network/using-registry-values-to-enable-and-disable-task-offloading
-- Network - RSS
-  - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
-- Network - Performance Tuning
-  - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
