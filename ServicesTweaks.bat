@@ -6,11 +6,13 @@ rem ::: Stops and disables unnecessary windows services
 rem ::: Creates registry entry to force disable unnecessary windows services
 rem ::: Requires administrative privileges
 
-@echo On
+@echo Off
 
+echo.
 echo Starting - Disabling and stopping Window services  
 echo.
 
+@echo On
 rem :::====================================================
 rem ::: STOP unnecessary windows services one at a time
 rem :::====================================================
@@ -318,7 +320,10 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\XboxNetApiSvc" /v "Start" /t REG
 rem ::: Disable ZT Helper Service
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\ZTHELPER" /v "Start" /t REG_DWORD /d 4 /f
 
+@echo Off
+
 echo. 
 echo  Completed - Unnecessary Windows Services have been stopped and disabled ...
 echo.
+
 pause
