@@ -8,7 +8,10 @@ rem ::: https://github.com/shoober420/windows11-scripts
 rem ::: !!! WARNING !!!
 rem ::: !!! DOES NOT SUPPORT DIGITAL STREAM COMPRESSION (DSC) !!!
 rem ::: !!! Black screen will occur if used with DSC monitors !!!
-rem ::: !!! RECOMMENDED TO DISABLE ONBOARD INTEGRATED GPU IN BIOS AND DEVICE MANAGER AND USE DEDICATED GPU ONLY !!!
+
+rem ::: !!! RECOMMENDED TO DISABLE ONBOARD INTEGRATED GPU IN BIOS AND DEVICE MANAGER !!!
+rem ::: !!! USE DEDICATED GPU ONLY !!!
+rem ::: !!! IMPROVE LATENCY AT THE COST OF A LITTLE FRAMERATE !!!
 
 PAUSE
 
