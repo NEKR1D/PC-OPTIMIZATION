@@ -231,13 +231,14 @@ Set these as the global profile for NVIDIA and individually set specific values 
 
 ## Timer Resolution
 - Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
-- Leave this program started and running in the background
+- Start this program with windows and always running in the background
 - Check Enable custome timer resolution *
 - Check Use GlobalTimerResolutionREquests ** [we also force this in the registry in .bat]
-- The Wanted Timer Resolution field should have a value around 0.5
+- The Wanted Timer Resolution field should have a value around 0.5ms
+- The default Windows setting is around ~15ms.
 - You need to use the Measure Sleep application to view the current resoltuon and delta
 - Your system will differ and need to have a different timer resolution such that you achieve the lowest and consistent sleep metric
-- When this value is wrong when the sleep measurment is varying too much (such as 1ms then spiking to 2ms)
+- You will know your setting isn't optmial when you see the sleep measurment is varying too much (such as 1ms then spiking to 2ms)
 - For my system configuration, setting the value to 0.5050 produced the best result
 
 ```
