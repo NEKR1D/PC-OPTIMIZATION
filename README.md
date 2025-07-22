@@ -136,7 +136,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Texture filtering - Trilinear optimization ```Off```
 - Threaded optimization ```On```
 - Tripple buffering ```Off```
-- Vertical Sync	```On```
+- Vertical Sync	```Off```
 
 > [!NOTE]
 > - Low Latency Mode is preferential based and requires testing. If you enable NVIDIA Reflex setttings in-game it will override this flag.
