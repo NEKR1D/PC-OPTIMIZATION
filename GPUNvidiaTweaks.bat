@@ -5,15 +5,13 @@ rem ::: Plundered by NEKR1D
 rem ::: Originally created by Shoober420
 rem ::: https://github.com/shoober420/windows11-scripts
 
-rem ::: Works only on NVIDIA GPUs
-rem ::: Also use on AMD/NVIDIA combo laptops
-
 rem ::: !!! WARNING !!!
-rem ::: !!! DOES NOT SUPPORT DIGITAL STREAM COMPRESSION (DSC). !!!
+rem ::: !!! DOES NOT SUPPORT DIGITAL STREAM COMPRESSION (DSC) !!!
 rem ::: !!! Black screen will occur if used with DSC monitors !!!
 
-rem ::: !!! RECOMMENDED TO DISABLE ONBOARD INTEGRATED GPU IN BIOS AND DEVICE MANAGER AND USE DEDICATED GPU ONLY !!!
-rem ::: !!! IMPROVE LATENCY AT THE COST OF LITTLE LESS FPS !!!
+rem ::: !!! RECOMMENDED TO DISABLE ONBOARD INTEGRATED GPU IN BIOS AND DEVICE MANAGER
+rem ::: !!! USE DEDICATED GPU ONLY !!!
+rem ::: !!! IMPROVE LATENCY AT THE COST OF A LITTLE FRAMERATE !!!
 
 PAUSE
 
