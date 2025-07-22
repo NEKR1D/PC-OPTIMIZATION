@@ -23,6 +23,8 @@
   - https://www.elevenforum.com/t/enable-or-disable-core-isolation-memory-integrity-in-windows-11.4942/
 - CPU - Intel - Optimization Applications for Latency
   - https://www.intel.com/content/www/us/en/developer/articles/technical/optimizing-computer-applications-for-latency-part-1-configuring-the-hardware.html
+- DirectX - Demystifying Full Screen Optimizations
+  - https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/
 - DNS - CloudFlare DNS Options
   - https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
 - Mouse - MouseDataQueueSize
@@ -31,8 +33,6 @@
   - https://www.youtube.com/watch?v=6AoRfv9W110&t=154s
 - Mouse - Designing Games for High DPI
   - https://forums.blurbusters.com/viewtopic.php?f=22&p=81380
-- DirectX - Demystifying Full Screen Optimizations
-  - https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/
 - GPU - NVIDIA GPU PState
   - https://docs.nvidia.com/gameworks/content/gameworkslibrary/coresdk/nvapi/group__gpupstate.html
 - GPU - NVIDIA System Latency Optimization
