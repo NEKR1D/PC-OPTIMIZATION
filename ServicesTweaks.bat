@@ -4,7 +4,6 @@ rem ::: Created by NEKR1D
 
 rem ::: Stops then disables unnecessary windows services
 rem ::: Creates registry entry for each to force disable (added as an extra measure)
-rem ::: Requires administrative privileges
 
 @echo Off
 
