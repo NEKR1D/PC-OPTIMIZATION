@@ -260,7 +260,8 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 > - You will know your setting isn't optimal when you see the sleep measurment values are varying too much (such as 1ms spiking to 2ms or higher)
 
 ## Interrupt Affinity
-- Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts including defining which cpu core intterupts are sent to by each device
+- Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
+- Specify and separate by each device which cpu cores interrupts are sent to
   
 - Example [_with HyperThreading disabled_];
   - GPU // P-Cores 4,5,6,7
