@@ -107,9 +107,6 @@
 - Automatically Accept "Driver Unsigned" warning ```On```
 
 ## NVIDIA - Control Panel - 3D Settings
-
-Set these as the global profile for NVIDIA and individually set specific values per game .exe to your preference [such as sharpening or frame-rate locking]
-
 - Open ```NVIDIA Control Panel```
 - Click ```Manage 3D Settings```
 - Image Scaling ```Off```
@@ -139,6 +136,8 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Vertical Sync	```Off```
 
 > [!NOTE]
+> - Set these as the global profile for NVIDIA
+> - Individually set specific values per game .exe to your preference [such as sharpening or frame-rate locking]
 > - Low Latency Mode is preferential based and requires testing. If you enable NVIDIA Reflex setttings in-game it will override this flag.
 > - Negative LOD bias setting is preferential based and the best choice will depend on the game. Manipulates texture/object pop-in/image quality.
 
