@@ -33,6 +33,8 @@
   - https://www.nvidia.com/en-us/geforce/guides/gfecnt/202010/system-latency-optimization-guide/
 - GPU - Input Lag Revisited: V-Sync and NVIDIA Reflex
   - https://www.youtube.com/watch?v=dPMHEyz38TM
+- GPU - Input Lag and Frame Rate Limiters
+  - https://www.youtube.com/watch?v=8ZRuFaFZh5M&t=817s
 - GPU - Gsync 101 - Input Lag
   - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
 - GPU - Nvidia Profile Inspector
