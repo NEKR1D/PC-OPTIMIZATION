@@ -27,8 +27,8 @@ rem ::: First check to confirm we only want to select the active physical networ
 for /f "tokens=2 delims==" %%A in ('wmic nic where "NetEnabled=true and AdapterTypeID=0" get DeviceID /value ^| find "DeviceID"') do (
     set DEV_ID=%%A
 
-    rem ::: Get matching SettingID from nicconfig where DHCPEnabled=true
-	rem ::: Second check to confirm we only want to select the active physical network adapter
+rem ::: Get matching SettingID from nicconfig where DHCPEnabled=true
+rem ::: Second check to confirm we only want to select the active physical network adapter
     for /f "tokens=1,2 delims==" %%B in ('wmic nicconfig where "IPEnabled=true and DHCPEnabled=true and Index=%%A" get SettingID /value ^| find "SettingID"') do (
         set GUID=%%C
         goto :found
