@@ -136,7 +136,7 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Texture filtering - Trilinear optimization ```Off```
 - Threaded optimization ```On```
 - Tripple buffering ```Off```
-- Vertical Sync	```On```
+- Vertical Sync	```Off```
 
 > [!NOTE]
 > - Low Latency Mode is preferential based and requires testing. If you enable NVIDIA Reflex setttings in-game it will override this flag.
@@ -167,13 +167,13 @@ Set these as the global profile for NVIDIA and individually set specific values 
 - Click ```Manage 3D Settings```
 - Click ```Program Settings```
 - Click ```Add``` set ```Power Management Mode``` to ```High Performance``` for;
-- DWM.exe (located in \Windows\System32)
-- Explorer.exe (located in \Windows)
-- MicrosoftShellExperienceHost
-- Steam
-- Browsers
-- VLC
-- Any other games or apps with this toggle not set correctly
+  - DWM.exe (located in \Windows\System32)
+  - Explorer.exe (located in \Windows)
+  - MicrosoftShellExperienceHost
+  - Steam
+  - Browsers
+  - VLC
+  - Any other games or apps with this toggle not set correctly
 
 > [!NOTE]
 > - Simple method for forcing ```High Performance``` individually for specific Windows apps and game .exes ensuring Power Management Mode is NOT set to ```NVIDIA Recommended```.
