@@ -260,6 +260,19 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 > - You will know your setting isn't optimal when you see the sleep measurment values are varying too much (such as 1ms spiking to 2ms or higher)
 > - For my system configuration, setting the Timer Resolution value to 0.5050 produced the best result (each sleep metric is exact/accurate to 2 decimal places - 1.00ms)
 
+## Interrupt Affinity
+- Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts including defining which cpu core intterupts are sent to by each device
+  
+- Example [with HyperThreading disabled];
+  - GPU - P-Cores 4,5,6,7
+  - NIC - P-Cores 1,2,3
+  - USB Host Controllers - P-Cores 1,2,3
+  - NVME Drives - E-cores 8-15
+  - SATA/NVME Controllers - E-cores 8-15
+
+> [!NOTE]
+> - Core 0 - Do not use this threads on this core. Typically the default threads for all devices IRQ/MSI, also in many cases already has significant usage by OS, applications and games.
+
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
