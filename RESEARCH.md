@@ -27,8 +27,6 @@
   - https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/
 - DNS - CloudFlare DNS Options
   - https://blog.cloudflare.com/introducing-1-1-1-1-for-families/
-- Mouse - MouseDataQueueSize
-  - https://www.xbitlabs.com/mousedataqueuesize/
 - GPU - NVIDIA GPU PState
   - https://docs.nvidia.com/gameworks/content/gameworkslibrary/coresdk/nvapi/group__gpupstate.html
 - GPU - NVIDIA System Latency Optimization
@@ -39,6 +37,8 @@
   - https://blurbusters.com/gsync/gsync101-input-lag-tests-and-settings/14/
 - GPU - Nvidia Profile Inspector
   - https://www.pcgamingwiki.com/wiki/Nvidia_Profile_Inspector
+- Mouse - MouseDataQueueSize
+  - https://www.xbitlabs.com/mousedataqueuesize/
 - Mouse - High DPI For Lowest Latency
   - https://www.youtube.com/watch?v=6AoRfv9W110&t=154s
 - Mouse - Designing Games for High DPI
