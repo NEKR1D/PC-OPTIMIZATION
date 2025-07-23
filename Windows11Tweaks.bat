@@ -156,7 +156,6 @@ reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\WiFiSession" /v "Start" /t REG_DWORD /d "0" /f
 
 rem ::: =================================== Windows Policies ===================================
-
 rem ::: rem ::: https://admx.help/?Category=Windows_11_2022
 rem ::: https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services
 rem ::: https://docs.microsoft.com/en-us/windows/client-management/mdm/new-in-windows-mdm-enrollment-management#whatsnew10
@@ -281,8 +280,6 @@ reg add "HKCU\Software\Microsoft\InputPersonalization" /v "RestrictImplicitInkCo
 reg add "HKCU\Software\Microsoft\InputPersonalization" /v "RestrictImplicitTextCollection" /t REG_DWORD /d "1" /f
 reg add "HKCU\Software\Microsoft\InputPersonalization\TrainedDataStore" /v "HarvestContacts" /t REG_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Personalization\Settings" /v "AcceptedPrivacyPolicy" /t REG_DWORD /d "0" /f
-
-rem ::: ________________________________________________________________________________________
 reg add "HKCU\Software\Microsoft\Input" /v "IsInputAppPreloadEnabled" /t REG_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Input\Settings" /v "VoiceTypingEnabled" /t REG_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Input\TIPC" /v "Enabled" /t REG_DWORD /d "0" /f
@@ -322,7 +319,7 @@ rem ::: --------------------------------- Bluetooth & Devices ------------------
 rem ::: ........................................ Mouse .........................................
 rem ::: . . . . . . . . . . . . . . . . Additional mouse options . . . . . . . . . . . . . . . .
 
-rem ::: ________________________________________________________________________________________
+
 reg add "HKCU\Control Panel\Desktop" /v "SmoothScroll" /t REG_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Mouse" /v "MouseTrails" /t REG_SZ /d "0" /f
 
@@ -353,12 +350,13 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "AppCaptureE
 rem ::: Capture audio when recording a game
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "AudioCaptureEnabled" /t REG_DWORD /d "0" /f
 
-rem ::: Capture mosue cursor when recording a game
+rem ::: Capture mouse cursor when recording a game
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "CursorCaptureEnabled" /t REG_DWORD /d "0" /f
 
-rem ::: ________________________________________________________________________________________
+rem ::: Capture microphone when recording a game
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "MicrophoneCaptureEnabled" /t REG_DWORD /d "0" /f
 
+rem ::: Capture microphone with echo cancellation
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "EchoCancellationEnabled" /t REG_DWORD /d "0" /f
 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "HistoricalCaptureEnabled" /t REG_DWORD /d "0" /f
@@ -370,16 +368,15 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v "HistoricalC
 rem ::: Disable Game DVR / "Press Win + G to record a clip"
 reg add "HKCU\System\GameConfigStore" /v "GameDVR_Enabled" /t REG_DWORD /d "0" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\GameDVR" /v "AllowGameDVR" /t REG_DWORD /d "0" /f
-
 reg add "HKLM\System\CurrentControlSet\Services\BcastDVRUserService" /v "Start" /t REG_DWORD /d "4" /f
 reg add "HKLM\System\CurrentControlSet\Services\xbgm" /v "Start" /t REG_DWORD /d "4" /f
+
 sc config XblAuthManager start= disabled
 sc config XblGameSave start= disabled
 sc config XboxGipSvc start= disabled
 sc config XboxNetApiSvc start= disabled
 schtasks /Change /TN "Microsoft\XblGameSave\XblGameSaveTask" /Disable
 
-rem ::: ________________________________________________________________________________________
 rem ::: Remove GameBarPresenceWriter.exe (to restore run SFC scan)
 takeown /s %computername% /u %username% /f "%WINDIR%\System32\GameBarPresenceWriter.exe"
 icacls "%WINDIR%\System32\GameBarPresenceWriter.exe" /inheritance:r /grant:r %username%:F
@@ -414,7 +411,6 @@ reg add "HKCU\Control Panel\Accessibility\StickyKeys" /v "Flags" /t REG_SZ /d "2
 rem ::: Toggle keys / 58 - Disable All / 63 - Default
 reg add "HKCU\Control Panel\Accessibility\ToggleKeys" /v "Flags" /t REG_SZ /d "58" /f
 
-rem ::: ________________________________________________________________________________________
 rem ::: Disable Windows Key Hotkeys
 rem ::: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoWinKeys" /t REG_DWORD /d "1" /f
 rem ::: Disable specific Windows Key Hotkeys only (like R = Win+R)
@@ -433,7 +429,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "RotatingLockScreenOverlayEnabled" /t REG_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338387Enabled" /t REG_DWORD /d "0" /f
 
-rem ::: ________________________________________________________________________________________
 rem ::: Disable LockScreen
 rem ::: reg add "HKLM\Software\Policies\Microsoft\Windows\Personalization" /v "NoLockScreen" /t REG_DWORD /d "1" /f
 rem ::: Disable Sign-in Screen Background Image
@@ -484,7 +479,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" /v "Value" /t REG_SZ /d "Deny" /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy" /v "Value" /t REG_SZ /d "Deny" /f
 
-rem ::: ________________________________________________________________________________________
+
 rem ::: Allow/Deny - Allow access to account info on this device
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation" /v "Value" /t REG_SZ /d "Deny" /f
 
@@ -694,7 +689,6 @@ rem ::: ........................................ Speech ........................
 
 rem ::: Help make online speech recognition better
 reg add "HKCU\Software\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy" /v "HasAccepted" /t REG_DWORD /d "0" /f
-
 
 rem ::: =================================== Windows Settings ===================================
 rem ::: ---------------------------------- Privacy & security ----------------------------------
@@ -1509,7 +1503,6 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance" /v "MaxTicketE
 rem ::: Disable Internet connection sharing
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Network Connections" /v "NC_ShowSharedAccessUI" /t REG_DWORD /d "0" /f
 
-
 rem ::: =================================== Windows Settings ===================================	
 rem ::: ---------------------------------- Privacy & security ----------------------------------	
 rem ::: ................................ Diagnostics & feedback ................................	
@@ -1519,7 +1512,7 @@ rem ::: 3 - Send optional diagnostic data / 1 - No	(NEEDED FOR INSIDER BUILD UPD
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" /v "ShowedToastAtLevel" /t REG_DWORD /d "1" /f	
 rem ::: Tailored experiences	
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExperiencesWithDiagnosticDataEnabled" /t REG_DWORD /d "0" /f	
-rem ::: ________________________________________________________________________________________	
+	
 rem ::: Send optional diagnostic data / 0 - Security (Not applicable on Home/Pro, it resets to Basic) / 1 - Basic / 2 - Enhanced (Hidden) / 3 - Full	
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "AllowTelemetry" /t REG_DWORD /d "0" /f	
 rem ::: Feedback Frequency - Windows should ask for my feedback: 0 - Never / Removed - Automatically
