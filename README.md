@@ -270,6 +270,14 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
   - USB Host Controllers // High  // P-Cores 1,2,3
   - NVME Drives // High  // E-cores 8-15
   - SATA/NVME Controllers // High  // E-cores 8-15
+ 
+| Device                  | Priority | Core Assignment    |
+|-------------------------|----------|--------------------|
+| GPU                     | High     | P-Cores 4,5,6,7    |
+| Network Controller      | High     | P-Cores 1,2,3      |
+| USB Host Controllers    | High     | P-Cores 1,2,3      |
+| NVME Drives             | High     | E-cores 8-15       |
+| SATA/NVME Controllers   | High     | E-cores 8-15       |
 
 > [!NOTE]
 > - Do not use any threads on Core 0. Typically the default interrupt thread(s) for entire system IRQ/MSI etc. Bottleneck in many cases where defaults result in significant usage by OS, applications and games.
