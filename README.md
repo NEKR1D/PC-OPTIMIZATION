@@ -236,7 +236,7 @@
 - Set the ```Wanted Timer Resolution``` field to a value extremely close to 0.5ms
 - Use Measure Sleep application to check diagnostics for resolution, sleep and delta;
 
-```
+``` Measure Sleep
 Resolution: 0.5050ms, Sleep(n=1) slept 1.0038ms (delta: 0.0038)
 Resolution: 0.5050ms, Sleep(n=1) slept 1.0040ms (delta: 0.0040)
 Resolution: 0.5050ms, Sleep(n=1) slept 1.0036ms (delta: 0.0036)
