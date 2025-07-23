@@ -271,6 +271,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 | USB Host Controllers    | High     | P-Cores 1,2,3      |
 | NVME Drives             | High     | E-cores 8-15       |
 | SATA/NVME Controllers   | High     | E-cores 8-15       |
+
 _(Example settings that set high priority and seperate intterupts individually for each device across usable cores)_
 
 > [!NOTE]
