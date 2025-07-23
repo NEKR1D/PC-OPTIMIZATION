@@ -270,11 +270,10 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 | Network Controller      | High     | P-Cores 1,2,3      |
 | USB Host Controllers    | High     | P-Cores 1,2,3      |
 | NVME Drives             | High     | E-cores 8-15       |
-| SATA/NVME Controllers   | High     | E-cores 8-15       |
-
-_(Example settings that set high priority and seperate intterupts individually for each device across usable cores)_
+| NVME Controllers        | High     | E-cores 8-15       |
 
 > [!NOTE]
+> - Example table shows a configuartion that sets high priority, seperates intterupts individually on usable cores for all MSI enabled devices.
 > - Do not use any threads on Core 0. Typically the default interrupt thread(s) for entire system IRQ/MSI etc. Bottleneck in many cases where defaults result in significant usage by OS, applications and games.
 
 ***
