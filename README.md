@@ -273,7 +273,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 | NVME Controllers        | High     | E-cores 8-15       |
 
 > [!NOTE]
-> - Example table shows a configuartion that sets high priority, seperates intterupts individually on usable cores for all MSI enabled devices.
+> - Example table shows a configuartion where HyperThreading is disabled, that sets high priority and seperates intterupts individually on usable threads for all MSI enabled devices.
 > - Do not use any threads on Core 0. Typically the default interrupt thread(s) for entire system IRQ/MSI etc. Bottleneck in many cases where defaults result in significant usage by OS, applications and games.
 
 ***
