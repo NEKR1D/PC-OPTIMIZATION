@@ -259,7 +259,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 > - Test different Timer Resolution values on your system so that you achieve the lowest and most consistent sleep metric
 > - Your Timer Resolution isn't optimal when you see the sleep values vary too much (spiking from 1ms to 2ms or higher)
 
-## Message Signal Intterupts
+## Message Signal Intterupts (MSI)
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
 - Assign cpu cores to separate devices where interrupts are sent to
 - Assign priority level
