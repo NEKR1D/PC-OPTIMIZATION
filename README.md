@@ -259,7 +259,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 > - Test different Timer Resolution values on your system so that you achieve the lowest and most consistent sleep metric
 > - Your Timer Resolution isn't optimal when you see the sleep values vary too much (spiking from 1ms to 2ms or higher)
 
-## Interrupt Affinity
+## Message Signal Intterupts
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
 - Assign cpu cores to separate devices where interrupts are sent to
 - Assign priority level
@@ -272,8 +272,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
   - SATA/NVME Controllers // High  // E-cores 8-15
 
 > [!NOTE]
-> - Core 0 - Do not use any threads on this core. Typically the default interrupt threads for all devices IRQ/MSI, also in many cases already has significant usage by OS, applications and games.
-
+> - Do not use any threads on Core 0. Typically the default interrupt thread(s) for entire system IRQ/MSI etc. Bottleneck in many cases where defaults result in significant usage by OS, applications and games.
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
