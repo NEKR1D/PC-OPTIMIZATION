@@ -228,12 +228,14 @@
 - Set ```Audio Output``` to ```Headphones``` mode in games whenever possible
 - Increase Windows volume to ```100%``` (_Use your DAC/AMP or in-game settings to control volume levels instead_)
 
-## Timer Resolution
+## Windows Timer Resolution
 - Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
 - Start this program with windows and always running in the background
 - Check Enable custome timer resolution *
 - Check Use GlobalTimerResolutionRequests ** [we already force this in the registry in ```TimerTweaks.bat```]
 - The Wanted Timer Resolution field should have a value extremely close to 0.5ms
+  
+- Use the Measure Sleep application to output diagnostics for resolution, sleep and delta;
 
 ```
 Resolution: 0.5050ms, Sleep(n=1) slept 1.0038ms (delta: 0.0038)
@@ -254,9 +256,8 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
   
 > [!NOTE]
 > - The default Windows setting is around ~15ms.
-> - You can use the Measure Sleep application to view the current resolution, sleep and delta
-> - For my system, setting the Timer Resolution value to 0.5050 produced the best result (each sleep metric is exact/accurate to 2 decimal places - 1.00ms)
-> - Test different Timer Resolution values on your system so that you achieve the lowest and most consistent sleep metric
+> - For my system, setting the Timer Resolution value to 0.5050 produced the best result where each sleep metric is exact/accurate to 2 decimal places - 1.00ms.
+> - On your system, test different Timer Resolution values so that you achieve the lowest and most consistent sleep metric
 > - Your Timer Resolution isn't optimal when you see the sleep values vary too much (spiking from 1ms to 2ms or higher)
 
 ## Message Signal Intterupts (MSI)
