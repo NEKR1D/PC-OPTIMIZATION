@@ -262,13 +262,14 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 ## Interrupt Affinity
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
 - Assign cpu cores to separate devices where interrupts are sent to
+- Assign priority level
   
-- Example [_with HyperThreading disabled_];
-  - GPU // P-Cores 4,5,6,7
-  - Network Controller // P-Cores 1,2,3
-  - USB Host Controllers // P-Cores 1,2,3
-  - NVME Drives // E-cores 8-15
-  - SATA/NVME Controllers // E-cores 8-15
+- **Device // Priority // Core Assignment**
+  - GPU // High // P-Cores 4,5,6,7
+  - Network Controller // High  // P-Cores 1,2,3
+  - USB Host Controllers // High  // P-Cores 1,2,3
+  - NVME Drives // High  // E-cores 8-15
+  - SATA/NVME Controllers // High  // E-cores 8-15
 
 > [!NOTE]
 > - Core 0 - Do not use any threads on this core. Typically the default interrupt threads for all devices IRQ/MSI, also in many cases already has significant usage by OS, applications and games.
