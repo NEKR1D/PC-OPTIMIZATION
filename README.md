@@ -231,8 +231,8 @@
 ## Windows Timer Resolution
 - Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
 - Start this program with windows and always running in the background
-- Enable ```Custome Timer Resolution *```
-- Enable ```GlobalTimerResolutionRequests **``` [we already force this in the registry in ```TimerTweaks.bat```]
+- Enable ```Custome Timer Resolution```
+- Enable ```GlobalTimerResolutionRequests``` [we already force this in the registry in ```TimerTweaks.bat```]
 - Set the ```Wanted Timer Resolution``` field to a value extremely close to 0.5ms
 - Use Measure Sleep application to check diagnostics for resolution, sleep and delta;
 
