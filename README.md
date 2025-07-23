@@ -274,7 +274,7 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 
 > [!NOTE]
 > - Example table shows a configuartion where HyperThreading is disabled, that sets high priority and seperates intterupts individually on usable threads for all MSI enabled devices.
-> - Do not use any threads on Core 0. Typically the default interrupt thread(s) for entire system IRQ/MSI etc. Bottleneck in many cases where defaults result in significant usage by OS, applications and games.
+> - Do not use any threads on Core 0. Typically the default interrupt thread(s) for entire system IRQ/MSI etc. Bottleneck in many cases where OS, applications and games defaults to significant usage of this core/thread(s).
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
