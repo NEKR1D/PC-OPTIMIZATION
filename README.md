@@ -8,9 +8,9 @@
 - Serves mainly as a document to track my own configuration changes.
 - Inentionally not packaged or hidden in complexities in order to be transparent, modifiable and accessible.
 - Currently tested and working on;
-  -  ```INTEL 12900K```
-  -  ```NVIDIA 3080```
-  -  ```WINDOWS 11 // 24H2 [Build 26100.4652]```
+  -  ```INTEL i9 12900K```
+  -  ```NVIDIA RTX 3080 [12GB]```
+  -  ```WINDOWS 11 Pro [Build 24H2 26100.4652]```
 
 > [!WARNING]
 > - Tweaks are experimental
