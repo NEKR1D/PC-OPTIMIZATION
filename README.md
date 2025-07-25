@@ -5,13 +5,15 @@
 - A collection of ```Tweaks.bat``` focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
 - Experimental ```Windows11Tweaks.bat``` that make the OS more responsive, remove bloat, remove telemetry and adjustments to security/privacy elements.
 - Other improvements include removing or reducing stutters and hitching.
-- Not intended as a comprehensive user guide with technical explanations or a FAQ.
-- Not a system overclocking guide.
-- Serves as a document to track my own configuration changes.
-- Currently tested and working on;
-  - ```INTEL i9 12900K```
-  - ```NVIDIA RTX 3080```
-  - ```WINDOWS 11 Pro [Build 24H2 26100.4652]```
+
+> [!NOTE]
+> - Not intended as a comprehensive user guide with technical explanations or a FAQ.
+> - Not a system overclocking guide.
+> - Serves as a document to track my own configuration changes.
+> - Currently tested and working on;
+>   - ```INTEL i9 12900K```
+>   - ```NVIDIA RTX 3080```
+>   - ```WINDOWS 11 Pro [Build 24H2 26100.4652]```
 
 > [!WARNING]
 > - Tweaks are experimental
