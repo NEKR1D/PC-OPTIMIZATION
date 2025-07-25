@@ -67,10 +67,13 @@
   - https://www.overclock.net/threads/registry-setting-disabletaskoffload-rss-and-indirection-table.1752848/
 - Network - Performance Tuning
   - https://docs.oracle.com/cd/E13924_01/coh.340/e13818/perftune.htm
-- Windows - DNS over HTTPS (DoH)
+- Windows - DNS and DoH (DNS over HTTPS)
   - https://www.elevenforum.com/t/how-to-set-dns-over-https-via-command-prompt.1232/
   - https://learn.microsoft.com/en-us/windows-server/networking/dns/doh-client-support
   - https://techcommunity.microsoft.com/blog/networkingblog/making-doh-discoverable-introducing-ddr/2887289
+  - https://techcommunity.microsoft.com/blog/networkingblog/windows-insiders-gain-new-dns-over-https-controls/2494644
+  - https://www.tech2geek.net/how-to-enable-dns-over-https-doh-in-windows-11-for-better-privacy/
+  - https://blog.netwrix.com/dns-over-https
 - Windows - Virtualization Protections - Code Integrity
   - https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?tabs=security
 - Windows - Message Signaled Interrupts (MSI)
