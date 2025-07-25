@@ -7,10 +7,12 @@
 - Not intended as a comprehensive user guide with technical explanations or a FAQ.
 - Serves mainly as a document to track my own configuration changes.
 - Inentionally not packaged or hidden in complexities in order to be transparent, modifiable and accessible.
-- Currently tested and working on;
-  -  ```INTEL i9 12900K```
-  -  ```NVIDIA RTX 3080 [12GB]```
-  -  ```WINDOWS 11 Pro [Build 24H2 26100.4652]```
+  
+> [!NOTE]
+> - Currently tested and working on;
+> -  ```INTEL i9 12900K```
+> -  ```NVIDIA RTX 3080 [12GB]```
+> -  ```WINDOWS 11 Pro [Build 24H2 26100.4652]```
 
 > [!WARNING]
 > - Tweaks are experimental
