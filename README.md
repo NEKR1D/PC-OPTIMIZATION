@@ -7,9 +7,9 @@
 - Other improvements include removing or reducing stutters and hitching.
 
 > [!NOTE]
+> - Serves mainly as a document to track my own configuration changes.
 > - Not intended as a comprehensive user guide with technical explanations or a FAQ.
 > - Not a system overclocking guide.
-> - Serves as a document to track my own configuration changes.
 > - Currently tested and working on;
 >   - ```INTEL i9 12900K```
 >   - ```NVIDIA RTX 3080```
