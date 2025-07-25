@@ -9,7 +9,7 @@
 - Serves mainly as a document to track my own configuration changes.
 - Currently tested and working on;
   - ```INTEL i9 12900K```
-  - ```NVIDIA RTX 3080``
+  - ```NVIDIA RTX 3080```
   - ```WINDOWS 11 Pro [Build 24H2 26100.4652]```
 
 > [!WARNING]
