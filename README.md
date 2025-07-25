@@ -57,10 +57,8 @@
 - Intel SpeedStep ```Disable``` 
 - Intel TurboBoost ```Disable```
 - TPM ```Disable``` 
-- Integrated/On-board devices [Audio, Video, Bluetooth, WiFi] ```Disable```
+- Integrated devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
-- SATA disk controlled mode to AHCI ```Enable```
-- Set a static voltage for CPU vcore then use load line calibration (LLC)
 
 > [!NOTE]
 > - Performance improvement by disabling Hyper-Threading will vary by game. May benefit by; decreasing power draw and temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs. Don't forget to set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
