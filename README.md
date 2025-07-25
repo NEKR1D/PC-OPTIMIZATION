@@ -43,6 +43,8 @@
 ## BIOS - General Settings
   
 **Disable:**
+- Active State Power Management (ASPM) ```Disable``` 
+- Aggressive Link Power Management (ALPM) ```Disable```
 - Hyper-V ```Disable``` 
 - Intel Virtualization Technology ```Disable``` 
 - VT-d ```Disable``` 
@@ -50,24 +52,30 @@
 - Spread Spectrum [_When Overclocking_]```Disable``` 
 - CPU C-States ```Disable``` 
 - CPU Power Throttling ```Disable``` 
-- CPU Thermal Protection```Disable``` 
+- CPU Thermal Protection```Disable```
+- Fast Boot ```Disable```
 - Intel SpeedStep ```Disable``` 
-- Intel TurboBoost ```Disable``` 
+- Intel TurboBoost ```Disable```
 - TPM ```Disable``` 
 - Integrated/On-board devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
+- SATA disk controlled mode to AHCI ```Enable```
+- Set a static voltage for CPU vcore then use load line calibration (LLC)
 
 > [!NOTE]
 > - Performance improvement by disabling Hyper-Threading will vary by game. May benefit by; decreasing power draw and temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs. Don't forget to set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
-- AHCI ```Enable``` 
+- AHCI [SATA controlled mode] ```Enable``` 
 - XMP [_Profiles for RAM_]```Enable``` 
-- High Performance Power Mode ```Enable``` 
+- High Performance Power Mode [_Intel Defaults_] ```Enable``` 
 - BCLK size [_Set to 100.00 Mhz_]```Enable``` 
-- CPU VRM Switching Frequency [_Set to 500 Khz or higher_] ```Enable```  
+- CPU VRM Switching Frequency [_Set to 500 Khz or higher_] ```Enable```
+- High Precision Event Timer (HPET) ```Enable```
 - AVX Offset - Set to ```Enable``` and ```0```
+- Load Line Calibration (LLC) [_Set a static voltage for CPU vcore and use LLC_] ```Enable```
+- Secure Boot ```Enable```
   
 ## BIOS - Enable Resizable BAR
 - Enabling ```Resizable BAR``` in the BIOS is required otherwise the GPU Driver level settings will not have any effect.
