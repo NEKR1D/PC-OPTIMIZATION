@@ -6,7 +6,8 @@
 - Experimental ```Windows11Tweaks.bat``` that make the OS more responsive, remove bloat, remove telemetry and adjustments to security/privacy elements.
 - Other improvements include removes or completely minimizes stutters and hitching.
 - Not intended as a comprehensive user guide with technical explanations or a FAQ.
-- Serves mainly as a document to track my own configuration changes.
+- Not a system overclocking guide.
+- Serves as a document to track my own configuration changes.
 - Currently tested and working on;
   - ```INTEL i9 12900K```
   - ```NVIDIA RTX 3080```
@@ -65,7 +66,7 @@
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
-- AHCI [SATA controlled mode] ```Enable``` 
+- AHCI [_SATA controller mode_] ```Enable``` 
 - XMP [_Profiles for RAM_]```Enable``` 
 - High Performance Power Mode [_Intel Defaults_] ```Enable``` 
 - BCLK size [_Set to 100.00 Mhz_]```Enable``` 
