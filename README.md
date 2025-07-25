@@ -6,6 +6,7 @@
 - Experimental ```Windows11Tweaks.bat``` that make the OS more responsive, remove bloat, remove telemetry and adjustments to security/privacy elements.
 - Not intended as a comprehensive user guide with technical explanations or a FAQ.
 - Serves mainly as a document to track my own configuration changes.
+- Inentionally not packaged or hidden in complexities in order to be transparent, modifiable and accessible.
 - Currently tested and working on;
   -  ```INTEL 12900K```
   -  ```NVIDIA 3080```
@@ -13,6 +14,7 @@
 
 > [!WARNING]
 > - Tweaks are experimental
+> - Tailored for Intel, Nvidia and Windows environment
 > - Expect increased temperatures, power consumption and CPU/GPU usage.
 > - Use the scripts provided as a reference to test and tailor settings to your own environment.
 
