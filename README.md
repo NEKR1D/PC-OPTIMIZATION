@@ -34,7 +34,6 @@
 - ParkControl
 - Power Settings Explorer
 - Timer Bench
-- Titus Ultimate Windows Utility Tool
 - TCPOptimizer
 - USB Device Viewer
 - USB Tree Viewer
