@@ -17,7 +17,7 @@
 
 > [!WARNING]
 > - Tweaks are experimental
-> - Tailored for Intel, Nvidia and Windows environment
+> - Tailored for an Intel, NVIDIA and Windows OS environment
 > - Expect increased temperatures, power consumption and CPU/GPU usage.
 > - Use the scripts provided as a reference to test and tailor settings to your own environment.
 
