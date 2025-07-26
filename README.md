@@ -148,11 +148,11 @@
 
 > [!NOTE]
 > - Set these as the global profile for NVIDIA
-> - Individually set specific values per game .exe to your preference [such as sharpening or frame-rate locking]
+> - Individually set specific NVIDIA profile per game .exe to your preference [such as sharpening or frame-rate locking]
 > - Low Latency Mode [Off/On/Ultra] is preferential based and the best choice will depend on the game and your hardware.
-> - If you enable NVIDIA Reflex setttings in-game it will override any Low Latency Mode flag set.
+> - NVIDIA Reflex setttings enabled in-game will override any Low Latency Mode flag set.
 > - Negative LOD bias setting is preferential based and the best choice will depend on the game. Manipulates texture pop-in distance and quality.
-> - Some games intentionally ignore NVIDIA Control Panel settings or are simply not compatible
+> - Some games intentionally ignore NVIDIA Control Panel settings or are simply not compatible.
 
 ## NVIDIA Control Panel - Color Settings
 - Open ```NVIDIA Control Panel```
