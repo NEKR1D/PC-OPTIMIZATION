@@ -67,7 +67,6 @@
 - XMP [_Profiles for RAM_]```Enable``` 
 - High Performance Power Mode [_Intel Defaults_] ```Enable``` 
 - BCLK size [_Set to 100.00 Mhz_]```Enable``` 
-- CPU VRM Switching Frequency [_Set to 500 Khz or higher_] ```Enable```
 - High Precision Event Timer (HPET) ```Enable```
 - AVX Offset - Set to ```Enable``` and ```0```
 - Load Line Calibration (LLC) [_Set a static voltage for CPU vcore and use LLC_] ```Enable```
