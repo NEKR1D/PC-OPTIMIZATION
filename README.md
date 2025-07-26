@@ -61,14 +61,10 @@
 - TPM ```Disable``` 
 - Integrated devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
-
-> [!NOTE]
-> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit by; decreasing power draw and temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs.
-> - Set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
-- AHCI [_SATA controller mode_] ```Enable``` 
+- AHCI [_SATA Controller Mode_] ```Enable``` 
 - XMP [_Profiles for RAM_]```Enable``` 
 - High Performance Power Mode [_Intel Defaults_] ```Enable``` 
 - BCLK size [_Set to 100.00 Mhz_]```Enable``` 
@@ -77,6 +73,10 @@
 - AVX Offset - Set to ```Enable``` and ```0```
 - Load Line Calibration (LLC) [_Set a static voltage for CPU vcore and use LLC_] ```Enable```
 - Secure Boot ```Enable```
+
+> [!NOTE]
+> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit by; decreasing power draw and temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs.
+> - Set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
   
 ## BIOS - Enable Resizable BAR
 - Enabling ```Resizable BAR``` in the BIOS is required otherwise the GPU Driver level settings will not have any effect.
