@@ -239,7 +239,9 @@
 - Enable ```Exclusive Mode```
 - Open ```Control Panel``` > ```Hardware and Sound``` > ```Sound``` > ```Communications``` > Set to ```Do Nothing```
 - Set ```Audio Output``` to ```Headphones``` mode in games whenever possible
-- Increase Windows volume to ```100%``` (_Use your DAC/AMP or in-game settings to control volume levels instead_)
+- Set ```Default Format``` to ```24-bit 48000Hz (Studio Quality)```
+- Increase and keep ```Windows OS``` volume set to ```100%```
+  - Use your DAC/AMP, physical volume slider or in-game settings to control volume levels instead
 
 ## Windows Timer Resolution
 - Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
