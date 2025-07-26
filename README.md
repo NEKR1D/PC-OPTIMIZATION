@@ -38,7 +38,6 @@
 - ParkControl
 - Power Settings Explorer
 - Timer Bench
-- TCPOptimizer
 - USB Device Viewer
 - USB Tree Viewer
 
