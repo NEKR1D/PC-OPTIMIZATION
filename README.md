@@ -149,8 +149,10 @@
 > [!NOTE]
 > - Set these as the global profile for NVIDIA
 > - Individually set specific values per game .exe to your preference [such as sharpening or frame-rate locking]
-> - Low Latency Mode is preferential based and requires testing. If you enable NVIDIA Reflex setttings in-game it will override this flag.
-> - Negative LOD bias setting is preferential based and the best choice will depend on the game. Manipulates texture/object pop-in/image quality.
+> - Low Latency Mode [Off/On/Ultra] is preferential based and the best choice will depend on the game and your hardware.
+> - If you enable NVIDIA Reflex setttings in-game it will override any Low Latency Mode flag set.
+> - Negative LOD bias setting is preferential based and the best choice will depend on the game. Manipulates texture pop-in distance and quality.
+> - Some games intentionally ignore NVIDIA Control Panel settings or are simply not compatible
 
 ## NVIDIA Control Panel - Color Settings
 - Open ```NVIDIA Control Panel```
@@ -199,7 +201,7 @@
 - Vertical Sync - Smooth AFR Behavior ```Off```
 - Vertical Sync - Tear Control ```Standard```
 - Antialiasing - Line Gamma ```On```
-- Ansel - Enabled ```Off``` [_Disables NVIDIA APP/GUI and Overlay, does not impact NVIDIA Control Panel_]
+- Ansel - Enabled ```Off``` [_Dependancy for NVIDIA APP/GUI and Overlay. Does not impact NVIDIA Control Panel_]
 - CUDA - Forced P2 State ```Off```
 - DLSS - Enable DLL Override - ```On - DLSS Overridden by latest available```
 - DLSS - Forced Preset Letter -  ```Always use latest```
