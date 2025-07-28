@@ -10,10 +10,9 @@ rem ::: !!! Use script as reference only !!!
 rem ::: !!! Mismatched settings at tcp stack, device or registry level can have unintended behavior !!!
 rem ::: !!! Some settings could take priority over the other !!!
 
+rem ::: Installing WMIC...
 if not exist C:\Windows\System32\wbem\WMIC.exe (
-    rem :::Installing WMIC...
-    DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
-    rem :::Done.
+DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
 )
 
 TIMEOUT 1
