@@ -25,20 +25,20 @@ setlocal enabledelayedexpansion
 rem ::: Get list of physical adapters where NetEnabled=true and AdapterTypeID=0 (Ethernet)
 rem ::: First check to confirm we only want to select the active physical network adapter
 for /f "tokens=2 delims==" %%A in ('wmic nic where "NetEnabled=true and AdapterTypeID=0" get DeviceID /value ^| find "DeviceID"') do (
-    set DEV_ID=%%A
+set DEV_ID=%%A
 
 rem ::: Get matching SettingID from nicconfig where DHCPEnabled=true
 rem ::: Second check to confirm we only want to select the active physical network adapter
-    for /f "tokens=1,2 delims==" %%B in ('wmic nicconfig where "IPEnabled=true and DHCPEnabled=true and Index=%%A" get SettingID /value ^| find "SettingID"') do (
-        set GUID=%%C
-        goto :found
-    )
+for /f "tokens=1,2 delims==" %%B in ('wmic nicconfig where "IPEnabled=true and DHCPEnabled=true and Index=%%A" get SettingID /value ^| find "SettingID"') do (
+set GUID=%%C
+goto :found
+)
 )
 
 :found
 if "%GUID%"=="" (
-    echo Failed to find a physical network adapter with DHCP enabled.
-    exit /b 1
+echo Failed to find a physical network adapter with DHCP enabled.
+exit /b 1
 )
 
 rem ::: Set Registry path to TCP/IP parameters\interface of the active physical network adapter
@@ -68,13 +68,16 @@ netsh interface ipv4 add dns name="Ethernet" addr=1.0.0.1 index=2
 rem ::: Flush DNS
 ipconfig /flushdns
 
+rem ::: Reset Windows Sockets
+netsh winsock reset
+
 rem ::: Enabling DNS over HTTPS (DoH)
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
 
 rem ::: Require DoH = 3 / Enable DoH = 2 / Prohibit DoH = 1
-rem ::: Requiring DoH (3) can cause conflicts with  ISP DNS and VPN applications' DNS that aren't configurable and can't handle this flag correctly
-rem ::: Enabling DoH (2) resolved conflicts and isn't worth investigating furthur
+rem ::: Requiring DoH (3) can cause conflicts with ISP DNS and third-party VPN DNS that aren't configurable and can't handle this flag correctly
+rem ::: Enabling DoH (2) resolved conflicts and isn't worth investigating furthur. Just be aware forcing DoH (3) can cause unreachable network traffic/websites/services
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "2" /f
 
 rem ::: Disable TCP/IP NetBIOS Helper Service (lmhosts)
@@ -141,7 +144,7 @@ rem ::: Disabling MIMO Power Save Mode -  Disable = 1
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
 
 rem ::: Disable most properties/services on Network Adapter 
-rem ::: Also visible in device manager properties of device
+rem ::: These are also viewable/visible in device manager properties of device
 rem ::: Intel i-225v Adapter no longer supports RSS [officially removed in .inf]
 
 rem ::: Disabling Network Adapter offloading, rss, wake-on-LAN, mircast, etc.
@@ -212,8 +215,8 @@ reg add "%%n" /v "PnPCapabilities" /t REG_DWORD /d "0x00000118" /f
 
 rem ::: MSI mode support for Network Adapter
 for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PCI\VEN_"') do (
-	reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f
-	reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "0" /f
 )
 
 rem ::: Maximum Transmission Unit (MTU)
