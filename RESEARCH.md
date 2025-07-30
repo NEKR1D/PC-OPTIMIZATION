@@ -3,15 +3,15 @@
   - https://github.com/AlchemyTweaks/Verified-Tweaks
 - BoringBoredom
   - https://github.com/BoringBoredom/PC-Optimization-Hub/
-- Calypto's Latency Guide
+- Calypto - Latency Guide
   - https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0
 - DjDallmann
   - https://github.com/djdallmann/GamingPCSetup/
 - Geoff Chappell
   - https://www.geoffchappell.com/studies/windows/win32/index.htm?tx=66
-- MarkC
+- MarkC - Mouse Accel Fix
   - https://donewmouseaccel.blogspot.com/
-- Melody's Tweaks
+- Melody
   - https://sites.google.com/view/melodystweaks/basictweaks
 - N1kobg
   - https://n1kobg.blogspot.com/p/blog-page_23.html
