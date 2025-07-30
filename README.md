@@ -3,7 +3,7 @@
 # PC Optimization for Gaming
 
 - A collection of ```Tweaks.bat``` focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
-- Experimental ```Windows11Tweaks.bat``` that make the OS more responsive. Remove bloat and configure related settings of telemetry, security and privacy.
+- Experimental ```Windows11Tweaks.bat``` that make the OS more responsive. Remove bloat and configure some telemetry, security and privacy elements.
 - Other improvements can include reducing or eliminating stutters and hitching.
 
 > [!NOTE]
