@@ -7,8 +7,8 @@ rem ::: !!! Your hardware and devices are different !!!
 rem ::: !!! May brick your Network Adapter and connectivity !!!
 rem ::: !!! Use script as reference only !!!
 
-rem ::: !!! Mismatched settings at tcp stack, device or registry level can have unintended behavior !!!
-rem ::: !!! Some settings could take priority over the other !!!
+rem ::: !!! Mismatched settings between browser, OS, tcp stack, device and registry can have unintended behavior !!!
+rem ::: !!! Friendly reminder - some settings can take priority over others and cause confusion !!!
 
 rem ::: Installing WMIC...
 if not exist C:\Windows\System32\wbem\WMIC.exe (
@@ -17,12 +17,13 @@ DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
 
 TIMEOUT 1
 
-rem ::: Disable Nagle's Algorithm and modify ACK
 @echo off
-setlocal enabledelayedexpansion
+
+rem ::: Disable Nagle's Algorithm and modify ACK
 
 rem ::: Get list of physical adapters where NetEnabled=true and AdapterTypeID=0 (Ethernet)
 rem ::: First check to confirm we only want to select the active physical network adapter
+setlocal enabledelayedexpansion
 for /f "tokens=2 delims==" %%A in ('wmic nic where "NetEnabled=true and AdapterTypeID=0" get DeviceID /value ^| find "DeviceID"') do (
 set DEV_ID=%%A
 
