@@ -16,9 +16,9 @@
 >   - ```WINDOWS 11 Pro [Version 24H2 Build 26100.4652]```
 
 > [!WARNING]
-> - Tweaks are experimental
-> - Tailored for an Intel, NVIDIA and Windows OS environment
-> - Expect increased temperatures, power consumption and CPU/GPU usage.
+> - Tweaks are experimental.
+> - Tailored for an Intel, NVIDIA and Windows OS environment.
+> - Expect increased temperatures, power consumption and usage of CPU and GPU.
 > - Use the scripts provided as a reference to test and tailor settings to your own environment.
 
 > [!CAUTION]
