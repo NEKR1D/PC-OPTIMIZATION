@@ -3135,19 +3135,19 @@ rem ::: Disable Driver Updates through Windows Update and Online Metadata
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching" /v "DriverUpdateWizardWuSearchEnabled" /t REG_DWORD /d "0" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" /v "SearchOrderConfig" /t REG_DWORD /d "0" /f
 
-REM ::: Disable Windows Copilot for Current User
+rem ::: Disable Windows Copilot for Current User
 reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d "1" /f
 
-REM ::: Disable Windows Copilot for Local Machine
+rem ::: Disable Windows Copilot for Local Machine
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d "1" /f
 
-REM ::: Disable Edge Sidebar (HubsSidebarEnabled)
+rem ::: Disable Edge Sidebar (HubsSidebarEnabled)
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HubsSidebarEnabled /t REG_DWORD /d "0" /f
 
-REM ::: Disable Search Box Suggestions for Current User
+rem ::: Disable Search Box Suggestions for Current User
 reg add "HKCU\Software\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /t REG_DWORD /d "1" /f
 
-REM ::: Disable Search Box Suggestions for Local Machine
+rem ::: Disable Search Box Suggestions for Local Machine
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /t REG_DWORD /d "1" /f
 
 rem ::: REBOOT YOUR PC
