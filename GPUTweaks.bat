@@ -27,9 +27,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v "PlatformSupp
 rem ::: Affinity tweak
 reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePolicy" /t REG_DWORD /d "3" /f
 
-
 rem ::: Enable MSI Mode for GPU
-rem ::: Program: http://www.mediafire.com/file/ewpy1p0rr132thk/MSI_util_v3.zip/file
 rem ::: Device Manager > Display Adapters > "GPUNAME" > Properties > Details > Property > Device instant path
 rem ::: HKLM\SYSTEM\CurrentControlSet\Enum\PCI\"Device instant path"
 for /f %%g in ('wmic path win32_videocontroller get PNPDeviceID ^| findstr /L "VEN_"') do (
