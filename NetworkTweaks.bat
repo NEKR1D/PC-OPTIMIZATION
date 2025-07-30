@@ -133,7 +133,6 @@ rem ::: Setting Packet Scheduler - Limit reservable bandwidth = 0
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Psched" /v "NonBestEffortLimit" /t REG_DWORD /d "0" /f
 
 rem ::: Get the Sub ID of the Network Adapter
-
 for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}" /v "*SpeedDuplex" /s ^| findstr  "HKEY"') do (
 
 rem ::: Setting Network Adapter SpeedDuplex to 1 Gbit [1Gbit = 6] [Auto Negotiation = 0]
