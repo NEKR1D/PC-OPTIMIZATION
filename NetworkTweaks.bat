@@ -213,9 +213,10 @@ reg add "%%n" /v "PnPCapabilities" /t REG_DWORD /d "0x00000118" /f
 )
 
 rem ::: MSI mode support for Network Adapter
+rem ::: Forces MSI Mode ON and Forces High Priority
 for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PCI\VEN_"') do (
 reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "3" /f
 )
 
 rem ::: Maximum Transmission Unit (MTU)
