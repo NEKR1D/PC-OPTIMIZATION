@@ -115,6 +115,21 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
+set "APP_KEY=%IFEO_BASE%\Marathon.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\Dead Space.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\SpeedRunners2.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
 rem ::: System
 
 set "APP_KEY=%IFEO_BASE%\svchost.exe\PerfOptions"
@@ -173,6 +188,14 @@ rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execut
 rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\OutOfAction-Win64-Shipping.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PathOfExile_x64Steam.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PathOfExileSteam.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csgo.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PortalWars2Client-Win64-Shipping.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Routine-Win64-Shipping.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\NoRestForTheWicked.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\IntoTheUnwell-Win64-Shipping.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\marathon.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Dead Space.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
+rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SpeedRunners2.exe" /v "UseLargePages" /t REG_DWORD /d "1" /f
 
 rem ::: ARC Raiders crashes with Large Pages enabled
 rem reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\PioneerGame.exe" /v "UseLargePages" /t REG_DWORD /d "0" /f
