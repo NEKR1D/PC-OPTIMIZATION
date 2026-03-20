@@ -241,6 +241,19 @@
 - Set ```Default Format``` to ```24-bit 48000Hz (Studio Quality)```
 - Increase and keep ```Windows OS``` volume set to ```100%```
   - Use your DAC/AMP, physical volume slider or in-game settings to control volume levels instead
+  
+## USB Ports & Devices
+- Not all USB ports on your motherbboard are created equal.
+- USB port performance can vary significantly.
+- USB port connections can be tied "Direct to CPU", routed through the shared motherboard chipset, or powered by slower third-party controllers. 
+- CPU-direct ports offer the highest bandwidth and lowest latency. They are primarily an AMD Ryzen feature (Not Intel).
+- Newer or "feature rich aka top-end and expensive" motherboards may not have this concer
+- Use a tool like USB LATENCY ANALYZER (https://tools.mariusheier.com/cpudirect.html) to research and verify.
+- Count chips between your device and CPU. More chips = more latency.
+- 0 CHIPS  device --- [CPU]
+- 1 CHIP   device -[CHIPSET]- [CPU]
+- 2 CHIPS  device -[HUB]-[CHIPSET]- [CPU]
+- The optimization scripts I provided include commands for disabling "USB Selective Suspend" in Windows
 
 ## Windows Timer Resolution
 - Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution

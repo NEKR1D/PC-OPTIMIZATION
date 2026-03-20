@@ -5,9 +5,11 @@ rem ::: Plundered by NEKR1D
 rem ::: Originally created by Shoober420
 rem ::: https://github.com/shoober420/windows11-scripts
 
-rem ::: Pagefile Size in MB 
+rem ::: PageFile Size in MB 
 rem ::: 8GB = 8192 / 16GB = 16384 / 32GB = 32768 / 64GB = 65536
 rem ::: InitialSize=65536 / MaximumSize=65536
+
+rem ::: !!! Disabling PageFile not recommended, many applications and games still rely on this legacy operating system feature to function correctly
 
 if not exist C:\Windows\System32\wbem\WMIC.exe (
     echo Installing WMIC...

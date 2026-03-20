@@ -1,4 +1,5 @@
-rem ::: Network Tweaks 
+rem ::: Network Tweaks
+
 rem ::: Plundered by NEKR1D 
 
 rem ::: !!! Warning !!!
@@ -6,7 +7,7 @@ rem ::: !!! Your hardware and devices are different !!!
 rem ::: !!! May cause Network Adapter driver conflicts and break all connectivity !!!
 rem ::: !!! Use script as reference only !!!
 
-rem ::: (Revised for Stability. CPU Usage and Latency)
+rem ::: (Revised for Stability, CPU Utilization and Latency)
 
 rem ::: Installing WMIC...
 if not exist C:\Windows\System32\wbem\WMIC.exe (
@@ -49,7 +50,7 @@ endlocal
 
 @echo on
 
-rem ::: Setting DNS dynamically for active adapters
+rem ::: Set DNS to CloudFlare DNS for active adapters
 powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | Set-DnsClientServerAddress -ServerAddresses '1.1.1.1','1.0.0.1'"
 
 rem ::: Flush DNS & Reset Sockets
@@ -58,9 +59,9 @@ netsh winsock reset
 
 rem ::: Enabling DNS over HTTPS (DoH)
 rem ::: DoHPolicy [ Require DoH = 3 / Enable DoH = 2 / Prohibit DoH = 1 ]
-rem ::: Note: Requiring DoH (3) can cause conflicts with ISP DNS and third-party apps such as VPN DNS that aren't configurable and can't handle this flag correctly
-rem ::: Note: Forcing DoH (3) can cause network traffic/websites/services to be unreachable in many scenarios.
-rem ::: Note: Enabling DoH (2) resolves conflicts and isn't worth investigating furthur.
+rem ::: !!! Requiring DoH (3) can cause conflicts with ISP DNS and third-party apps such as VPN DNS that aren't configurable and can't handle this flag correctly
+rem ::: !!! Forcing DoH (3) can cause network traffic/websites/services to be unreachable in many scenarios.
+rem ::: !!! Enabling DoH (2) resolves conflicts and isn't worth investigating furthur for the intention of this script.
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableAutoDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters" /v "EnableDoh" /t REG_DWORD /d "2" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "DoHPolicy" /t REG_DWORD /d "2" /f
@@ -81,7 +82,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multime
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /T REG_DWORD /v SystemResponsiveness /d 0 /f
 
 rem ::: Network Adapter Settings 
-rem ::: [ Speed, Power, and Offloading ]
+rem ::: Optimizing for Speed, Power, and Offloading to NIC
 for /f %%n in ('Reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}" /v "*SpeedDuplex" /s ^| findstr  "HKEY"') do (
 reg add "%%n" /v "*SpeedDuplex" /t REG_SZ /d "0" /f
 reg add "%%n" /v "MIMOPowerSaveMode" /t REG_SZ /d "3" /f
@@ -118,7 +119,7 @@ reg add "%%n" /v "RxIntDelay" /t REG_SZ /d "0" /f
 reg add "%%n" /v "RxAbsIntDelay" /t REG_SZ /d "0" /f
 )
 
-rem ::: Network Adapter - Forcing MSI mode support
+rem ::: Force MSI mode support on NIC
 for /f %%i in ('wmic path Win32_NetworkAdapter get PNPDeviceID ^| findstr /l "PCI\VEN_"') do (
 reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\MessageSignaledInterruptProperties" /v "MSISupported" /t REG_DWORD /d "1" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Enum\%%i\Device Parameters\Interrupt Management\Affinity Policy" /v "DevicePriority" /t REG_DWORD /d "3" /f
@@ -140,12 +141,14 @@ powershell -Command "netsh int ipv4 set dynamicport tcp start=10000 num=3000" >n
 powershell -Command "Set-NetOffloadGlobalSetting -Chimney Disabled" >nul
 powershell -Command "Set-NetOffloadGlobalSetting -PacketCoalescingFilter Disabled" >nul
 
-rem ::: InternetCustom Profile Optimizations
+rem ::: Internet Custom Profile Optimizations
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -MinRto 300" >nul
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialCongestionWindow 10" >nul
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Enabled -ScalingHeuristics Disabled" >nul
 
-rem ::: Network Adapter - Remove all other unused NIC Bindings - Only Leave IPv4 Enabled
+rem ::: Disable Unnessecary NIC Services
+rem ::: Remove all other unused NIC Bindings - Only Leave IPv4 Enabled
+
 rem ::: Disable Client for Microsoft Networks
 powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_msclient' -Confirm:$false }"
 
