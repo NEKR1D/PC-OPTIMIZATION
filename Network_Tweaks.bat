@@ -3,8 +3,8 @@ rem ::: Network Tweaks
 rem ::: Plundered by NEKR1D 
 
 rem ::: !!! Warning !!!
-rem ::: !!! Your hardware and devices are different !!!
-rem ::: !!! May cause Network Adapter driver conflicts and break all connectivity !!!
+rem ::: !!! Your network interface card (NIC) is different !!!
+rem ::: !!! May cause driver conflicts and break all connectivity !!!
 rem ::: !!! Use script as reference only !!!
 
 rem ::: (Revised for Stability, CPU Utilization and Latency)
@@ -105,8 +105,8 @@ reg add "%%n" /v "RoamingPreferredBandType" /t REG_SZ /d "3" /f
 reg add "%%n" /v "uAPSDSupport" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*FlowControl" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*RSS" /t REG_SZ /d "1" /f
-reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "0" /f
-reg add "%%n" /v "ITR" /t REG_SZ /d "0" /f
+rem reg add "%%n" /v "*InterruptModeration" /t REG_SZ /d "0" /f
+rem reg add "%%n" /v "ITR" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*JumboPacket" /t REG_SZ /d "1514" /f
 reg add "%%n" /v "LogLinkStateEvent" /t REG_SZ /d "0" /f
 reg add "%%n" /v "*QoS" /t REG_SZ /d "0" /f
@@ -146,8 +146,9 @@ powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -MinRto 300" 
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -InitialCongestionWindow 10" >nul
 powershell -Command "Set-NetTCPSetting -SettingName InternetCustom -AutoTuningLevelLocal Enabled -ScalingHeuristics Disabled" >nul
 
-rem ::: Disable Unnessecary NIC Services
-rem ::: Remove all other unused NIC Bindings - Only Leave IPv4 Enabled
+rem ::: Disable Unnessecary Network Services
+rem ::: Remove all other unused network bindingst
+rem ::: Only IPv4 Enabled
 
 rem ::: Disable Client for Microsoft Networks
 powershell -Command "Get-NetAdapter -Physical | Where-Object {$_.Status -eq 'Up'} | ForEach-Object { Disable-NetAdapterBinding -Name $_.Name -ComponentID 'ms_msclient' -Confirm:$false }"

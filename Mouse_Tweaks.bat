@@ -20,8 +20,8 @@ reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseThreshold2" /t REG_SZ /d "0"
 rem ::: Set Smooth Mouse Curves
 rem ::: Custom values that give the most linear mouse response curve possible under Windows' default mouse drivers
 rem ::: A 1:1 input ratio (true value of 0 acceleration)
-rem ::: Designed to counteract the built-in acceleration/prediction that happens even when the "Enhance pointer precision" setting is disabled in Control Panel.
-rem ::: Setting these values to zero can make Windows ignore them and revert to its default, built-in acceleration curve. This default curve is the same one that is active when the "Enhance pointer precision" checkbox is on.
+rem ::: Designed to counteract the built-in (hidden) acceleration/prediction that happens even when the "Enhance pointer precision" setting is disabled in Control Panel.
+rem ::: Delete these registry entries or setting these values to zero makes Windows ignore them and revert to its default, built-in acceleration curve which is actually the same as having "Enhance pointer precision" enabled.
 reg add "HKCU\Control Panel\Mouse" /f /v "SmoothMouseXCurve" /t REG_BINARY /d 000000000000000000a0000000000000004001000000000000800200000000000000050000000000
 reg add "HKCU\Control Panel\Mouse" /f /v "SmoothMouseYCurve" /t REG_BINARY /d 000000000000000066a6020000000000cd4c050000000000a0990a00000000003833150000000000
 reg add "HKU\.DEFAULT\Control Panel\Mouse" /f /v "SmoothMouseXCurve" /t REG_BINARY /d 000000000000000000a0000000000000004001000000000000800200000000000000050000000000
