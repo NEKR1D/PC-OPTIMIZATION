@@ -104,7 +104,7 @@
 - Disable Installer Telemetry & Advertising ```On```
 - Unattended Express Installation ```On```
 - Perform a clean installation  ```On```
-- Disable Multi-Plane Overlay (MPO) ```On```
+- Disable Multi-Plane Overlay (MPO) ```Off```
 - Disable Ansel ```On```
 - Show Expert Tweaks ```On```
 - Disable Driver Telemetry (Experimental) ```On```
@@ -115,6 +115,10 @@
 - Rebuild Digital Signature (Required) ```On```
 - Use Method Compatible With Easy Anti-Cheat ```On```
 - Automatically Accept "Driver Unsigned" warning ```On```
+
+> [!NOTE]
+> - Recently in 2026 I've been leaving MPO and Full Screen Optimizations ON in Windows and NVIDIA driver settings. Majority of games I play are DX12 based. I noticed improvements in this area compared to when Windows 11 launched.
+> - Emphasis here on extreme importance to use these tweaks as a reference only. Don't blindly follow anyone or assume they are posting what is objectively true for all scenarios. Things change. Research, think how it applies and do your own testing.
 
 ## NVIDIA - Control Panel - 3D Settings
 - Open ```NVIDIA Control Panel```
