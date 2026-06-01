@@ -305,7 +305,9 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 
 > [!NOTE]
 > - Example table shows a configuartion where HyperThreading is disabled, that sets high priority and seperates intterupts individually on usable threads for all MSI enabled devices.
+> - Serves as an example of how you might split MSI Intterupts across cores. May not be optimal for your hardware/configuration.
 > - Recommended to not set intterupts on Core 0. Typically the default interrupt thread(s) for entire system. Bottleneck in many cases where OS, applications and games can default to significant usage of this core/thread(s).
+> - In rare cases, some device drivers do need to be assigned to Core 0 and changing these vaulues including MSI Limit can cause the device to fail.
 
 ***
 <p align="center"> Plundered with ❤️ by NEKR1D </p>
