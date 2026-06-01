@@ -43,7 +43,7 @@
 - USB Device Viewer
 - USB Tree Viewer
 
-- > [!NOTE]
+> [!NOTE]
 > - Providing a list of various tools and software used for performance and gaming in general. Many of theses are not covered or explained in this document but wanted to share what can be useful to look into.
 
 ## BIOS - General Settings
