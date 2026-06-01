@@ -38,6 +38,7 @@
 - NVCleanInstall
 - ParkControl
 - Power Settings Explorer
+- RawAccel
 - Timer Bench
 - USB Device Viewer
 - USB Tree Viewer
