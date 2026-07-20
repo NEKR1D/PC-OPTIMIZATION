@@ -24,7 +24,7 @@
 > [!CAUTION]
 > - **Use at your own risk**.
 
-## Software & Tools Used
+## Software & Tools
 - ASUS GPU Tweak III
 - Display Driver Unistaller (DDU)
 - Driver Store Explorer
@@ -44,7 +44,8 @@
 - USB Tree Viewer
 
 > [!NOTE]
-> - Providing a list of various tools and software used for performance and gaming in general. Many of theses are not covered or explained in this document but wanted to share what can be useful to look into.
+> - Providing a list of various tools and software used for performance and gaming in general.
+> - Many of theses are not covered or explained in this document but sharing useful tools for you to look into.
 
 ## BIOS - General Settings
   
