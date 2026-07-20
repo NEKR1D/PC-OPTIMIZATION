@@ -1,4 +1,4 @@
-rem ::: Image File Execution Options [IFEO] Tweaks Batch
+` ::: Image File Execution Options [IFEO] Tweaks Batch
 
 rem ::: Plundered by NEKR1D
 
@@ -70,6 +70,16 @@ reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
+set "APP_KEY=%IFEO_BASE%\LOTF2-Win64-Shipping.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\DeadzoneSteam-Win64-Shipping.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
 set "APP_KEY=%IFEO_BASE%\destiny2.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
@@ -126,6 +136,11 @@ reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
 
 set "APP_KEY=%IFEO_BASE%\SpeedRunners2.exe\PerfOptions"
+reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
+reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
+
+set "APP_KEY=%IFEO_BASE%\OrionClient-Win64-Shipping.exe.exe\PerfOptions"
 reg add "%APP_KEY%" /v CpuPriorityClass /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v IoPriority /t REG_DWORD /d 6 /f
 reg add "%APP_KEY%" /v PagePriority /t REG_DWORD /d 6 /f
