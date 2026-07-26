@@ -26,12 +26,10 @@
 ## Software & Tools
 - Display Driver Unistaller (DDU)
 - Driver Store Explorer
-- Equalizer APO + PEACE
 - HWiNFO
-- Intelligent Standby List Cleaner
 - Interrupt Affinity Policy Tool
+- LatencyMon
 - Measure Sleep
-- NVCleanInstall
 - ParkControl
 - Power Settings Explorer
 - RawAccel
