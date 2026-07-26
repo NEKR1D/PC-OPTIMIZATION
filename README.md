@@ -3,7 +3,6 @@
 # PC Optimization for Gaming
 
 - A collection of ```Tweaks.bat``` focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
-- Experimental ```Windows11Tweaks.bat``` that make the OS more responsive. Remove bloat and configure telemetry, security and privacy elements.
 - Other potential benefits and improvements include; reducing or eliminating stutters and hitching.
 
 > [!NOTE]
@@ -12,12 +11,12 @@
 > - Not a system overclocking guide.
 > - Currently tested and working on;
 >   - ```INTEL i9 12900K```
->   - ```NVIDIA RTX 3080```
->   - ```WINDOWS 11 Pro [Version 25H2 Build 26200.7171]```
+>   - ```AMD 9070 XT```
+>   - ```WINDOWS 11 Pro [Version 25H2 Build 26200.8894]```
 
 > [!WARNING]
 > - Tweaks are experimental.
-> - Tailored for Intel CPU, NVIDIA GPU and Windows 11 OS.
+> - Tailored for Intel CPU, AMD GPU and Windows 11 OS.
 > - Expect increased temperatures, power consumption and usage of CPU and GPU.
 > - Use the scripts provided as a reference to test and tailor settings to your own environment.
 
@@ -25,7 +24,6 @@
 > - **Use at your own risk**.
 
 ## Software & Tools
-- ASUS GPU Tweak III
 - Display Driver Unistaller (DDU)
 - Driver Store Explorer
 - Equalizer APO + PEACE
@@ -33,8 +31,6 @@
 - Intelligent Standby List Cleaner
 - Interrupt Affinity Policy Tool
 - Measure Sleep
-- MSI Afterburner
-- NVIDIA Profile Inspector
 - NVCleanInstall
 - ParkControl
 - Power Settings Explorer
@@ -88,140 +84,13 @@
 - **In BIOS:**
    - Set Above 4G Decoding [Resizable Bar] to ```Enable```
   
-- **In NVIDIA Profile Inspector:**
-   - Set rBAR - Feature to ```Enable```
-   - Set rBAR - Options to  ```0x00000001```
-   - Set rBAR - Size Limit to ```0x0000000040000000``` [_1GB_]  or ```0x0000000060000000``` [_1.5GB_]
-  
 > [!NOTE]
 > - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
 > - You can verify ```Resizable BAR``` is enabled by opening the ```NVIDIA Control Panel``` then ```System Information```, and then look for ```Resizable BAR``` in the list. If it says ```Yes```, you’re set.
 > - Some research suggests that setting rBAR size higher such as 4GB, 8GB, 12GB, 16GB [_relative to your available VRAM_] can be taken advantage of by some games as long as VRAM never hits/exceeds max.
 
-## NVIDIA - Graphics Card Driver Clean Install
-- Boot Windows in ```Safe Mode```
-- Run ```Display Driver Uninstaller (DDU)``` to remove all traces of your current NVIDIA driver from your PC.
-- Reboot
-- Run ```NVCleanInstall``` software to install a modified version of the NVIDIA graphics card driver.
-- Follow the settings in the next section
-
-## NVCleanInstall - Settings
-- Select Components to Install ```Display Driver (Required)```
-- Disable Installer Telemetry & Advertising ```On```
-- Unattended Express Installation ```On```
-- Perform a clean installation  ```On```
-- Disable Multi-Plane Overlay (MPO) ```On```
-- Disable Ansel ```On```
-- Show Expert Tweaks ```On```
-- Disable Driver Telemetry (Experimental) ```On```
-- Enable Message Signaled Interrupts (MSI) ```On```
-- Interupt Policy ```Specified Processers``` Click ```Select Processors``` and assign the cores you want MSI to be assigned for the GPU
-- Interupt Priority ```High```
-- Disable HDCP ```On```
-- Rebuild Digital Signature (Required) ```On```
-- Use Method Compatible With Easy Anti-Cheat ```On```
-- Automatically Accept "Driver Unsigned" warning ```On```
-
-## NVIDIA - Control Panel - 3D Settings
-- Open ```NVIDIA Control Panel```
-- Click ```Manage 3D Settings```
-- Image Scaling ```Off```
-- Image Sharpening ```Off```
-- Anisotropic Filtering	```Off```
-- Antialiasing - FXAA ```Off```
-- Antialiasing - Gamma Correction ```On```
-- Antialiasing - Mode ```Application Controlled```
-- Antialiasing - Transparancy ```Off```
-- Background Application Max Frame Rate ```Off```
-- CUDA – GPUS ```All```
-- Low Latency Mode	```On``` or ```Ultra```
-- Max Frame Rate ```Off``` or ```Match Your Monitor's Refresh Rate```
-- Monitor Technology ```Fixed Refresh```
-- Multi-Frame Samples AA (MFAA) ```Off```
-- OpenGL GDI Compatibility ```Prefer performance```
-- OpenGL Rendering GPU ```Auto```
-- Power Management Mode	```Prefer Max Performance```
-- Preferred refresh rate ```Highest available```
-- Shader Cache Size - ```Unlimited```
-- Texture filtering - Anisotropic sample optimization ```Off```
-- Texture filtering - Negative LOD bias ```Clamp```
-- Texture filtering - Quality ```High Performance```
-- Texture filtering - Trilinear optimization ```Off```
-- Threaded optimization ```On```
-- Tripple buffering ```Off```
-- Vertical Sync	```Off```
-
-> [!NOTE]
-> - Set these as the global profile for NVIDIA
-> - Individually set specific NVIDIA profile per game .exe to your preference [such as sharpening or frame-rate locking]
-> - Low Latency Mode [Off/On/Ultra] is preferential based and the best choice will depend on the game and your hardware.
-> - NVIDIA Reflex setttings enabled in-game will override any Low Latency Mode flag set.
-> - Negative LOD bias setting is preferential based and the best choice will depend on the game. Manipulates texture pop-in distance and quality.
-> - Some games intentionally ignore NVIDIA Control Panel settings or are simply not compatible.
-
-## NVIDIA Control Panel - Color Settings
-- Open ```NVIDIA Control Panel```
-- Under ```Display``` select ```Change Resolution```
-- Select ```Use NVIDIA color settings```
-- Under ```Desktop color depth``` select ```Highest (32-bit)```
-- Under ```Output color depth``` select ```8 bpc```
-- Under ```Output color format``` select ```RGB```
-- Under ```Output dynamic range``` select ```Full```
-
-## NVIDIA Control Panel - Desktop Size and Position
-- Open ```NVIDIA Control Panel```
-- Under ```Display``` Select ```Adjust Desktop Size and Position```
-- Under ```Select Scaling Mode``` Select ```No Scaling```
-- Under ```Perform Scaling On:``` Select ```GPU```
-- Check ```Override the scaling mode set by games and programs``` to ```On```
-
-> [!NOTE]
-> - In general, any type of scaling either by GPU or Display will add some amount of latency.
-> - GPU scaling is typically faster than what built-in monitor technology offers which, on some models, can introduce more input latency than expected.
-
-- ## NVIDIA Control Panel - 3D Settings - Forcing High Performance
-- Open ```NVIDIA Control Panel```
-- Click ```Manage 3D Settings```
-- Click ```Program Settings```
-- Click ```Add``` set ```Power Management Mode``` to ```High Performance``` for;
-  - DWM.exe (located in \Windows\System32)
-  - Explorer.exe (located in \Windows)
-  - MicrosoftShellExperienceHost
-  - Steam
-  - Browsers
-  - VLC
-  - Any other games or apps with this toggle not set correctly
-
-> [!NOTE]
-> - Simple method for forcing ```High Performance``` individually for specific Windows apps and game .exes ensuring Power Management Mode is NOT set to ```NVIDIA Recommended```.
-
-## NVIDIA Profile Inspector - Settings
-
-- GSYNC - Application Mode ```Off```
-- GSYNC - Application Requested State ```Off```
-- GSYNC - Application State ```Disable```
-- GSYNC - Global Feature ```Off```
-- GSYNC - Global Mode ```Off```
-- Vertical Sync - Force ```Off```
-- Vertical Sync - Smooth AFR Behavior ```Off```
-- Vertical Sync - Tear Control ```Standard```
-- Antialiasing - Line Gamma ```On```
-- Ansel - Enabled ```Off``` [_Dependancy for NVIDIA APP/GUI and Overlay. Does not impact NVIDIA Control Panel_]
-- CUDA - Forced P2 State ```Off```
-- DLSS - Enable DLL Override - ```On - DLSS Overridden by latest available```
-- DLSS - Forced Preset Letter -  ```Always use latest```
-- DLSS-RR - Enable DLL Override - ```On - DLSS-RR Overridden by latest available```
-- DLSS-RR - Forced Preset Letter -  ```Always use latest```
-- Raytracing - (DXR) Enabled ```Off```
-- Raytracing - (Vulkan RT) Enabled ```Off```
-- rBAR - Feature ```Enable```
-- rBAR - Options ```0x00000001 (Returnal, Red Dead Redemption 2)```
-- rBAR - Size Limit ```0x0000000060000000``` _[1.5GB]_
-- Antialiasing - SLI AA ```0x00000000 AA_MODE_SELECTOR_SLIAA_DISABLED```
-- NVIDIA Predefined Ansel Usage ```0x00000000 ANSEL_ALLOW_DISALLOWED```
-- Variable Refresh Rate ```0x00000000 VSYNCVRRCONTROL_DISABLE```
-- Staging Cache Size ```0x01000001 Max```
-- Shader Max Reg Allowed ```0x00000400 Max``` [_Specifies max register allowed when compiling/optimizing a shader_]
+## AMD Graphics Card / Adrenaline Software
+- To be updated.
 
 ## Windows Hardware-Accelerated GPU Scheduling
 - Open ```Control Panel```
@@ -261,37 +130,6 @@
 - 2 CHIPS  device -[HUB]-[CHIPSET]- [CPU]
 - Note: the optimization scripts I provided include commands for disabling "USB Selective Suspend" in Windows.
 
-## Windows Timer Resolution
-- Use the Intelligent Standby List Cleaner application to force a Windows Timer Resolution
-- Start this program with windows and always running in the background
-- Enable ```Custome Timer Resolution```
-- Enable ```GlobalTimerResolutionRequests``` [we already force enable this in the registry in ```TimerTweaks.bat```]
-- Set the ```Wanted Timer Resolution``` field to a value extremely close to 0.5ms
-- Use Measure Sleep application to check diagnostics for resolution, sleep and delta;
-
-```Measure Sleep
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0038ms (delta: 0.0038)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0040ms (delta: 0.0040)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0036ms (delta: 0.0036)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0042ms (delta: 0.0042)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0045ms (delta: 0.0045)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0076ms (delta: 0.0076)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0045ms (delta: 0.0045)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0041ms (delta: 0.0041)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0031ms (delta: 0.0031)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0035ms (delta: 0.0035)
-Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
-```
-  
-> [!NOTE]
-> - The default Windows setting is around ~15ms.
-> - For my system, setting the Timer Resolution value to 0.5050 produced the best result where each sleep metric is exact/accurate to 2 decimal places - 1.00ms.
-> - On your system, test different Timer Resolution values so that you achieve the lowest and most consistent sleep metric
-> - Your Timer Resolution isn't optimal when you see the sleep values vary too much (spiking from 1ms to 2ms or higher)
-
 ## Message Signal Intterupts (MSI)
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
 - Assign cpu cores to separate devices where interrupts are sent to
@@ -300,10 +138,20 @@ Resolution: 0.5050ms, Sleep(n=1) slept 1.0033ms (delta: 0.0033)
 | Device                  | Priority | Core Assignment    |
 |-------------------------|----------|--------------------|
 | GPU                     | High     | P-Cores 4,5,6,7    |
-| Network Controller      | High     | P-Cores 1,2,3      |
+| Network Controller      | High     | P-Cores 0,1,2,3    |
 | USB Host Controllers    | High     | P-Cores 1,2,3      |
 | NVME Drives             | High     | E-cores 8-15       |
 | NVME Controllers        | High     | E-cores 8-15       |
+
+- I am currently testing [as of August 2026] to let the OS handle all MSIs at high priority.
+
+| Device                  | Priority | Core Assignment    |
+|-------------------------|----------|--------------------|
+| GPU                     | High     | Spread Messages Across All Processors  |
+| Network Controller      | High     | Spread Messages Across All Processors  |
+| USB Host Controllers    | High     | Spread Messages Across All Processors  |
+| NVME Drives             | High     | Spread Messages Across All Processors  |
+| NVME Controllers        | High     | Spread Messages Across All Processors  |
 
 > [!NOTE]
 > - Example table shows a configuartion where HyperThreading is disabled, that sets high priority and seperates intterupts individually on usable threads for all MSI enabled devices.
