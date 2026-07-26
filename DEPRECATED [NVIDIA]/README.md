@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# Deprecated Tweaks
+# Deprecated Tweaks for Windows 11 and NVIDIA GPUs
 
 > [!WARNING]
 > - This section is no longer monitored or updated.
