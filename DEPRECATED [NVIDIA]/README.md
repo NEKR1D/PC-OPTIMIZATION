@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# Deprecated Tweaks for PC Gaming Optimization
+# Deprecated Tweaks
 
 > [!WARNING]
 > - This section is no longer monitored or updated.
