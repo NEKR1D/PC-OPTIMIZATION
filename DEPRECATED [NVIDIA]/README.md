@@ -1,5 +1,11 @@
 <a name="readme-top"></a>
 
+# Deprecated Tweaks for PC Gaming Optimization
+
+> [!WARNING]
+> - This section is no longer monitored or updated.
+> - Archiving for education purposes only.
+
 # PC Optimization for Gaming
 
 - A collection of ```Tweaks.bat``` focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
