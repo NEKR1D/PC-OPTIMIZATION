@@ -73,14 +73,13 @@
 - Secure Boot ```Enable```
 
 > [!NOTE]
-> - Performance improvement by disabling Hyper-Threading will vary by game. May benefit by; decreasing power draw and temperatures, specific core/instruction assignments and increase overclock stability or capabilities. There are always trade-offs.
-> - Set appropriate number of cores value in ```BCDTweaks.bat``` to match your HT setting.
+> - 
   
 ## BIOS - Enable Resizable BAR
 - Enabling ```Resizable BAR``` in the BIOS is required otherwise the GPU Driver level settings will not have any effect.
   
 - **In BIOS:**
-   - Set Above 4G Decoding [Resizable Bar] to ```Enable```
+   - Ensure Above 4G Decoding [Resizable Bar] is set to ```Enable```
   
 > [!NOTE]
 > - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
