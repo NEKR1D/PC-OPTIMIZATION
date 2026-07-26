@@ -83,7 +83,7 @@
   
 > [!NOTE]
 > - Enabling ```Resizable BAR``` in the BIOS depends on your hardware compatibility, motherboard manufacturer and BIOS version.
-> - You can verify ```Resizable BAR``` is enabled by opening the ```NVIDIA Control Panel``` then ```System Information```, and then look for ```Resizable BAR``` in the list. If it says ```Yes```, you’re set.
+> - You can verify ```Resizable BAR``` is enabled by opening the official GPU software for AMD or NVIDIA and find ```Resizable BAR``` shown as enabled.
 > - Some research suggests that setting rBAR size higher such as 4GB, 8GB, 12GB, 16GB [_relative to your available VRAM_] can be taken advantage of by some games as long as VRAM never hits/exceeds max.
 
 ## AMD Graphics Card / Adrenaline Software
