@@ -71,9 +71,6 @@
 - AVX Offset - Set to ```Enable``` and ```0``` offset.
 - Load Line Calibration (LLC) [_Set a static voltage for CPU vcore and use LLC_] ```Enable```
 - Secure Boot ```Enable```
-
-> [!NOTE]
-> - 
   
 ## BIOS - Enable Resizable BAR
 - Enabling ```Resizable BAR``` in the BIOS is required otherwise the GPU Driver level settings will not have any effect.
