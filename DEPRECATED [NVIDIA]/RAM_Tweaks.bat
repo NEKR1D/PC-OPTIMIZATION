@@ -1,0 +1,132 @@
+rem ::: RAM Tweaks
+
+rem ::: Plundered by NEKR1D
+
+rem ::: Originally created by Shoober420
+rem ::: https://github.com/shoober420/windows11-scripts
+
+rem ::: PageFile Size in MB 
+rem ::: 8GB = 8192 / 16GB = 16384 / 32GB = 32768 / 64GB = 65536
+rem ::: InitialSize=65536 / MaximumSize=65536
+
+rem ::: !!! Disabling PageFile not recommended, many applications and games still rely on this legacy operating system feature to function correctly
+
+if not exist C:\Windows\System32\wbem\WMIC.exe (
+    echo Installing WMIC...
+    DISM /Online /Add-Capability /CapabilityName:WMIC~~~~
+    echo Done.
+)
+
+rem ::: Sets SvcHostSplitThresholdInKB, IoPageLockLimit, CacheUnmapBehindLengthInMB, and ModifiedWriteMaximum according to RAM size
+
+@echo off
+
+echo.
+echo 1. 8GB RAM
+echo 2. 16GB RAM
+echo 3. 32GB RAM
+echo 4. 64GB RAM
+echo C. Cancel
+echo.
+choice /c 1234C /m "Choose an option :"
+
+if 5 EQU %ERRORLEVEL% (
+   echo User chose to cancel.
+) else if 4 EQU %ERRORLEVEL% (
+   call :64gb
+) else if 3 EQU %ERRORLEVEL% (
+   call :32gb
+) else if 2 EQU %ERRORLEVEL% (
+   call :16gb
+) else if 1 EQU %ERRORLEVEL% (
+   call :8gb
+) else if 0 EQU %ERRORLEVEL% (
+   echo User bailed out.
+)
+
+goto :eof
+
+:8gb
+echo User chose 8GB RAM
+
+rem wmic computersystem where name="%computername%" set AutomaticManagedPagefile=False
+rem wmic pagefileset where name="C:\\pagefile.sys" set InitialSize=8192,MaximumSize=8192
+
+reg add "HKLM\SYSTEM\ControlSet001\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "800000" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "800000" /f
+
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "IoPageLockLimit" /t REG_DWORD /d "0xffffffff" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "CacheUnmapBehindLengthInMB" /t REG_DWORD /d "0x00000200" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "ModifiedWriteMaximum" /t REG_DWORD /d "0x00000040" /f
+goto :end
+
+:16gb
+echo User chose 16GB RAM
+
+rem wmic computersystem where name="%computername%" set AutomaticManagedPagefile=False
+rem wmic pagefileset where name="C:\\pagefile.sys" set InitialSize=16384,MaximumSize=16384
+
+reg add "HKLM\SYSTEM\ControlSet001\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "1000000" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "1000000" /f
+
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "IoPageLockLimit" /t REG_DWORD /d "0xffffffff" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "CacheUnmapBehindLengthInMB" /t REG_DWORD /d "0x00000400" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "ModifiedWriteMaximum" /t REG_DWORD /d "0x00000080" /f
+goto :end
+
+:32gb
+echo User chose 32GB RAM
+
+rem wmic computersystem where name="%computername%" set AutomaticManagedPagefile=False
+rem wmic pagefileset where name="C:\\pagefile.sys" set InitialSize=32768,MaximumSize=32768
+
+reg add "HKLM\SYSTEM\ControlSet001\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "2000000" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "2000000" /f
+
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "IoPageLockLimit" /t REG_DWORD /d "0xffffffff" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "CacheUnmapBehindLengthInMB" /t REG_DWORD /d "0x00000800" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "ModifiedWriteMaximum" /t REG_DWORD /d "0x00000160" /f
+goto :end
+
+:64gb
+echo User chose 64GB RAM
+
+rem wmic computersystem where name="%computername%" set AutomaticManagedPagefile=False
+rem wmic pagefileset where name="C:\\pagefile.sys" set InitialSize=65536,MaximumSize=65536
+
+reg add "HKLM\SYSTEM\ControlSet001\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "4000000" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control" /v "SvcHostSplitThresholdInKB" /t REG_DWORD /d "4000000" /f
+
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "IoPageLockLimit" /t REG_DWORD /d "0xffffffff" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "CacheUnmapBehindLengthInMB" /t REG_DWORD /d "0x00001600" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "ModifiedWriteMaximum" /t REG_DWORD /d "0x00000320" /f
+goto :end
+
+:end
+
+rem ::: Max Page Pool Size / 1GB Non Paged Pool Size
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "NonPagedPoolSize" /t REG_DWORD /d "0x400" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "PagedPoolSize" /t REG_DWORD /d "0xffffffff" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "DynamicMemory" /t REG_DWORD /d "1" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "EnforceWriteProtection" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "MakeLowMemory" /t REG_DWORD /d "1" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "SessionPoolSize" /t REG_DWORD /d "64" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "SessionViewSize" /t REG_DWORD /d "136" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "SystemCacheLimit" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "SessionSpaceLimit" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "WriteWatch" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "SnapUnloads" /t REG_DWORD /d "1" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "MapAllocationFragment" /t REG_DWORD /d "0x20000" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "Mirroring" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "DontVerifyRandomDrivers" /t REG_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\ControlSet001\Control\Session Manager\Memory Management" /v "EnableLowVaAccess" /t REG_DWORD /d "1" /f
+
+rem ::: Disable Memory Compression
+PowerShell -Command "Disable-MMAgent -MemoryCompression"
+
+rem ::: Disable Page Combining
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "DisablePageCombining" /t REG_DWORD /d "1" /f
+
+PowerShell -Command "Disable-MMAgent -PageCombining"
+
+PAUSE
