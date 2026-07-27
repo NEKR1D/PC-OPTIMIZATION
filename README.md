@@ -83,8 +83,16 @@
 > - You can verify ```Resizable BAR``` is enabled by opening the official GPU software for AMD or NVIDIA and find ```Resizable BAR``` shown as enabled.
 > - Some research suggests that setting rBAR size higher such as 4GB, 8GB, 12GB, 16GB [_relative to your available VRAM_] can be taken advantage of by some games as long as VRAM never hits/exceeds max.
 
-## AMD Graphics Card / Adrenaline Software
-- To be updated.
+## AMD Adrenaline Software
+- Undervolting typically -50mV to -100mV.
+- Increase Power Limit (%) to max 10%
+- Clock frequency adjustments have almost no impact in standard gaming use cases
+- More details to be updated here.
+  
+> [!NOTE]
+> - Clock frequency adjustments are something so finely tuned it's not the time to investigate and comb through.
+> - For RDNA4 (9070XT), AMD not allow you to lock frequencies to something higher and stable. The firmware is fairly locked down. You have to rely on the automatic boost clock system.
+> - More details to be updated here.
 
 ## Windows Hardware-Accelerated GPU Scheduling
 - Open ```Control Panel```
@@ -92,7 +100,19 @@
 - Select ```Display```
 - Select ```Graphics```
 - Select ```Change Default Graphics Settings```
-- Set ```Hardware-accelerated GPU Scheduling``` to ```On```
+- Set ```Hardware-accelerated GPU Scheduling``` to ```Off```
+
+- > [!NOTE]
+> - Disabling ```Hardware-accelerated GPU Scheduling``` for improvements will depend your hardware and game. Example, if you are bottlenecked by  CPU or GPU via VRAM or GPU core utilization.
+> - Test thoroughly, sometimes toggling this completely resolves stutters.
+
+## Variable Refresh Rate
+- Open ```Control Panel```
+- Select ```System```
+- Select ```Display```
+- Select ```Graphics```
+- Select ```Change Default Graphics Settings```
+- Set ```Variable Refresh Rate``` to ```Off```
 
 ## Windows Game Mode
 - Open```Control Panel```
