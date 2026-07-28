@@ -1,6 +1,8 @@
 rem ::: PC Optimization tweaks
 rem ::: 
 rem ::: Plundered by NEKR1D
+rem ::: 
+rem ::: Work In Progress, Still Updating...
 
 rem ::: !!! Warning !!!
 rem ::: !!! Your hardware, chipset and devices are different !!!
