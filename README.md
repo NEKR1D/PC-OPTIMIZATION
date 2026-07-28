@@ -60,13 +60,12 @@
 - PCIe Link State Power Management ```Disable```
 - TPM ```Disable``` 
 - Integrated devices [Audio, Video, Bluetooth, WiFi] ```Disable```
-- Unused USB ports ```Disable```
   
 **Enable:**
 - Above 4G Decoding _[Resizable Bar]_ ```Enable``` 
 - AHCI [_SATA Controller Mode_] ```Enable``` 
 - XMP [_Profiles for RAM_] ```Enable``` 
-- High Performance Power Mode [_Intel Defaults_] ```Enable``` 
+- High Performance Power Mode [_Intel "Default" or Manufacturer Performance Mode_] ```Enable``` 
 - BCLK size [_Set to 100.00 Mhz_] ```Enable``` 
 - High Precision Event Timer (HPET) ```Enable```
 - AVX Offset - Set to ```Enable``` and ```0``` offset.
@@ -159,7 +158,7 @@
 | NVME Drives             | High     | E-cores 8-15       |
 | NVME Controllers        | High     | E-cores 8-15       |
 
-- I am currently testing [as of August 2026] to let the OS handle all MSIs at high priority.
+- Currently testing [as of August 2026] to let the OS handle all MSIs at high priority.
 
 | Device                  | Priority | Core Assignment    |
 |-------------------------|----------|--------------------|
