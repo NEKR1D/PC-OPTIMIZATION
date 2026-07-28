@@ -1,4 +1,4 @@
-rem ::: PC Optimization tweaks
+rem ::: PC Optimization Tweaks
 rem ::: 
 rem ::: Plundered by NEKR1D
 rem ::: 
@@ -8,13 +8,36 @@ rem ::: !!! Warning !!!
 rem ::: !!! Your hardware, chipset and devices are different !!!
 rem ::: !!! Use script as reference only !!!
 
-rem ::: Disable PCIe Link State Power Management and Active State Power Management (ASPM)\
-rem ::: Also disable these in BIOS.
+rem ::: Disable Ultra Low Power State (UPLS) for AMD GPU
+rem ::: Search the registry for the specific sub-key holding the ULPS configuration and set to 0
+for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}" /s /f "EnableUlps" /v ^| findstr "HKEY"') do (
+    echo Found AMD GPU Key: %%A
+    reg add "%%A" /v EnableUlps /t REG_DWORD /d 0 /f
+    echo.
+)
+
+rem ::: Disable PCIe Link State Power Management and Active State Power Management (ASPM)
+rem ::: Also manually disable these in BIOS.
 powercfg /setacvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setdcvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setactive SCHEME_CURRENT
 
-rem ::: Games system profile tweaks (Corrected Values)
+rem ::: Disable Multi-Plane Overlay (MPO)
+reg add "HKLM\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
+
+rem ::: Remove Context Menu Delay (MenuShowDelay = 0)
+reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 0 /f
+
+rem ::: Reduce Mouse Hover Delay (MouseHoverTime = 100)
+reg add "HKCU\Control Panel\Mouse" /v MouseHoverTime /t REG_SZ /d 100 /f
+
+rem ::: Set MMCSS CPU Prioritization (SystemResponsiveness = 0)
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "SystemResponsiveness" /t REG_DWORD /d 0 /f
+
+rem ::: Set Global System Timer Resolution (GlobalTimerResolutionRequests = 1)
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "GlobalTimerResolutionRequests" /t REG_DWORD /d 1 /f
+
+rem ::: Games system profile tweaks
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Affinity" /t REG_DWORD /d "0" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Background Only" /t REG_SZ /d "False" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Clock Rate" /t REG_DWORD /d "10000" /f
@@ -35,7 +58,6 @@ reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseThreshold1" /t REG_SZ /d "0"
 reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseThreshold2" /t REG_SZ /d "0" /f
 
 rem ::: Change Windows Desktop Pointer Speed (Default is 10)
-rem ::: Setting to 3 as requested for 3200+ DPI users
 reg add "HKCU\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3" /f
 reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3" /f
 
@@ -46,7 +68,6 @@ reg add "HKCU\Control Panel\Mouse" /v "ActiveWindowTracking" /t REG_DWORD /d "1"
 
 rem ::: Device & Services Tweaks
 rem ::: Disables unnecessary devices and services (such as those loaded with chipset drivers) that are not needed.
-
 rem ::: pnputil /enum-devices [shows all services]
 
 rem ::: WAN Miniport (L2TP)
@@ -439,3 +460,5 @@ rem ::: ZT Helper Service
 powershell -Command "Stop-Service -Name 'ZTHELPER' -Force -ErrorAction SilentlyContinue"
 powershell -Command "Set-Service -Name 'ZTHELPER' -StartupType Disabled"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\ZTHELPER" /v "Start" /t REG_DWORD /d 4 /f
+
+PAUSE
