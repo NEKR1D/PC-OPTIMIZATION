@@ -57,6 +57,7 @@
 - Fast Boot ```Disable```
 - Intel SpeedStep ```Disable``` 
 - Intel TurboBoost ```Disable```
+- PCIe Link State Power Management ```Disable```
 - TPM ```Disable``` 
 - Integrated devices [Audio, Video, Bluetooth, WiFi] ```Disable```
 - Unused USB ports ```Disable```
