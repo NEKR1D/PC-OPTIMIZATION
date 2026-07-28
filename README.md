@@ -2,7 +2,7 @@
 
 # PC Optimization for Gaming
 
-- A collection of ```Tweaks.bat``` focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
+- A collection of ```TWEAKS.bat``` focused on optimizing overall responsiveness by improving framerate, frametimes, input and device communication latencies.
 - Other potential benefits and improvements include; reducing or eliminating stutters and hitching.
 
 > [!NOTE]
@@ -100,11 +100,12 @@
 - Select ```Display```
 - Select ```Graphics```
 - Select ```Change Default Graphics Settings```
-- Set ```Hardware-accelerated GPU Scheduling``` to ```Off```
+- Set ```Hardware-accelerated GPU Scheduling``` to ```ON``` or ```OFF```
 
 - > [!NOTE]
-> - Disabling ```Hardware-accelerated GPU Scheduling``` for improvements will depend your hardware and game. Example, if you are bottlenecked by  CPU or GPU via VRAM or GPU core utilization.
+> - Disabling ```Hardware-accelerated GPU Scheduling``` for improvements will depend your hardware and game. Example, if you are bottlenecked by CPU or GPU via VRAM or GPU core utilization.
 > - Test thoroughly, sometimes toggling this completely resolves stutters.
+> - In most cases leave this ON.
 
 ## Variable Refresh Rate
 - Open ```Control Panel```
