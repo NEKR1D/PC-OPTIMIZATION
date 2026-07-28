@@ -8,7 +8,8 @@ rem ::: !!! Warning !!!
 rem ::: !!! Your hardware, chipset and devices are different !!!
 rem ::: !!! Use script as reference only !!!
 
-rem # Disable PCIe Link State Power Management and Active State Power Management (ASPM)
+rem ::: Disable PCIe Link State Power Management and Active State Power Management (ASPM)\
+rem ::: Also disable these in BIOS.
 powercfg /setacvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setdcvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setactive SCHEME_CURRENT
