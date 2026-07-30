@@ -8,7 +8,21 @@ rem ::: !!! Warning !!!
 rem ::: !!! Your hardware, chipset and devices are different !!!
 rem ::: !!! Use script as reference only !!!
 
-rem ::: Disable Ultra Low Power State (UPLS) for AMD GPU
+rem ::: !!! Building an all in one bat file this time, will grow as updated !!!
+
+@echo off
+
+rem :::
+rem ::: AMD Tweaks
+rem :::
+
+rem ::: AMD Shader Cache set to Always On
+rem ::: 31 00 = AMD Optimized (Default)
+rem ::: 32 00 = Always On
+rem ::: 30 00 = Off (Never use this)  
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000\UMD" /v ShaderCache /t REG_BINARY /d 3200 /f
+
+rem ::: AMD Disable Ultra Low Power State (UPLS)
 rem ::: Search the registry for the specific sub-key holding the ULPS configuration and set to 0
 for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}" /s /f "EnableUlps" /v ^| findstr "HKEY"') do (
     echo Found AMD GPU Key: %%A
@@ -16,11 +30,19 @@ for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Clas
     echo.
 )
 
+rem :::
+rem ::: Windows Power Tweaks
+rem :::
+
 rem ::: Disable PCIe Link State Power Management and Active State Power Management (ASPM)
 rem ::: Also manually disable these in BIOS.
 powercfg /setacvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setdcvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
 powercfg /setactive SCHEME_CURRENT
+
+rem :::
+rem ::: Windows System & Profile General Tweaks
+rem :::
 
 rem ::: Disable Multi-Plane Overlay (MPO)
 reg add "HKLM\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
@@ -47,6 +69,10 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProf
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "SFIO Priority" /t REG_SZ /d "High" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Latency Sensitive" /t REG_SZ /d "True" /f
 
+rem :::
+rem ::: Windows Mouse
+rem :::
+
 rem ::: Disable "Enhance Pointer Precision" (Acceleration) for Current User
 reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_SZ /d "0" /f
 reg add "HKCU\Control Panel\Mouse" /v "MouseThreshold1" /t REG_SZ /d "0" /f
@@ -65,6 +91,10 @@ rem ::: Enable Active Window Tracking (Hover to focus)
 rem ::: Note: Background hover-scrolling is native to Windows 11, but this specifically focuses the window
 reg add "HKCU\Control Panel\Desktop" /v "UserPreferencesMask" /t REG_BINARY /d 9f3e078012000000 /f
 reg add "HKCU\Control Panel\Mouse" /v "ActiveWindowTracking" /t REG_DWORD /d "1" /f
+
+rem :::
+rem ::: Windows - Device & Services
+rem :::
 
 rem ::: Device & Services Tweaks
 rem ::: Disables unnecessary devices and services (such as those loaded with chipset drivers) that are not needed.
