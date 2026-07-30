@@ -103,7 +103,8 @@
 - Set ```Hardware-accelerated GPU Scheduling``` to ```ON``` or ```OFF```
 
 > [!NOTE]
-> - Disabling ```Hardware-accelerated GPU Scheduling``` for improvements will depend your hardware and game. Example, if you are bottlenecked by CPU or GPU via VRAM or GPU core utilization.
+> - Disabling ```Hardware-accelerated GPU Scheduling``` for improvements will depend your hardware and game.
+> - Examples of variation and effectiveness include whether your system is CPU or GPU bottlenecked via VRAM or GPU core utilization.
 > - Test thoroughly, sometimes toggling this completely resolves stutters.
 > - In most cases leave this ON.
 
