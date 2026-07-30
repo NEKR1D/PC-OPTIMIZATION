@@ -149,15 +149,6 @@
 - Use the Interrupt Affinity Policy Tool application to define and force Message Signal Intterupts
 - Assign cpu cores to separate devices where interrupts are sent to
 - Assign priority level
- 
-| Device                  | Priority | Core Assignment    |
-|-------------------------|----------|--------------------|
-| GPU                     | High     | P-Cores 4,5,6,7    |
-| Network Controller      | High     | P-Cores 0,1,2,3    |
-| USB Host Controllers    | High     | P-Cores 1,2,3      |
-| NVME Drives             | High     | E-cores 8-15       |
-| NVME Controllers        | High     | E-cores 8-15       |
-
 - Currently testing [as of August 2026] to let the OS handle all MSIs at high priority.
 
 | Device                  | Priority | Core Assignment    |
@@ -169,9 +160,8 @@
 | NVME Controllers        | High     | Spread Messages Across All Processors  |
 
 > [!NOTE]
-> - Example table shows a configuartion that seperates intterupts individually on usable threads for all MSI enabled devices and sets them all as high priority.
 > - Serves as an example of how you might split MSI Intterupts across cores. May not be optimal for your hardware/configuration.
-> - Recommended to not set intterupts on Core 0. Typically the default interrupt thread(s) for entire system. Bottleneck in many cases where OS, applications and games can default to significant usage of this core/thread(s).
+> - Some research indicates not set intterupts on Core 0. Typically the default interrupt thread(s) for entire system are sent to Core 0. Bottleneck in many cases where OS, applications and games can default to significant usage of this core/thread(s).
 > - In rare cases, some device drivers do need to be assigned to Core 0 and changing these vaulues including MSI Limit can cause the device to fail. You might see your device hardware flagged (!) in Windows Device Manager.
 
 ***
