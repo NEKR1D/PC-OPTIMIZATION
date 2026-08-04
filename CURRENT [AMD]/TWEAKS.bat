@@ -34,11 +34,35 @@ rem :::
 rem ::: Windows Power Tweaks
 rem :::
 
-rem ::: Disable PCIe Link State Power Management and Active State Power Management (ASPM)
-rem ::: Also manually disable these in BIOS.
-powercfg /setacvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
-powercfg /setdcvalueindex SCHEME_CURRENT 501a4d13-42af-4429-9fd1-a8218c268e20 ee12f906-d277-404b-b6da-e5fa1a576df5 0
-powercfg /setactive SCHEME_CURRENT
+rem ::: NETWORK Tweaks
+
+rem ::: Loop through every 4-digit subkey (0000, 0001, 0002, etc.)
+set "NIC_CLASS=HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}"
+for /f "tokens=*" %%k in ('reg query "%NIC_CLASS%" ^| findstr /R "\\[0-9][0-9][0-9][0-9]$"') do (
+    echo Applying to: %%k
+	
+rem ::: Disable Interrupt Moderation
+    reg add "%%k" /v "*InterruptModeration" /t REG_SZ /d "0" /f >nul 2>&1
+    
+rem ::: Disable Flow Control
+    reg add "%%k" /v "*FlowControl" /t REG_SZ /d "0" /f >nul 2>&1
+    
+rem ::: Disable Large Send Offload (IPv4 & IPv6)
+    reg add "%%k" /v "*LsoV2IPv4" /t REG_SZ /d "0" /f >nul 2>&1
+    reg add "%%k" /v "*LsoV2IPv6" /t REG_SZ /d "0" /f >nul 2>&1
+    
+rem ::: Disable Energy Efficient Ethernet (EEE) / Green Ethernet
+    reg add "%%k" /v "*EEE" /t REG_SZ /d "0" /f >nul 2>&1
+    reg add "%%k" /v "AdvancedEEESetting" /t REG_SZ /d "0" /f >nul 2>&1
+    
+rem ::: Disable ARP Offload / Power Management
+    reg add "%%k" /v "*PMARPOffload" /t REG_SZ /d "0" /f >nul 2>&1
+    reg add "%%k" /v "*PMNSOffload" /t REG_SZ /d "0" /f >nul 2>&1
+    
+rem ::: Uncheck "Allow the computer to turn off this device to save power" (Value 24 disables it)
+    reg add "%%k" /v "PnPCapabilities" /t REG_DWORD /d "24" /f >nul 2>&1
+
+)
 
 rem :::
 rem ::: Windows System & Profile General Tweaks
