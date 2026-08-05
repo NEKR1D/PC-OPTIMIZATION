@@ -30,10 +30,6 @@ for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Clas
     echo.
 )
 
-rem :::
-rem ::: Windows Power Tweaks
-rem :::
-
 rem ::: NETWORK Tweaks
 
 rem ::: Loop through every 4-digit subkey (0000, 0001, 0002, etc.)
@@ -111,10 +107,8 @@ rem ::: Change Windows Desktop Pointer Speed (Default is 10)
 reg add "HKCU\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3" /f
 reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3" /f
 
-rem ::: Enable Active Window Tracking (Hover to focus)
-rem ::: Note: Background hover-scrolling is native to Windows 11, but this specifically focuses the window
-reg add "HKCU\Control Panel\Desktop" /v "UserPreferencesMask" /t REG_BINARY /d 9f3e078012000000 /f
-reg add "HKCU\Control Panel\Mouse" /v "ActiveWindowTracking" /t REG_DWORD /d "1" /f
+rem ::: Disable Activate a window by hovering over it
+reg add "HKCU\Control Panel\Mouse" /v ActiveWindowTracking /t REG_DWORD /d 0 /f
 
 rem :::
 rem ::: Windows - Device & Services
