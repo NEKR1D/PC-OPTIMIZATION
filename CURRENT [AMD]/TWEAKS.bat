@@ -111,6 +111,15 @@ rem ::: Disable Activate a window by hovering over it
 reg add "HKCU\Control Panel\Mouse" /v ActiveWindowTracking /t REG_DWORD /d 0 /f
 
 rem :::
+rem ::: Windows General
+rem :::
+
+rem ::: Disable Windows Taskbar Preview Pop-up on Apps (Mouse Hover thumbnails)
+rem ::: sets hover delay to 30 seconds
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ExtendedUIHoverTime /t REG_DWORD /d 30000 /f
+
+
+rem :::
 rem ::: Windows - Device & Services
 rem :::
 
