@@ -64,6 +64,9 @@ rem :::
 rem ::: Windows System & Profile General Tweaks
 rem :::
 
+rem ::: Disable PagingExecutive (Forces System related resources to load in RAM only instead of offsetting some into PageFile when idle)
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v DisablePagingExecutive /t REG_DWORD /d 1 /f
+
 rem ::: Disable Multi-Plane Overlay (MPO)
 reg add "HKLM\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
 
