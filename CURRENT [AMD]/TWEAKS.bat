@@ -8,7 +8,7 @@ rem ::: !!! Warning !!!
 rem ::: !!! Your hardware, chipset and devices are different !!!
 rem ::: !!! Use script as reference only !!!
 
-rem ::: !!! Building an all in one bat file this time, will grow as updated !!!
+rem ::: !!! Building an all in one bat file, will grow as updated !!!
 
 @echo off
 
@@ -30,7 +30,12 @@ for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Clas
     echo.
 )
 
+rem :::
 rem ::: NETWORK Tweaks
+rem :::
+
+rem ::: Disable NetworkThrottlingIndex [Can increase DPCs and more CPU intensive]
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v NetworkThrottlingIndex /t REG_DWORD /d 0xffffffff /f
 
 rem ::: Loop through every 4-digit subkey (0000, 0001, 0002, etc.)
 set "NIC_CLASS=HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}"
@@ -70,12 +75,6 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management
 rem ::: Disable Multi-Plane Overlay (MPO)
 reg add "HKLM\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
 
-rem ::: Remove Context Menu Delay (MenuShowDelay = 0)
-reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 0 /f
-
-rem ::: Reduce Mouse Hover Delay (MouseHoverTime = 100)
-reg add "HKCU\Control Panel\Mouse" /v MouseHoverTime /t REG_SZ /d 100 /f
-
 rem ::: Set MMCSS CPU Prioritization (SystemResponsiveness = 0)
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "SystemResponsiveness" /t REG_DWORD /d 0 /f
 
@@ -113,14 +112,39 @@ reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3
 rem ::: Disable Activate a window by hovering over it
 reg add "HKCU\Control Panel\Mouse" /v ActiveWindowTracking /t REG_DWORD /d 0 /f
 
+rem ::: Reduce Mouse Hover Delay (MouseHoverTime = 100)
+reg add "HKCU\Control Panel\Mouse" /v MouseHoverTime /t REG_SZ /d 100 /f
+
+
+rem :::
+rem ::: Windows Sound
+rem ::: 
+
+rem ::: Disable power management for Sound Controllers
+
+for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}" 2^>nul ^| findstr /i "0"') do (
+    reg add "%%A" /v PnPCapabilities /t REG_DWORD /d 24 /f >nul 2>&1
+)
+
+rem ::: Disable USB Selective Suspend for USB Audio Devices
+
+for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /s /k /f "Device Parameters" 2^>nul ^| findstr /i /e "Device Parameters"') do (
+    reg add "%%A" /v EnhancedPowerManagementEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+    reg add "%%A" /v AllowIdleIrpInD3 /t REG_DWORD /d 0 /f >nul 2>&1
+    reg add "%%A" /v DeviceSelectiveSuspended /t REG_DWORD /d 0 /f >nul 2>&1
+    reg add "%%A" /v SelectiveSuspendEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+)
+
 rem :::
 rem ::: Windows General
 rem :::
 
 rem ::: Disable Windows Taskbar Preview Pop-up on Apps (Mouse Hover thumbnails)
-rem ::: sets hover delay to 30 seconds
+rem ::: Sets hover delay to 30 seconds
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ExtendedUIHoverTime /t REG_DWORD /d 30000 /f
 
+rem ::: Remove Context Menu Delay (MenuShowDelay = 0)
+reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 0 /f
 
 rem :::
 rem ::: Windows - Device & Services
@@ -275,6 +299,11 @@ rem ::: Connected User Experiences and Telemetry
 powershell -Command "Stop-Service -Name 'DiagTrack' -Force -ErrorAction SilentlyContinue"
 powershell -Command "Set-Service -Name 'DiagTrack' -StartupType Disabled"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\DiagTrack" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Windows Health and Optimized Experiences
+powershell -Command "Stop-Service -Name 'whesvc' -Force -ErrorAction SilentlyContinue"
+powershell -Command "Set-Service -Name 'whesvc' -StartupType Disabled"
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\whesvc" /v "Start" /t REG_DWORD /d 4 /f
 
 rem ::: Dialog Blocking Service
 powershell -Command "Stop-Service -Name 'DialogBlockingS' -Force -ErrorAction SilentlyContinue"
@@ -520,5 +549,14 @@ rem ::: ZT Helper Service
 powershell -Command "Stop-Service -Name 'ZTHELPER' -Force -ErrorAction SilentlyContinue"
 powershell -Command "Set-Service -Name 'ZTHELPER' -StartupType Disabled"
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\ZTHELPER" /v "Start" /t REG_DWORD /d 4 /f
+
+rem ::: Disable Application Experience Telemetry, Program Compatibility Assistant & Appraiser Tasks
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser Exp" /Disable
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\ProgramDataUpdater" /Disable
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\StartupAppTask" /Disable
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\PcaPatchDbTask" /Disable
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\SdbinstMergeDbTask" /Disable
+schtasks /Change /TN "\Microsoft\Windows\Application Experience\MareBackup" /Disable
 
 PAUSE
