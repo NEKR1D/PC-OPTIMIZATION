@@ -66,6 +66,27 @@ rem ::: Uncheck "Allow the computer to turn off this device to save power" (Valu
 )
 
 rem :::
+rem ::: Windows Audio General Tweaks
+rem :::
+
+rem :::
+rem ::: Disable any power management for Sound Controllers
+rem :::
+
+for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}" 2^>nul ^| findstr /i "0"') do (
+    reg add "%%A" /v PnPCapabilities /t REG_DWORD /d 24 /f >nul 2>&1
+)
+
+rem ::: Disable USB Selective Suspend for USB Audio Devices
+
+for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /s /k /f "Device Parameters" 2^>nul ^| findstr /i /e "Device Parameters"') do (
+    reg add "%%A" /v EnhancedPowerManagementEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+    reg add "%%A" /v AllowIdleIrpInD3 /t REG_DWORD /d 0 /f >nul 2>&1
+    reg add "%%A" /v DeviceSelectiveSuspended /t REG_DWORD /d 0 /f >nul 2>&1
+    reg add "%%A" /v SelectiveSuspendEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+)
+
+rem :::
 rem ::: Windows System & Profile General Tweaks
 rem :::
 
@@ -106,8 +127,8 @@ reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseThreshold1" /t REG_SZ /d "0"
 reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseThreshold2" /t REG_SZ /d "0" /f
 
 rem ::: Change Windows Desktop Pointer Speed (Default is 10)
-reg add "HKCU\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3" /f
-reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "3" /f
+reg add "HKCU\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "4" /f
+reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "MouseSensitivity" /t REG_SZ /d "4" /f
 
 rem ::: Disable Activate a window by hovering over it
 reg add "HKCU\Control Panel\Mouse" /v ActiveWindowTracking /t REG_DWORD /d 0 /f
@@ -115,28 +136,8 @@ reg add "HKCU\Control Panel\Mouse" /v ActiveWindowTracking /t REG_DWORD /d 0 /f
 rem ::: Reduce Mouse Hover Delay (MouseHoverTime = 100)
 reg add "HKCU\Control Panel\Mouse" /v MouseHoverTime /t REG_SZ /d 100 /f
 
-
 rem :::
-rem ::: Windows Sound
-rem ::: 
-
-rem ::: Disable power management for Sound Controllers
-
-for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}" 2^>nul ^| findstr /i "0"') do (
-    reg add "%%A" /v PnPCapabilities /t REG_DWORD /d 24 /f >nul 2>&1
-)
-
-rem ::: Disable USB Selective Suspend for USB Audio Devices
-
-for /f "tokens=*" %%A in ('reg query "HKLM\SYSTEM\CurrentControlSet\Enum\USB" /s /k /f "Device Parameters" 2^>nul ^| findstr /i /e "Device Parameters"') do (
-    reg add "%%A" /v EnhancedPowerManagementEnabled /t REG_DWORD /d 0 /f >nul 2>&1
-    reg add "%%A" /v AllowIdleIrpInD3 /t REG_DWORD /d 0 /f >nul 2>&1
-    reg add "%%A" /v DeviceSelectiveSuspended /t REG_DWORD /d 0 /f >nul 2>&1
-    reg add "%%A" /v SelectiveSuspendEnabled /t REG_DWORD /d 0 /f >nul 2>&1
-)
-
-rem :::
-rem ::: Windows General
+rem ::: Windows General Tweaks
 rem :::
 
 rem ::: Disable Windows Taskbar Preview Pop-up on Apps (Mouse Hover thumbnails)
